@@ -37,6 +37,15 @@ nextBtn.addEventListener("click", () => {
   carousel.scrollBy({ left: 300, behavior: "smooth" });
 });
 
+// Auto-scroll carousel
+setInterval(() => {
+  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+    carousel.scrollTo({ left: 0, behavior: "smooth" });
+  } else {
+    carousel.scrollBy({ left: 300, behavior: "smooth" });
+  }
+}, 5000);
+
 // RSVP Form feedback
 const rsvpForm = document.getElementById("rsvp-form");
 const formMessage = document.getElementById("form-message");

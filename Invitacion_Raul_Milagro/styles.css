@@ -4,6 +4,13 @@ body {
   padding: 0;
   background-color: #fdfdfd;
   color: #2d2d2d;
+  font-size: 1.2rem; /* Mayor legibilidad */
+  line-height: 1.6;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -22,6 +29,7 @@ h1, h2 {
   text-align: center;
   color: #4b6651;
   margin-top: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 section {
@@ -31,12 +39,16 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 
 .cover {
   background: linear-gradient(to bottom, #f5f5f5, #e0f7ec);
   padding: 80px 20px;
+  background-attachment: fixed;
 }
 
 .detail-item {
@@ -58,6 +70,11 @@ form button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #8ba25b;
 }
 
 footer {
@@ -144,4 +161,10 @@ footer {
 
 .hidden {
   display: none;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
