@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raul & Milagro - Invitación de Boda</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <section class="cover fade-in">
+    <h1>Raul  &  Milagro</h1>
+    <p>Dos almas, un corazón, y un destino</p>
+  </section>
+
+  <section class="invitation fade-in">
+    <h2>Nos Casamos</h2>
+    <p>Con la bendición de nuestras familias, te invitamos a celebrar este momento inolvidable.</p>
+    <p>Viernes 11 de Octubre de 2025</p>
+  </section>
+
+  <section class="details fade-in">
+    <h2>Detalles del Evento</h2>
+    <div class="detail-item"><strong>📍 Lugar:</strong> Parroquia Nuestra Señora de San José</div>
+    <div class="detail-item"><strong>🕒 Hora:</strong> 2:30 PM</div>
+    <div class="detail-item"><strong>🎉 Recepción:</strong> Hacienda Los Álamos, 5:00 PM</div>
+  </section>
+
+  <section class="countdown fade-in">
+    <h2>Faltan</h2>
+    <div id="countdown">Cargando...</div>
+  </section>
+
+  <section class="carousel fade-in">
+    <h2>Momentos Especiales</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev">⟨</button>
+      <div class="carousel-container" id="carousel">
+        <img src="assets/foto1.jpg" alt="Foto 1">
+        <img src="assets/foto2.jpg" alt="Foto 2">
+        <img src="assets/foto3.jpg" alt="Foto 3">
+      </div>
+      <button class="carousel-btn next">⟩</button>
+    </div>
+  </section>
+
+  <section class="mapa fade-in">
+    <h2>Ubicación</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18..."
+      width="100%" height="300" allowfullscreen="" loading="lazy">
+    </iframe>
+  </section>
+
+  <section class="rsvp fade-in">
+    <h2>Confirmar Asistencia</h2>
+    <form id="rsvp-form" action="https://formsubmit.co/your-email@example.com" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="number" name="guests" placeholder="Número de acompañantes" required>
+      <button type="submit">Confirmar</button>
+      <p id="form-message" class="form-success hidden">¡Gracias por confirmar tu asistencia!</p>
+    </form>
+  </section>
+
+  <footer class="fade-in">
+    <p>Gracias por ser parte de nuestra historia ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
