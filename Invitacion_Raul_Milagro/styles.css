@@ -1,9 +1,20 @@
+:root {
+  --warm-taupe: #D2BEB0;
+  --golden-beige: #E6C48D;
+  --champagne: #F4E8D4;
+  --burnt-orange: #C75B39;
+  --dusty-rose: #CD8C90;
+  --caramel-brown: #5B3A29;
+  --terracotta: #C2613F;
+  --sage-green: #9CA88E;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fdfdfd;
-  color: #2d2d2d;
+  background-color: var(--champagne);
+  color: var(--caramel-brown);
   font-size: 1.2rem; /* Mayor legibilidad */
   line-height: 1.6;
 }
@@ -25,9 +36,9 @@ h2 {
 
 
 h1, h2 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Playfair Display', serif;
   text-align: center;
-  color: #4b6651;
+  color: var(--caramel-brown);
   margin-top: 20px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -39,21 +50,67 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(135deg, #ffffff, #f0f0f0);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
 }
 
 
 .cover {
-  background: linear-gradient(to bottom, #f5f5f5, #e0f7ec);
+  position: relative;
+  background: linear-gradient(to bottom, var(--golden-beige), var(--champagne));
   padding: 80px 20px;
   background-attachment: fixed;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 8px, transparent 10px),
+    radial-gradient(circle at 70% 40%, rgba(255,255,255,0.4) 0, rgba(255,255,255,0.4) 6px, transparent 8px),
+    radial-gradient(circle at 30% 80%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 10px, transparent 12px);
+  background-size: 200px 200px;
+  animation: move-bubbles 30s linear infinite;
+  pointer-events: none;
+}
+
+.ceremony {
+  background-color: var(--sage-green);
+}
+
+.countdown {
+  background-color: var(--dusty-rose);
+}
+
+.carousel {
+  background-color: var(--champagne);
+}
+
+.songs {
+  background-color: var(--warm-taupe);
+}
+
+.dress {
+  background-color: var(--dusty-rose);
+}
+
+.tips {
+  background-color: var(--sage-green);
+}
+
+.mapa {
+  background-color: var(--champagne);
+}
+
+.rsvp {
+  background-color: var(--warm-taupe);
 }
 
 .detail-item {
   margin: 10px 0;
   font-size: 1.1rem;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--golden-beige);
 }
 
 form input, form button {
@@ -65,7 +122,7 @@ form input, form button {
 }
 
 form button {
-  background-color: #6c7a3e;
+  background-color: var(--burnt-orange);
   color: white;
   border: none;
   border-radius: 6px;
@@ -74,7 +131,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #8ba25b;
+  background-color: var(--terracotta);
 }
 
 footer {
@@ -84,14 +141,19 @@ footer {
 }
 
 .countdown {
-  background-color: #e8f5e9;
+  background-color: var(--dusty-rose);
   padding: 30px 20px;
 }
 
-#countdown-timer {
-  font-size: 1.5rem;
+#countdown {
+  font-size: 2.5rem;
   margin-top: 10px;
   font-weight: bold;
+  border: 6px double var(--golden-beige);
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.6);
 }
 
 .carousel-container {
@@ -105,12 +167,15 @@ footer {
 .carousel-container img {
   height: 200px;
   border-radius: 10px;
+  border: 4px solid var(--golden-beige);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   scroll-snap-align: center;
 }
 
 .mapa iframe {
   border-radius: 8px;
   margin-top: 10px;
+  border: 4px solid var(--golden-beige);
 }
 
 .fade-in {
@@ -132,7 +197,7 @@ footer {
 }
 
 .carousel-btn {
-  background-color: #6c7a3e;
+  background-color: var(--burnt-orange);
   border: none;
   color: white;
   font-size: 1.5rem;
@@ -143,6 +208,11 @@ footer {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: var(--terracotta);
 }
 
 .carousel-btn.prev {
@@ -167,4 +237,9 @@ footer {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes move-bubbles {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100px); }
 }
