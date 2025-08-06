@@ -1,3 +1,13 @@
+// Welcome screen
+const enterBtn = document.getElementById("enter-btn");
+const welcomeScreen = document.getElementById("welcome-screen");
+
+enterBtn.addEventListener("click", () => {
+  welcomeScreen.classList.add("fade-out");
+  document.body.classList.remove("loading");
+  setTimeout(() => welcomeScreen.classList.add("hidden"), 800);
+});
+
 // Countdown
 const countdown = document.getElementById("countdown");
 const targetDate = new Date("2025-10-11T14:30:00").getTime();
