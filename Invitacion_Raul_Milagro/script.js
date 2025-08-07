@@ -1,3 +1,13 @@
+// Welcome screen
+const enterBtn = document.getElementById("enter-btn");
+const welcomeScreen = document.getElementById("welcome-screen");
+
+enterBtn.addEventListener("click", () => {
+  welcomeScreen.classList.add("fade-out");
+  document.body.classList.remove("loading");
+  setTimeout(() => welcomeScreen.classList.add("hidden"), 800);
+});
+
 // Countdown
 const countdown = document.getElementById("countdown");
 const targetDate = new Date("2025-10-11T14:30:00").getTime();
@@ -36,6 +46,15 @@ prevBtn.addEventListener("click", () => {
 nextBtn.addEventListener("click", () => {
   carousel.scrollBy({ left: 300, behavior: "smooth" });
 });
+
+// Auto-scroll carousel
+setInterval(() => {
+  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+    carousel.scrollTo({ left: 0, behavior: "smooth" });
+  } else {
+    carousel.scrollBy({ left: 300, behavior: "smooth" });
+  }
+}, 5000);
 
 // RSVP Form feedback
 const rsvpForm = document.getElementById("rsvp-form");

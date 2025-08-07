@@ -5,9 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raul & Milagro - Invitación de Boda</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="loading">
+
+  <div id="welcome-screen">
+    <div class="welcome-content">
+      <div class="heart">❤️</div>
+      <h2>Bienvenidos a la invitación de Raul y Milagro</h2>
+      <button id="enter-btn">Ingresar</button>
+    </div>
+  </div>
 
   <section class="cover fade-in">
     <h1>Raul  &  Milagro</h1>
@@ -20,8 +28,8 @@
     <p>Viernes 11 de Octubre de 2025</p>
   </section>
 
-  <section class="details fade-in">
-    <h2>Detalles del Evento</h2>
+  <section class="ceremony fade-in">
+    <h2>Ceremonia</h2>
     <div class="detail-item"><strong>📍 Lugar:</strong> Parroquia Nuestra Señora de San José</div>
     <div class="detail-item"><strong>🕒 Hora:</strong> 2:30 PM</div>
     <div class="detail-item"><strong>🎉 Recepción:</strong> Hacienda Los Álamos, 5:00 PM</div>
@@ -43,6 +51,27 @@
       </div>
       <button class="carousel-btn next">⟩</button>
     </div>
+  </section>
+
+  <section class="songs fade-in">
+    <h2>Sugerencias de Canciones</h2>
+    <form id="songs-form" action="https://formsubmit.co/your-email@example.com" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="text" name="song1" placeholder="Canción 1">
+      <input type="text" name="song2" placeholder="Canción 2">
+      <input type="text" name="song3" placeholder="Canción 3">
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section class="dress fade-in">
+    <h2>Dress Code</h2>
+    <p>Formal - Colores neutros y elegantes.</p>
+  </section>
+
+  <section class="tips fade-in">
+    <h2>Tips y Regalos</h2>
+    <p>Tu presencia es nuestro mejor regalo, pero si deseas contribuir te dejamos algunas ideas.</p>
   </section>
 
   <section class="mapa fade-in">
