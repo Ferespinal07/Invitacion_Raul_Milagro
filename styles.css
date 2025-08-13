@@ -1,147 +1,1767 @@
+/* =======================
+   PALETA Y VARIABLES
+   ======================= */
+:root {
+  --warm-taupe: #D2BEB0;
+  --golden-beige: #E6C48D;
+  --champagne: #F4E8D4;
+  --burnt-orange: #C75B39;
+  --dusty-rose: #CD8C90;
+  --caramel-brown: #746159;
+  --terracotta: #C2613F;
+  --sage-green: #9CA88E;
+}
+
+/* =======================
+   RESET Y BASE
+   ======================= */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Calibri', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fdfdfd;
-  color: #2d2d2d;
+  background-color: #fafafa;
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+body.loading {
+  overflow: hidden;
 }
 
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-
-h1, h2 {
-  font-family: 'Great Vibes', cursive;
-  text-align: center;
-  color: #4b6651;
-  margin-top: 20px;
-}
-
-section {
-  min-height: 100vh; /* Ocupa toda la pantalla */
-  padding: 60px 20px;
-  text-align: center;
+/* =======================
+   BIENVENIDA
+   ======================= */
+#welcome-screen {
+  position: fixed;
+  inset: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-}
-
-
-.cover {
-  background: linear-gradient(to bottom, #f5f5f5, #e0f7ec);
-  padding: 80px 20px;
-}
-
-.detail-item {
-  margin: 10px 0;
-  font-size: 1.1rem;
-}
-
-form input, form button {
-  display: block;
-  margin: 10px auto;
-  padding: 12px;
-  width: 80%;
-  max-width: 400px;
-}
-
-form button {
-  background-color: #6c7a3e;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-footer {
-  background-color: #f2f2f2;
-  padding: 20px;
   text-align: center;
+  background: var(--sage-green);
+  z-index: 2000;
+  transition: opacity 0.8s ease;
+  padding: 40px;
 }
 
-.countdown {
-  background-color: #e8f5e9;
-  padding: 30px 20px;
+.welcome-content {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-#countdown-timer {
+.bienvenida-titulo {
+  color: #fff;
   font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.bienvenida-nombres {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.bienvenida-linea {
+  width: 120px;
+  height: 3px;
+  background: #fff;
+  margin: 0 auto 18px auto;
+  border-radius: 2px;
+}
+
+.bienvenida-sub {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  font-family: 'Playfair Display', serif;
+}
+
+.bienvenida-btn {
+  background: #4e7458;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 38px;
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
   margin-top: 10px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-.carousel-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding: 20px;
-  scroll-snap-type: x mandatory;
+.bienvenida-btn:hover {
+  background: #46654e;
+  transform: scale(1.05);
 }
 
-.carousel-container img {
-  height: 200px;
-  border-radius: 10px;
-  scroll-snap-align: center;
-}
-
-.mapa iframe {
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.carousel-wrapper {
+/* =======================
+   PORTADA (LANDING)
+   ======================= */
+.landing-cover {
+  min-height: 100vh;
+  background: #fafbfa;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 100;
 }
 
-.carousel-btn {
-  background-color: #6c7a3e;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  padding: 10px;
-  cursor: pointer;
+.landing-content {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rings-icon {
+  margin-bottom: 24px;
+}
+.rings-icon ion-icon {
+  font-size: 90px;
+  color: #8fa18b;
+  border: 2px solid #8fa18b;
   border-radius: 50%;
+  padding: 16px;
+}
+
+.landing-names {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  color: #8fa18b;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+}
+
+.landing-phrase {
+  color: #a6a9b0;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.landing-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.landing-divider span {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #dbe3d4;
+  border-radius: 2px;
+}
+.landing-divider ion-icon {
+  color: #b2b7b0;
+  font-size: 20px;
+}
+
+.landing-btn {
+  background: #8fa18b;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, transform 0.2s;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 200;
+}
+.landing-btn ion-icon {
+  color: #fff;
+  font-size: 2rem;
+}
+.landing-btn:hover {
+  background: #a7b9a0;
+  transform: scale(1.08);
+}
+
+/*===========================
+   BOTÓN DE MÚSICA
+   ======================= */
+
+.music-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 3000;
+  background: #8fa18b;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, transform 0.2s;
+}
+.music-btn:hover {
+  background: #a7b9a0;
+  transform: scale(1.08);
+}
+.music-btn ion-icon {
+  color: #fff;
+  font-size: 2rem;
+}
+
+/*===========================
+   FLECHA PARA DESLIZAR
+   ======================= */
+
+.scroll-down-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px auto;
+  font-size: 3.5rem;
+  color: var(--sage-green);
+  width: 100%;
+  background: #fafafa; /* o tu degradado */
+  padding: 18px 0 18px 0;
+}
+
+.scroll-down-arrow ion-icon {
+  animation: arrow-bounce 1.3s infinite;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(18px);}
+}
+
+
+/* =======================
+   CUENTA REGRESIVA
+   ======================= */
+.countdown-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafbfa;
+}
+
+.countdown-circle {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+.countdown-floral {
   position: absolute;
+  width: 520px;   /* Aumenta el tamaño del marco */
+  height: 580px;  /* Aumenta el tamaño del marco */
   top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-btn.prev {
-  left: 10px;
+.countdown-floral img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-.carousel-btn.next {
-  right: 10px;
+.countdown-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
 }
 
-.form-success {
+.countdown-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #7a8b7a;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+
+.countdown-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 18px;
+}
+
+.countdown-numbers div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-numbers span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3d4e47;
+  font-family: 'Playfair Display', serif;
+}
+
+.countdown-numbers .label {
+  font-size: 1rem;
+  color: #7a8b7a;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.countdown-heart {
   margin-top: 10px;
-  color: green;
-  font-weight: bold;
+}
+.countdown-heart ion-icon {
+  font-size: 2.2rem;
+  color: #7a8b7a;
 }
 
-.hidden {
-  display: none;
+/*=====================
+   SEPARADOR ELEGANTE
+   ======================= */
+
+.elegant-separator{
+  --badge-top: 50%;        /* súbelo/bájalo afinando este valor */
+  background: #fafbfa;
+  padding: 36px 0 72px;
+  position: relative;
+  overflow: hidden;
 }
+
+.elegant-separator .waves{
+  width: 100%;
+  height: 140px;
+  display: block;
+}
+
+.divider-badge{
+  position: absolute;
+  left: 50%;
+  top: var(--badge-top);    /* más arriba para alinearlo con las líneas */
+  transform: translate(-50%, -50%);
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;  /* el círculo ya lo pinta el SVG */
+}
+
+/* Imagen del badge en el separador elegante */
+.badge-img{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;       /* evita deformaciones */
+  border-radius: 50%;        /* forma circular, opcional */
+  background: #fff;          /* círculo blanco como el anterior */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* sombra suave */
+  padding: 5px;             /* deja un borde interno para “marco” */
+}
+
+
+
+/* =======================
+   CEREMONIA
+   ======================= */
+
+/* Separador de sección */
+.section-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0 40px 0;
+}
+.section-title {
+  background: #8fa18b;
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 10px 48px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+/* Ceremonia */
+.ceremonia-section {
+  background: #fafafa;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px 20px;
+}
+
+.ceremonia-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.ceremonia-info {
+  background: #eef3ee;
+  border-radius: 18px;
+  padding: 36px 36px 24px 36px;
+  min-width: 340px;
+  max-width: 420px;
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+}
+
+.ceremonia-dia-titulo {
+  color: #b2b7b0;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.ceremonia-dia-fecha {
+  color: #6b7c5e;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.ceremonia-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.ceremonia-detalle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ceremonia-icon {
+  background: #cfd8cf;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7c5e;
+  font-size: 1.5rem;
+}
+.ceremonia-detalle-label {
+  color: #b2b7b0;
+  font-size: 0.95rem;
+}
+.ceremonia-detalle-valor {
+  color: #6b7c5e;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.ceremonia-lugar-label {
+  color: #b2b7b0;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+.ceremonia-lugar-nombre {
+  color: #6b7c5e;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.ceremonia-lugar-direccion {
+  color: #a6a9b0;
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+.ceremonia-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 320px;
+  max-width: 400px;
+  flex: 1 1 320px;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.ceremonia-btn {
+  background: #7a8b7a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 0;
+  font-size: 1.15rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0;
+}
+.ceremonia-btn.save-date {
+  background: #7a8b7a;
+}
+.ceremonia-btn.outline {
+  background: #fff;
+  color: #7a8b7a;
+  border: 2px solid #7a8b7a;
+  margin-top: 8px;
+}
+.ceremonia-btn:hover {
+  background: #8fa18b;
+  color: #fff;
+}
+.ceremonia-btn.outline:hover {
+  background: #e8ede8;
+  color: #7a8b7a;
+}
+
+
+/* === Separador Fiesta === */
+.fiesta-separator {
+  position: relative;
+  width: 100%;
+}
+
+.waves {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Posición del PNG centrado */
+.custom-image-slot {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-image-slot img {
+  width: 230px; /* ajusta tamaño */
+  height: auto;
+}
+
+
+
+
+/* =======================
+   FIESTA DE CELEBRACIÓN
+   ======================= */
+
+.section-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0 40px 0;
+}
+.section-title-celebracion {
+  background: var(--caramel-brown);
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 10px 48px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.fiesta-section {
+  background: #fafbfa;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px 20px;
+}
+
+
+
+
+.fiesta-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  flex-direction: row-reverse; /* Cambia el orden para dinamismo */
+}
+
+.fiesta-info {
+  background: #fff;
+  border-radius: 18px;
+  padding: 36px 36px 24px 36px;
+  min-width: 340px;
+  max-width: 420px;
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 2px dashed var(--caramel-brown);
+}
+
+.fiesta-dia-titulo {
+  color: var(--caramel-brown);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.fiesta-dia-fecha {
+  color: var(--caramel-brown);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.fiesta-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.fiesta-detalle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.fiesta-icon {
+  background: #c9bab3;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--caramel-brown);
+  font-size: 1.5rem;
+}
+.fiesta-detalle-label {
+  color: var(--caramel-brown);
+  font-size: 0.95rem;
+}
+.fiesta-detalle-valor {
+  color: var(--caramel-brown);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.fiesta-lugar-label {
+  color: var(--caramel-brown);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+.fiesta-lugar-nombre {
+  color: var(--caramel-brown);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.fiesta-lugar-direccion {
+  color: var(--caramel-brown);
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+.fiesta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 320px;
+  max-width: 400px;
+  flex: 1 1 320px;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.fiesta-btn {
+  background: var(--dusty-rose);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 0;
+  font-size: 1.15rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0;
+}
+.fiesta-btn.save-date {
+  background: var(--caramel-brown);
+}
+.fiesta-btn.outline {
+  background: #fff;
+  color: var(--caramel-brown);
+  border: 2px solid var(--caramel-brown);
+  margin-top: 8px;
+}
+.fiesta-btn:hover {
+  background: var(--caramel-brown);
+  color: #fff;
+}
+.fiesta-btn.outline:hover {
+  background: #c9bab3;
+  color: var(--caramel-brown);
+}
+/*======================
+   SEPARADORES
+======================*/
+
+
+
+/*==========================
+   RETRATOS DE NUESTRO AMOR
+   ===================== */
+
+.retratos-section {
+  background: #fafbfa;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px 20px;
+}
+
+.retratos-section .section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+  font-family: 'Dancing Script', cursive;
+  color: #fafafa;
+}
+
+.retratos-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 40px;
+}
+
+.retratos-polaroid {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 24px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 340px;
+}
+
+.retratos-polaroid img {
+  width: 290px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  margin-bottom: 16px;
+}
+
+.retratos-caption {
+  font-family: 'Dancing Script', cursive;
+  color: var(--caramel-brown);
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.retratos-arrow {
+  background: #e8ede8;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #8fa18b;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.retratos-arrow:hover {
+  background: #dbe3d4;
+  transform: scale(1.08);
+}
+
+.retratos-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+.retratos-dots .dot {
+  width: 12px;
+  height: 12px;
+  background: #dbe3d4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.retratos-dots .dot.active {
+  background: #8fa18b;
+}
+
+
+/*=====================
+   SEPARADOR ELEGANTE
+   ======================= */
+
+.elegant-separator{
+  --badge-top: 50%;        /* súbelo/bájalo afinando este valor */
+  background: #fafbfa;
+  padding: 36px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.elegant-separator .waves{
+  width: 100%;
+  height: 140px;
+  display: block;
+}
+
+.divider-badge{
+  position: absolute;
+  left: 50%;
+  top: var(--badge-top);    /* más arriba para alinearlo con las líneas */
+  transform: translate(-50%, -50%);
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;  /* el círculo ya lo pinta el SVG */
+}
+
+/* Imagen del badge en el separador elegante */
+.badge-img-copa{
+  width: 70%;
+  height: 70%;
+  object-fit: contain;       /* evita deformaciones */
+  border-radius: 50%;        /* forma circular, opcional */
+  background: #fff;          /* círculo blanco como el anterior */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* sombra suave */
+  padding: 12px;             /* deja un borde interno para “marco” */
+}
+
+/*==========================
+   MÚSICA DE LA FIESTA
+   ===================== */
+
+.musica-section {
+  background: #fafbfa;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px 20px;
+}
+.musica-subtitle {
+  color: #a6a9b0;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 32px;
+  margin-top: 18px;
+  font-family: 'Playfair Display', serif;
+}
+.musica-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 36px 24px 32px 24px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.musica-icon ion-icon {
+  font-size: 3rem;
+  color: #8fa18b;
+  margin-bottom: 10px;
+}
+.musica-pregunta {
+  font-family: 'Playfair Display', serif;
+  color: #7a8b7a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.musica-ayuda {
+  color: #a6a9b0;
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.musica-btn {
+  background: #8fa18b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 0;
+  width: 90%;
+  max-width: 600px;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+.musica-btn:hover {
+  background: #a7b9a0;
+}
+
+/* Modal sugerencia */
+.modal-sugerencia {
+  display: none;
+  position: fixed;
+  z-index: 4000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.modal-sugerencia.active {
+  display: flex;
+}
+.modal-overlay {
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.18);
+  z-index: 1;
+}
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 48px 32px 32px 32px;
+  max-width: 370px;
+  width: 95vw;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-floral-cancion img {
+  width: 180px;
+  position: absolute;
+  top: -38px;
+  left: 18%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.modal-icon ion-icon {
+  font-size: 3.2rem;
+  color: #8fa18b;
+  margin-bottom: 18px;
+  margin-top: 40px;
+}
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #8a925e;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 4;
+}
+.modal-close ion-icon {
+  font-size: 1.5rem;
+}
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  color: #23422c;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+.modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+.modal-form input {
+  border: none;
+  border-bottom: 1px solid #dbe3d4;
+  padding: 10px 4px;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+  color: #23422c;
+  font-family: 'Playfair Display', serif;
+}
+.modal-form input:focus {
+  border-bottom: 1.5px solid #8fa18b;
+}
+.modal-submit {
+  background: #8a925e;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+.modal-submit:hover {
+  background: #b7a96a;
+}
+
+/*=================
+Dress Code
+=================*/
+.dresscode-section {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  background: #fafbfa;
+}
+.dresscode-card {
+  background: #eef3ee;
+  border-radius: 20px;
+  padding: 40px 32px 32px 32px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+}
+.dresscode-icon ion-icon {
+  font-size: 3rem;
+  color: #8fa18b;
+  margin-bottom: 10px;
+}
+.dresscode-title {
+  font-family: 'Dancing Script', cursive;
+  color: #7a8b7a;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.dresscode-desc {
+  color: #a6a9b0;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.dresscode-btn {
+  background: #fff;
+  color: #7a8b7a;
+  border: 1.5px solid #7a8b7a;
+  border-radius: 10px;
+  padding: 12px 0;
+  width: 90%;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.dresscode-btn:hover {
+  background: #e8ede8;
+  color: #5c6d5c;
+}
+
+/* Modal Dress Code */
+.modal-dresscode {
+  display: none;
+  position: fixed;
+  z-index: 4000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.modal-dresscode.active {
+  display: flex;
+}
+.modal-overlay {
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.18);
+  z-index: 1;
+}
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 24px 12px 18px 12px;
+  max-width: 340px;
+  width: 40vw;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-floral-dresscode img {
+  width: 200px;
+  position: absolute;
+  top: -30px;
+  left: 18%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.modal-icon ion-icon {
+  font-size: 2rem;
+  color: #8fa18b;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #8a925e;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 4;
+}
+.modal-close ion-icon {
+  font-size: 1.5rem;
+}
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  color: #23422c;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1px;
+  margin-top: 1px;
+  text-align: center;
+}
+.modal-subtitle {
+  color: #7a8b7a;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1px;
+  text-align: center;
+}
+.modal-outfit-ideas {
+  color: #a6a9b0;
+  font-size: 1.2rem;
+  margin-bottom: 1px;
+  text-align: center;
+}
+.modal-outfit-img {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1px auto;
+  display: block;
+}
+
+/*===================
+Tips & Notas
+===================*/
+
+/* Tarjeta Tips & Notas */
+.tips-section {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  background: #fafbfa; /* Fondo suave */
+}
+.tips-card {
+  background: var(--caramel-brown); /* Fondo tarjeta */
+  border-radius: 20px;
+  padding: 32px 22px 22px 22px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+}
+.tips-icon ion-icon {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 10px;
+}
+.tips-title {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.tips-desc {
+  color: white;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.tips-btn {
+  background: #fff;
+  color: var(--caramel-brown);
+  border: 1.5px solid var(--caramel-brown);
+  border-radius: 10px;
+  padding: 12px 0;
+  width: 90%;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.tips-btn:hover {
+  background: #a18c82;
+  color: var(--caramel-brown);
+}
+
+
+/* La tarjeta debe ser referencia para el posicionamiento */
+.tips-card{
+  position: relative;
+  overflow: shown;            /* recorta la imagen fuera de los bordes redondeados */
+}
+
+/* Imagen decorativa arriba a la izquierda */
+.tips-deco-corner{
+  position: absolute;
+  top: -50px;                  /* mueve un poquito hacia arriba para que “asome” */
+  left: -50px;                 /* y hacia la izquierda */
+  width: clamp(120px, 28%, 220px); /* tamaño fluido */
+  pointer-events: none;        /* no tapa el botón */
+  opacity: .9;                 /* sutil */
+  transform: rotate(-6deg);    /* leve ángulo, opcional */
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.12));
+  /* Si tu PNG tiene fondo blanco y quieres integrarlo mejor:
+     mix-blend-mode: multiply; */
+}
+
+.tips-deco-corner:not([src]){ display:none; } /* por si aún no cargas la imagen */
+
+@media (max-width: 420px){
+  .tips-deco-corner{
+    top: -10px;
+    left: -8px;
+    width: 36vw;               /* un poco más grande en móviles */
+  }
+}
+
+/* Modal Tips & Notas */
+.modal-tips {
+  display: none;
+  position: fixed;
+  z-index: 4000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.modal-tips.active {
+  display: flex;
+}
+.modal-overlay {
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.18);
+  z-index: 1;
+}
+.modal-content-tips {
+  position: relative;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 24px 12px 18px 12px;
+  max-width: 340px;
+  width: 95vw;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-floral-tips img {
+  width: 200px;
+  position: absolute;
+  top: -85px;
+  left: 8%;
+  transform: translateX(-55%);
+  z-index: 3;
+}
+.modal-icon ion-icon {
+  font-size: 2.2rem;
+  color: var(--burnt-orange);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--terracotta);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 4;
+}
+.modal-close ion-icon {
+  font-size: 1.5rem;
+}
+.modal-title-tips {
+  font-family: 'Playfair Display', serif;
+  color: var(--caramel-brown);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  margin-top: 2px;
+  text-align: center;
+}
+.modal-list-tips {
+  color: var(--caramel-brown);
+  font-size: 1.05rem;
+  margin: 0 0 10px 0;
+  padding: 0;
+  list-style: none;
+}
+.modal-list-tips li {
+  margin-bottom: 12px;
+  color: var(--caramel-brown);
+  text-align: left;
+  line-height: 1.5;
+}
+
+
+
+/* =======================
+   COMPARTIR FOTOS
+   ======================= */
+.fotos-section{
+  min-height: 60vh;
+  background:#fafbfa;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:60px 20px;
+}
+
+.fotos-heading{
+  font-family:'Dancing Script', cursive;
+  color:#23422c;             /* verde elegante, acorde a la paleta */
+  text-align:center;
+  line-height:1.1;
+  font-size:clamp(2.2rem, 6vw, 3.2rem);
+  margin:0 0 10px 0;
+}
+
+.fotos-subtitle{
+  color:#a6a9b0;
+  font-family:'Playfair Display', serif;
+  font-size:1.15rem;
+  text-align:center;
+  margin:0 0 26px 0;
+}
+
+.fotos-card{
+  background:#eef3ee;        /* el mismo tono suave usado en otras tarjetas */
+  border-radius:20px;
+  box-shadow:0 8px 32px rgba(0,0,0,.08);
+  padding:28px 22px 26px 22px;
+  width:100%;
+  max-width:480px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  border:1px solid rgba(143,161,139,.25);
+}
+
+.fotos-qr{
+  width:min(320px, 78vw);
+  height:auto;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+  padding:10px;
+}
+
+.fotos-legend{
+  color:#6b7c5e;
+  font-size:1.02rem;
+  margin:14px 0 18px 0;
+  text-align:center;
+  font-weight:600;
+}
+
+.fotos-btn{
+  background:#7a8b7a;        /* mismo estilo de botones de la web */
+  color:#fff;
+  text-decoration:none;
+  border:none;
+  border-radius:10px;
+  padding:14px 26px;
+  font-size:1.05rem;
+  font-family:'Playfair Display', serif;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .2s;
+  display:inline-block;
+}
+.fotos-btn:hover{ background:#8fa18b; }
+
+
+
+/*===============
+    Regalos
+===============*/
+
+.regalos-section {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  background: #fafbfa;
+}
+.regalos-card {
+  background: #eef3ee;
+  border-radius: 20px;
+  padding: 32px 22px 22px 22px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+}
+.regalos-icon ion-icon {
+  font-size: 3rem;
+  color: #8fa18b;
+  margin-bottom: 10px;
+}
+.regalos-title {
+  font-family: 'Dancing Script', cursive;
+  color: #7a8b7a;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.regalos-desc {
+  color: #a6a9b0;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.regalos-btn {
+  background: #7a8b7a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 0;
+  width: 90%;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.regalos-btn:hover {
+  background: #8fa18b;
+}
+
+/* Modal Regalos */
+.modal-regalos {
+  display: none;
+  position: fixed;
+  z-index: 4000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-floral-behind {
+  position: absolute;
+  top: 110px; /* Ajusta según tu diseño */
+  left: 41%;
+  transform: translateX(-50%);
+  z-index: 4000; /* Detrás de la tarjeta */
+  pointer-events: none;
+}
+
+.modal-floral-behind img {
+  width: 170px; /* Ajusta el tamaño según prefieras */
+  display: block;
+}
+
+.modal-regalos.active {
+  display: flex;
+}
+.modal-overlay {
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.18);
+  z-index: 1;
+}
+.modal-content-regalos {
+  position: relative;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 18px 10px 14px 10px;      /* Menos padding */
+  max-width: 320px;                  /* Más angosto */
+  width: 96vw;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-floral img {
+  width: 120px;                       /* Más pequeña */
+  position: absolute;
+  top: -45px;
+  left: 35%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.modal-icon ion-icon {
+  font-size: 2.6rem;
+  color: #8fa18b;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.modal-text-regalos {
+  color: #7a8b7a;
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.modal-bancos,
+.modal-paypal,
+.modal-zelle {
+  color: #23422c;
+  font-size: 0.98rem;
+  margin-bottom: 8px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.modal-bancos strong,
+.modal-paypal strong,
+.modal-zelle strong {
+  font-size: 1rem;
+}
+
+.modal-qr {
+  width: 90px;
+  height: 90px;
+  margin: 6px auto 4px auto;
+  display: block;
+}
+
+.modal-zelle-info {
+  color: #8fa18b;
+  font-size: 0.93rem;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #8a925e;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 4;
+}
+.modal-close ion-icon {
+  font-size: 1.2rem;
+}
+
+
+
+/* =======================
+   CONFIRMACIÓN (WhatsApp)
+   ======================= */
+.rsvp-section{
+  min-height: 60vh;
+  background:#fafbfa;
+  padding:60px 20px;
+  display:flex; flex-direction:column; align-items:center;
+}
+.rsvp-heading{
+  font-family:'Dancing Script', cursive;
+  color:var(--deep-forest, #23422c);
+  text-align:center;
+  line-height:1.1;
+  font-size:clamp(2.2rem, 6vw, 3.2rem);
+  margin:0 0 8px 0;
+}
+.rsvp-subtitle{
+  color:var(--muted-text, #7f8c8d);
+  font-family:'Playfair Display', serif;
+  font-size:1.1rem;
+  text-align:center;
+  margin:0 0 26px 0;
+}
+.rsvp-card{
+  width:100%; max-width:460px;
+  background:var(--soft-card, #d2ded2);
+  border:1px solid rgba(143,161,139,.25);
+  border-radius:22px;
+  box-shadow:0 8px 32px rgba(0,0,0,.08);
+  padding:26px 22px;
+  display:flex; flex-direction:column; align-items:center; gap:16px;
+}
+.rsvp-icon{
+  width:68px; height:68px; border-radius:50%;
+  background:#fff; color:var(--deep-forest, #41664c);
+  display:grid; place-items:center; box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+.rsvp-icon svg{ width:34px; height:34px; }
+
+.rsvp-cta{
+  background:#7e8e7e;
+  color:#fff; border:none; border-radius:999px;
+  padding:14px 28px; font-weight:700; letter-spacing:.3px;
+  font-family:'Playfair Display', serif; font-size:1.02rem;
+  cursor:pointer; transition:transform .05s ease, background .2s;
+}
+.rsvp-cta:hover{ background:#516a51; }
+.rsvp-cta:active{ transform:translateY(1px); }
+
+.rsvp-link-quick{
+  font-size:.95rem; color:var(--deep-forest, #23422c);
+  text-decoration:underline; opacity:.8;
+}
+
+.rsvp-modal{ position:fixed; inset:0; display:none; z-index:90; }
+.rsvp-modal.is-open{ display:block; }
+.rsvp-modal__backdrop{
+  position:absolute; inset:0; background:rgba(0,0,0,.35);
+  backdrop-filter:saturate(80%) blur(2px);
+}
+.rsvp-modal__card{
+  position:relative;
+  width:min(92vw, 520px); margin:12vh auto 0;
+  background:#fff; border-radius:26px;
+  box-shadow:0 18px 60px rgba(0,0,0,.18);
+  padding:28px 22px 26px;
+}
+.rsvp-modal__close{
+  position:absolute; right:14px; top:12px;
+  width:36px; height:36px; border-radius:50%;
+  border:none; background:var(--sage-green); color:#fff;
+  font-size:22px; line-height:1; cursor:pointer;
+}
+.rsvp-modal__badge{
+  width:76px; height:76px; border-radius:50%;
+  background:var(--soft-card, #f2f5f2); color:var(--deep-forest, #23422c);
+  display:grid; place-items:center; box-shadow:0 12px 28px rgba(0,0,0,.12);
+  margin:-62px auto 12px;
+}
+.rsvp-modal__badge svg{ width:38px; height:38px; }
+.rsvp-modal__title{
+  font-family:'Playfair Display', serif;
+  color:var(--deep-forest);
+  text-align:center; margin:8px 0 14px; font-size:1.4rem;
+}
+
+.rsvp-modal__options{
+  display:flex; gap:16px; justify-content:center; margin-bottom:12px;
+}
+.rsvp-radio{
+  display:flex; align-items:center; gap:8px; cursor:pointer;
+  background:#f5f7f5; padding:10px 14px; border-radius:999px;
+  border:1px solid rgba(143,161,139,.25);
+  user-select:none;
+}
+.rsvp-radio input{ accent-color:var(--olive, #7a7f40); }
+
+.rsvp-inputs{ display:flex; flex-direction:column; gap:12px; margin:10px 0 16px; }
+.rsvp-inputs input{
+  width:100%; border:none; border-bottom:1px solid rgba(0,0,0,.15);
+  padding:12px 6px; outline:none; font-size:1rem;
+  font-family:inherit;
+}
+.rsvp-inputs input:focus{ border-bottom-color:var(--olive, #7a7f40); }
+
+.rsvp-send{
+  width:100%; background:var(--sage-green); color:#fff; border:none;
+  border-radius:12px; padding:14px; font-weight:800; letter-spacing:.3px;
+  font-family:'Playfair Display', serif; font-size:1.02rem;
+  cursor:pointer; transition:filter .15s ease;
+}
+.rsvp-send:hover{ filter:brightness(.95); }
+
+

@@ -4,70 +4,558 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raul & Milagro - Invitación de Boda</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="loading">
 
-  <section class="cover fade-in">
-    <h1>Raul  &  Milagro</h1>
-    <p>Dos almas, un corazón, y un destino</p>
-  </section>
+  <!-- Pantalla de bienvenida -->
+  <div id="welcome-screen">
+    <div class="welcome-content">
+      <h2 class="bienvenida-titulo">Bienvenidos a la invitación de</h2>
+      <p class="bienvenida-nombres"><strong>Raul y Milagro</strong></p>
+      <div class="bienvenida-linea"></div>
+      <p class="bienvenida-sub">La música de fondo es parte de la experiencia</p>
+      <button id="enter-btn" class="bienvenida-btn">INGRESAR</button>
+    </div>
+  </div>
 
-  <section class="invitation fade-in">
-    <h2>Nos Casamos</h2>
-    <p>Con la bendición de nuestras familias, te invitamos a celebrar este momento inolvidable.</p>
-    <p>Viernes 11 de Octubre de 2025</p>
-  </section>
-
-  <section class="details fade-in">
-    <h2>Detalles del Evento</h2>
-    <div class="detail-item"><strong>📍 Lugar:</strong> Parroquia Nuestra Señora de San José</div>
-    <div class="detail-item"><strong>🕒 Hora:</strong> 2:30 PM</div>
-    <div class="detail-item"><strong>🎉 Recepción:</strong> Hacienda Los Álamos, 5:00 PM</div>
-  </section>
-
-  <section class="countdown fade-in">
-    <h2>Faltan</h2>
-    <div id="countdown">Cargando...</div>
-  </section>
-
-  <section class="carousel fade-in">
-    <h2>Momentos Especiales</h2>
-    <div class="carousel-wrapper">
-      <button class="carousel-btn prev">⟨</button>
-      <div class="carousel-container" id="carousel">
-        <img src="assets/foto1.jpg" alt="Foto 1">
-        <img src="assets/foto2.jpg" alt="Foto 2">
-        <img src="assets/foto3.jpg" alt="Foto 3">
+  <!-- Portada tipo landing -->
+  <section id="landing-cover" class="landing-cover">
+    <div class="landing-content">
+      <div class="rings-icon">
+        <ion-icon name="infinite-outline"></ion-icon>
       </div>
-      <button class="carousel-btn next">⟩</button>
+      <h1 class="landing-names">Raul & Milagro</h1>
+      <p class="landing-phrase">Dos almas, un corazón, un destino</p>
+      <div class="landing-divider">
+        <span></span>
+        <ion-icon name="heart-outline"></ion-icon>
+        <span></span>
+      </div>
+      <button class="landing-btn" id="landing-btn">
+        <ion-icon name="play-outline"></ion-icon>
+      </button>
     </div>
   </section>
 
-  <section class="mapa fade-in">
-    <h2>Ubicación</h2>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18..."
-      width="100%" height="300" allowfullscreen="" loading="lazy">
-    </iframe>
+  <!-- Flecha animada para deslizar -->
+<div class="scroll-down-arrow">
+  <ion-icon name="chevron-down-outline"></ion-icon>
+</div>
+
+
+  <!-- Cuenta regresiva -->
+  <section id="countdown-section" class="countdown-section">
+    <div class="countdown-circle">
+      <div class="countdown-floral">
+        <!-- Puedes usar una imagen SVG decorativa aquí si lo deseas -->
+         <img src="assets/marco11.png" alt="Marco decorativo">
+        </div>
+        <div class="countdown-content">
+          <div class="countdown-title">Faltan</div>
+          <div class="countdown-numbers" id="countdown">
+            <div><span id="days">00</span><span class="label">días</span></div>
+            <div><span id="hours">00</span><span class="label">hs</span></div>
+            <div><span id="minutes">00</span><span class="label">min</span></div>
+            <div><span id="seconds">00</span><span class="label">seg</span></div>
+          </div>
+          <div class="countdown-heart">
+            <ion-icon name="heart-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="rsvp fade-in">
-    <h2>Confirmar Asistencia</h2>
-    <form id="rsvp-form" action="https://formsubmit.co/your-email@example.com" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="number" name="guests" placeholder="Número de acompañantes" required>
-      <button type="submit">Confirmar</button>
-      <p id="form-message" class="form-success hidden">¡Gracias por confirmar tu asistencia!</p>
+
+<!-- === Separador elegante antes de la ceremonia === -->
+<section class="elegant-separator" aria-hidden="true">
+  <!-- Ondas -->
+  <svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <path d="M0,70 C200,30 400,110 600,70 C800,30 1000,110 1200,70 C1300,50 1400,60 1440,55"
+          fill="none" stroke="var(--golden-beige)" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+    <path d="M0,85 C220,125 420,45 620,85 C820,125 1020,45 1220,85 C1320,100 1400,92 1440,95"
+          fill="none" stroke="var(--warm-taupe)" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+    <path d="M0,100 C240,60 440,140 640,100 C840,60 1040,140 1240,100 C1340,85 1400,90 1440,88"
+          fill="none" stroke="var(--golden-beige)" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  </svg>
+
+  <!-- Badge central con imagen -->
+  <div class="divider-badge">
+    <img src="assets/anillos2.png" alt="Anillos" class="badge-img" loading="lazy">
+  </div>
+</section>
+
+
+  <!-- Ceremonia -->
+<section id="ceremonia" class="ceremonia-section">
+  <!-- Separador de sección -->
+  <div class="section-separator">
+    <span class="section-title">Ceremonia</span>
+  </div>
+
+  <div class="ceremonia-content">
+    <div class="ceremonia-info">
+      <div class="ceremonia-dia">
+        <div class="ceremonia-dia-titulo">DÍA</div>
+        <div class="ceremonia-dia-fecha">Viernes 11 de Octubre - 2:30 pm</div>
+      </div>
+      <div class="ceremonia-detalles">
+        <div class="ceremonia-detalle">
+          <span class="ceremonia-icon"><ion-icon name="calendar-outline"></ion-icon></span>
+          <div>
+            <div class="ceremonia-detalle-label">Fecha</div>
+            <div class="ceremonia-detalle-valor">Viernes, 11 de Octubre</div>
+          </div>
+        </div>
+        <div class="ceremonia-detalle">
+          <span class="ceremonia-icon"><ion-icon name="time-outline"></ion-icon></span>
+          <div>
+            <div class="ceremonia-detalle-label">Hora</div>
+            <div class="ceremonia-detalle-valor">2:30 PM</div>
+          </div>
+        </div>
+      </div>
+      <div class="ceremonia-lugar">
+        <div class="ceremonia-lugar-label">LUGAR</div>
+        <div class="ceremonia-lugar-nombre">Parroquia Nuestra Señora</div>
+        <div class="ceremonia-lugar-direccion">Av. San Isidro 207, San José</div>
+      </div>
+    </div>
+    <div class="ceremonia-actions">
+      <button class="ceremonia-btn save-date">SAVE THE DATE</button>
+      <button class="ceremonia-btn outline">¿CÓMO LLEGAR?</button>
+    </div>
+  </div>
+</section>
+
+  <!-- separador fiesta -->
+<section class="fiesta-separator" aria-hidden="true">
+  <!-- Ondas -->
+  <svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <path d="M0,70 C200,30 400,110 600,70 C800,30 1000,110 1200,70 C1300,50 1400,60 1440,55"
+          fill="none" stroke="var(--golden-beige)" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+    <path d="M0,85 C220,125 420,45 620,85 C820,125 1020,45 1220,85 C1320,100 1400,92 1440,95"
+          fill="none" stroke="var(--warm-taupe)" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+    <path d="M0,100 C240,60 440,140 640,100 C840,60 1040,140 1240,100 C1340,85 1400,90 1440,88"
+          fill="none" stroke="var(--golden-beige)" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  </svg>
+
+  <!-- Contenedor para tu PNG -->
+  <div class="custom-image-slot">
+    <img src="/assets/detallehojas.png" alt="Decoración" />
+  </div>
+</section>
+
+
+
+
+<!-- Fiesta de Celebración -->
+<section id="fiesta" class="fiesta-section">
+  <!-- Separador de sección -->
+  <div class="section-separator">
+    <span class="section-title-celebracion">Fiesta de Celebración</span>
+  </div>
+
+  <div class="fiesta-content">
+    <!-- Ahora la info va a la derecha y los botones a la izquierda -->
+    <div class="fiesta-info">
+      <div class="fiesta-dia">
+        <div class="fiesta-dia-titulo">DÍA</div>
+        <div class="fiesta-dia-fecha">Viernes 11 de Octubre - 8:00 pm</div>
+      </div>
+      <div class="fiesta-detalles">
+        <div class="fiesta-detalle">
+          <span class="fiesta-icon"><ion-icon name="musical-notes-outline"></ion-icon></span>
+          <div>
+            <div class="fiesta-detalle-label">Música y Baile</div>
+            <div class="fiesta-detalle-valor">¡Diversión asegurada!</div>
+          </div>
+        </div>
+        <div class="fiesta-detalle">
+          <span class="fiesta-icon"><ion-icon name="wine-outline"></ion-icon></span>
+          <div>
+            <div class="fiesta-detalle-label">Brindis</div>
+            <div class="fiesta-detalle-valor">Cócteles y bebidas</div>
+          </div>
+        </div>
+      </div>
+      <div class="fiesta-lugar">
+        <div class="fiesta-lugar-label">LUGAR</div>
+        <div class="fiesta-lugar-nombre">Salón Jardines del Sol</div>
+        <div class="fiesta-lugar-direccion">Calle Primavera 123, San José</div>
+      </div>
+    </div>
+    <div class="fiesta-actions">
+      <button class="fiesta-btn save-date">AGENDAR FIESTA</button>
+      <button class="fiesta-btn outline">VER UBICACIÓN</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Retratos de Nuestro Amor -->
+<section id="retratos" class="retratos-section">
+  <div class="section-separator">
+    <span class="section-title">
+      <ion-icon name="camera-outline"></ion-icon>
+      Retratos de Nuestro Amor
+    </span>
+  </div>
+  <div class="retratos-carousel">
+    <button class="retratos-arrow left" aria-label="Anterior">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </button>
+    <div class="retratos-polaroid" id="retratos-polaroid">
+      <img src="assets/NoviosVelo.jpg" alt="Retrato 1">
+      <div class="retratos-caption">Nuestro primer encuentro</div>
+    </div>
+    <button class="retratos-arrow right" aria-label="Siguiente">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </button>
+  </div>
+  <div class="retratos-dots" id="retratos-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+
+<!-- === Separador elegante antes de la musica de la fiesta === -->
+<section class="elegant-separator" aria-hidden="true">
+  <!-- Ondas -->
+  <svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <path d="M0,70 C200,30 400,110 600,70 C800,30 1000,110 1200,70 C1300,50 1400,60 1440,55"
+          fill="none" stroke="var(--golden-beige)" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+    <path d="M0,85 C220,125 420,45 620,85 C820,125 1020,45 1220,85 C1320,100 1400,92 1440,95"
+          fill="none" stroke="var(--warm-taupe)" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+    <path d="M0,100 C240,60 440,140 640,100 C840,60 1040,140 1240,100 C1340,85 1400,90 1440,88"
+          fill="none" stroke="var(--golden-beige)" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  </svg>
+
+  <!-- Badge central con imagen -->
+  <div class="divider-badge">
+    <img src="assets/copa2.png" alt="Copa" class="badge-img-copa" loading="lazy">
+  </div>
+</section>
+
+
+<!-- Música de la Fiesta -->
+<section id="musica" class="musica-section">
+  <div class="section-separator">
+    <span class="section-title">Fiesta</span>
+  </div>
+  <div class="musica-subtitle">¡Celebremos juntos hasta el amanecer!</div>
+  <div class="musica-card">
+    <div class="musica-icon">
+      <ion-icon name="musical-notes-outline"></ion-icon>
+    </div>
+    <div class="musica-pregunta">¿Cuál es tu canción favorita?</div>
+    <div class="musica-ayuda">
+      Ayúdanos a crear la playlist perfecta para nuestra celebración
+    </div>
+    <button class="musica-btn" id="abrir-sugerencia">Sugerir una canción</button>
+  </div>
+</section>
+
+<!-- Modal sugerir canción -->
+<div class="modal-sugerencia" id="modal-sugerencia">
+  <div class="modal-overlay" id="cerrar-modal"></div>
+  <div class="modal-content">
+    <div class="modal-floral-cancion">
+      <img src="assets/Bordehojas.png" alt="Decoración" />
+    </div>
+    <div class="modal-icon">
+      <ion-icon name="musical-notes-outline"></ion-icon>
+    </div>
+    <button class="modal-close" id="cerrar-modal-btn" aria-label="Cerrar">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="modal-title">Sugerir Canción</div>
+    <form class="modal-form" id="form-sugerencia">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="text" placeholder="Nombre de canción y autor" required>
+      <input type="text" placeholder="Si lo desea ingrese el link de YouTube, Spotify, etc.">
+      <button type="submit" class="modal-submit">SUGERIR CANCIÓN</button>
     </form>
-  </section>
+  </div>
+</div>
 
-  <footer class="fade-in">
-    <p>Gracias por ser parte de nuestra historia ❤️</p>
-  </footer>
 
+<!-- Dress Code -->
+<section id="dresscode" class="dresscode-section">
+  <div class="dresscode-card">
+    <div class="dresscode-icon">
+      <ion-icon name="shirt-outline"></ion-icon>
+    </div>
+    <div class="dresscode-title">Dress Code</div>
+    <div class="dresscode-desc">Elegante - Colores tierra y pasteles</div>
+    <button class="dresscode-btn" id="abrir-dresscode">Ver más</button>
+  </div>
+</section>
+
+<!-- Modal Dress Code -->
+<div class="modal-dresscode" id="modal-dresscode">
+  <div class="modal-overlay" id="cerrar-modal-dresscode"></div>
+  <div class="modal-content">
+    <div class="modal-floral-dresscode">
+      <img src="assets/Bordehojas.png" alt="Decoración" />
+    </div>
+    <div class="modal-icon">
+      <ion-icon name="bowtie-outline"></ion-icon>
+    </div>
+    <button class="modal-close" id="cerrar-modal-dresscode-btn" aria-label="Cerrar">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="modal-title">Dress Code</div>
+    <div class="modal-subtitle">Vestimenta Formal</div>
+    <div class="modal-outfit-ideas">Outfit Ideas</div>
+    <img src="assets/dress code 1.jpg" alt="Ideas de outfit" class="modal-outfit-img">
+  </div>
+</div>
+
+
+
+<!-- Tips & Notas -->
+<section id="tips" class="tips-section">
+  <div class="tips-card">
+    <!-- Imagen decorativa en esquina -->
+    <img src="assets/hojaSEPARADAS.png" alt="" class="tips-deco-corner" aria-hidden="true">
+
+    <div class="tips-icon">
+      <ion-icon name="clipboard-outline"></ion-icon>
+    </div>
+    <div class="tips-title">Tips & Notas</div>
+    <div class="tips-desc">Información útil para nuestra celebración</div>
+    <button class="tips-btn" id="abrir-tips">Ver más</button>
+  </div>
+</section>
+
+
+<!-- Modal Tips & Notas -->
+<div class="modal-tips" id="modal-tips">
+  <div class="modal-overlay" id="cerrar-modal-tips"></div>
+  <div class="modal-content-tips">
+    <div class="modal-floral-tips">
+      <img src="assets/detallehojas.png" alt="Decoración" />
+    </div>
+    <div class="modal-icon">
+      <ion-icon name="clipboard-outline"></ion-icon>
+    </div>
+    <button class="modal-close" id="cerrar-modal-tips-btn" aria-label="Cerrar">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="modal-title-tips">Tips y Notas</div>
+    <ul class="modal-list-tips">
+      <li>• ¡Por favor ser puntuales!</li>
+      <li>• Queremos que disfrutes de esta fiesta al máximo, por eso decidimos que sea un evento sólo para adultos.</li>
+      <li>• ¡Confirmar asistencia a la brevedad, antes de la Fecha!</li>
+      <li>• Olvidarse de todo, y ¡¡¡a disfrutar!!!</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Compartir Fotos -->
+<section id="fotos" class="fotos-section">
+  <div class="fotos-heading">
+    Compartimos este<br>día junto a ti
+  </div>
+
+  <p class="fotos-subtitle">
+    Comparte tus fotos y videos de este hermoso día
+  </p>
+
+  <div class="fotos-card">
+    <!-- QR dinámico que apunta a tu carpeta de Drive -->
+    <img
+      class="fotos-qr"
+      src="https://api.qrserver.com/v1/create-qr-code/?size=340x340&data=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1T-illHM9PJAT9VYi0a14NZRreUI-dv-C%3Fusp%3Ddrive_link"
+      alt="Código QR para subir fotos"
+    />
+
+    <div class="fotos-legend">
+      Escanea el código QR y sube tus fotos
+    </div>
+
+    <a
+      class="fotos-btn"
+      href="https://drive.google.com/drive/folders/1T-illHM9PJAT9VYi0a14NZRreUI-dv-C?usp=drive_link"
+      target="_blank" rel="noopener"
+    >
+      SUBIR FOTOS
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Apartado de Regalos -->
+<section id="regalos" class="regalos-section">
+  <div class="regalos-card">
+    <div class="regalos-icon">
+      <ion-icon name="gift-outline"></ion-icon>
+    </div>
+    <div class="regalos-title">Regalos</div>
+    <div class="regalos-desc">
+      Tu presencia es nuestro mayor regalo. Si deseas obsequiarnos algo, hemos preparado algunas opciones que nos ayudarán a comenzar nuestra nueva vida juntos.
+    </div>
+    <button class="regalos-btn" id="abrir-regalos">Ver más</button>
+  </div>
+</section>
+
+<!-- Modal Regalos -->
+<div class="modal-regalos" id="modal-regalos">
+  <div class="modal-overlay" id="cerrar-modal-regalos"></div>
+
+    <!-- Imagen floral detrás -->
+  <div class="modal-floral-behind">
+    <img src="assets/Rosasblancas.png" alt="Decoración" />
+  </div>
+  
+  <div class="modal-content-regalos">
+   
+    <div class="modal-icon">
+      <ion-icon name="gift-outline"></ion-icon>
+    </div>
+    <button class="modal-close" id="cerrar-modal-regalos-btn" aria-label="Cerrar">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="modal-text-regalos">
+      Para quienes deseen hacer un regalo en efectivo, contaremos con sobres disponibles.<br>
+    </div>
+    <div class="modal-bancos">
+      <strong>• Depósito bancario:</strong><br>
+      Cuenta: XXXX XXXX XXXX XXXX
+    </div>
+    <div class="modal-paypal">
+      <strong>• PayPal:</strong><br>
+      Correo electrónico: correopaypal@gmail.com
+    </div>
+    <div class="modal-zelle">
+      <strong>• Zelle:</strong><br>
+      <img src="assets/Zelle.jpeg" alt="QR Zelle" class="modal-qr">
+      <div class="modal-zelle-info">Escanea el código QR para transferir vía Zelle</div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ======================================
+     CONFIRMACIÓN DE ASISTENCIA (WhatsApp)
+     ====================================== -->
+<section id="rsvp" class="rsvp-section">
+  <div class="rsvp-heading">Confirmación</div>
+  <p class="rsvp-subtitle">¿Nos acompañas en este día tan especial?</p>
+
+  <div class="rsvp-card">
+    <div class="rsvp-icon">
+      <!-- pequeño ícono de confeti -->
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M2 22l6-16 10 10L2 22zm15.5-14.5l2-2M14 3l1.5 1.5M20.5 9.5L22 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <button id="open-rsvp-modal" class="rsvp-cta">
+      CONFIRMAR ASISTENCIA
+    </button>
+
+    <!-- O confirmación ultra-rápida (sin modal): -->
+    <a id="quick-rsvp-si" class="rsvp-link-quick" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+  </div>
+
+  <!-- Modal -->
+  <div id="rsvp-modal" class="rsvp-modal" aria-hidden="true">
+    <div class="rsvp-modal__backdrop" data-close-modal></div>
+
+    <div class="rsvp-modal__card" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
+      <button class="rsvp-modal__close" title="Cerrar" aria-label="Cerrar" data-close-modal>&times;</button>
+
+      <div class="rsvp-modal__badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M2 22l6-16 10 10L2 22zm15.5-14.5l2-2M14 3l1.5 1.5M20.5 9.5L22 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <h3 id="rsvp-title" class="rsvp-modal__title">¿Asistes a la celebración?</h3>
+
+      <div class="rsvp-modal__options">
+        <label class="rsvp-radio">
+          <input type="radio" name="rsvpChoice" value="si" checked>
+          <span>¡Sí, confirmo!</span>
+        </label>
+
+        <label class="rsvp-radio">
+          <input type="radio" name="rsvpChoice" value="no">
+          <span>No puedo <span aria-hidden="true">😔</span></span>
+        </label>
+      </div>
+
+      <div class="rsvp-inputs">
+        <input id="rsvp-name" type="text" placeholder="Ingrese su nombre completo (opcional)">
+        <input id="rsvp-note" type="text" placeholder="Algún dato importante (opcional)">
+      </div>
+
+      <button id="rsvp-send" class="rsvp-send">ENVIAR POR WHATSAPP</button>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Ionicons y scripts -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="script.js"></script>
+  <script>
+    // Oculta la portada y muestra el resto al hacer click en el botón
+    document.addEventListener('DOMContentLoaded', function() {
+      const landingBtn = document.getElementById('landing-btn');
+      const landingCover = document.getElementById('landing-cover');
+      if (landingBtn && landingCover) {
+        landingBtn.addEventListener('click', function() {
+          landingCover.style.opacity = '0';
+          landingCover.style.pointerEvents = 'none';
+          setTimeout(() => {
+            landingCover.style.display = 'none';
+          }, 400);
+        });
+      }
+    });
+  </script>
+
+  <script>
+  // Oculta la pantalla de bienvenida al hacer click en el botón INGRESAR
+  document.addEventListener('DOMContentLoaded', function() {
+    const enterBtn = document.getElementById("enter-btn");
+    const welcomeScreen = document.getElementById("welcome-screen");
+    if (enterBtn && welcomeScreen) {
+      enterBtn.addEventListener("click", () => {
+        welcomeScreen.style.opacity = '0';
+        welcomeScreen.style.pointerEvents = 'none';
+        setTimeout(() => {
+          welcomeScreen.style.display = 'none';
+        }, 400);
+      });
+    }
+  });
+</script>
+
+<!-- Botón de música siempre visible -->
+<button class="music-btn" id="music-btn" aria-label="Reproducir/Pausar música">
+  <ion-icon id="music-icon" name="play-outline"></ion-icon>
+</button>
+<audio id="bg-music" src="assets/La Bondad De Dios - Church of The City- (Instrumental).mp3" loop></audio>
 
 </body>
 </html>
