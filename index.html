@@ -128,10 +128,24 @@
         <div class="ceremonia-lugar-direccion">Av. San Isidro 207, San José</div>
       </div>
     </div>
-    <div class="ceremonia-actions">
-      <button class="ceremonia-btn save-date">SAVE THE DATE</button>
-      <button class="ceremonia-btn outline">¿CÓMO LLEGAR?</button>
-    </div>
+<div class="ceremonia-actions">
+  <!-- Guarda la ceremonia en Google Calendar -->
+  <a id="ceremony-save"
+     class="ceremonia-btn save-date"
+     href="#"
+     target="_blank" rel="noopener">
+    SAVE THE DATE
+  </a>
+
+  <!-- Cómo llegar a la ceremonia en Google Maps -->
+  <a id="ceremony-maps"
+     class="ceremonia-btn outline"
+     href="#"
+     target="_blank" rel="noopener">
+    ¿CÓMO LLEGAR?
+  </a>
+</div>
+
   </div>
 </section>
 
@@ -192,10 +206,24 @@
         <div class="fiesta-lugar-direccion">Calle Primavera 123, San José</div>
       </div>
     </div>
-    <div class="fiesta-actions">
-      <button class="fiesta-btn save-date">AGENDAR FIESTA</button>
-      <button class="fiesta-btn outline">VER UBICACIÓN</button>
-    </div>
+<div class="fiesta-actions">
+  <!-- Guarda la fiesta en Google Calendar -->
+  <a id="party-save"
+     class="fiesta-btn save-date"
+     href="#"
+     target="_blank" rel="noopener">
+    AGENDAR FIESTA
+  </a>
+
+  <!-- Cómo llegar a la fiesta en Google Maps -->
+  <a id="party-maps"
+     class="fiesta-btn outline"
+     href="#"
+     target="_blank" rel="noopener">
+    VER UBICACIÓN
+  </a>
+</div>
+
   </div>
 </section>
 
@@ -399,7 +427,6 @@
 </section>
 
 
-
 <!-- Apartado de Regalos -->
 <section id="regalos" class="regalos-section">
   <div class="regalos-card">
@@ -418,34 +445,29 @@
 <div class="modal-regalos" id="modal-regalos">
   <div class="modal-overlay" id="cerrar-modal-regalos"></div>
 
-    <!-- Imagen floral detrás -->
+  <!-- Imagen floral detrás -->
   <div class="modal-floral-behind">
     <img src="assets/Rosasblancas.png" alt="Decoración" />
   </div>
   
   <div class="modal-content-regalos">
-   
     <div class="modal-icon">
       <ion-icon name="gift-outline"></ion-icon>
     </div>
     <button class="modal-close" id="cerrar-modal-regalos-btn" aria-label="Cerrar">
       <ion-icon name="close-outline"></ion-icon>
     </button>
+
     <div class="modal-text-regalos">
-      Para quienes deseen hacer un regalo en efectivo, contaremos con sobres disponibles.<br>
+      El mejor regalo es tu compañía, pero si deseas apoyarnos, aquí tienes dos opciones:
     </div>
-    <div class="modal-bancos">
-      <strong>• Depósito bancario:</strong><br>
-      Cuenta: XXXX XXXX XXXX XXXX
-    </div>
-    <div class="modal-paypal">
-      <strong>• PayPal:</strong><br>
-      Correo electrónico: correopaypal@gmail.com
-    </div>
-    <div class="modal-zelle">
-      <strong>• Zelle:</strong><br>
-      <img src="assets/Zelle.jpeg" alt="QR Zelle" class="modal-qr">
-      <div class="modal-zelle-info">Escanea el código QR para transferir vía Zelle</div>
+
+    <div class="modal-opciones-regalos">
+      <a href="https://www.amazon.com/hz/wishlist/XXXXXXXX" target="_blank" 
+         class="regalo-btn amazon-btn">Lista de Regalos en Amazon</a>
+
+      <a href="https://www.zellepay.com/" target="_blank" 
+         class="regalo-btn zelle-btn">Hacer Regalo por Zelle</a>
     </div>
   </div>
 </div>

@@ -529,6 +529,8 @@ body.loading {
   cursor: pointer;
   transition: background 0.2s;
   margin-bottom: 0;
+  text-align: center;
+  display: block;
 }
 .ceremonia-btn.save-date {
   background: #7a8b7a;
@@ -721,6 +723,8 @@ body.loading {
   cursor: pointer;
   transition: background 0.2s;
   margin-bottom: 0;
+  text-align: center;
+  display: block;
 }
 .fiesta-btn.save-date {
   background: var(--caramel-brown);
@@ -732,7 +736,7 @@ body.loading {
   margin-top: 8px;
 }
 .fiesta-btn:hover {
-  background: var(--caramel-brown);
+  background: #887972;
   color: #fff;
 }
 .fiesta-btn.outline:hover {
@@ -1573,80 +1577,45 @@ Tips & Notas
   flex-direction: column;
   align-items: center;
 }
-
-.modal-floral img {
-  width: 120px;                       /* Más pequeña */
-  position: absolute;
-  top: -45px;
-  left: 35%;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-.modal-icon ion-icon {
-  font-size: 2.6rem;
-  color: #8fa18b;
-  margin-bottom: 8px;
-  margin-top: 10px;
-}
-
-.modal-text-regalos {
-  color: #7a8b7a;
-  font-size: 0.98rem;
-  margin-bottom: 10px;
-  text-align: center;
-  line-height: 1.3;
-}
-
-.modal-bancos,
-.modal-paypal,
-.modal-zelle {
-  color: #23422c;
-  font-size: 0.98rem;
-  margin-bottom: 8px;
-  text-align: center;
-  line-height: 1.3;
-}
-
-.modal-bancos strong,
-.modal-paypal strong,
-.modal-zelle strong {
-  font-size: 1rem;
-}
-
-.modal-qr {
-  width: 90px;
-  height: 90px;
-  margin: 6px auto 4px auto;
-  display: block;
-}
-
-.modal-zelle-info {
-  color: #8fa18b;
-  font-size: 0.93rem;
-  margin-bottom: 4px;
-  text-align: center;
-}
-
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: #8a925e;
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  color: #fff;
+.modal-opciones-regalos {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 4;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
 }
-.modal-close ion-icon {
-  font-size: 1.2rem;
+
+.regalo-btn {
+  display: block;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.2s;
 }
+
+.amazon-btn {
+  background: #ff9900; /* color Amazon */
+  color: #fff;
+}
+.amazon-btn:hover {
+  background: #e68a00;
+  transform: scale(1.05);
+}
+
+.zelle-btn {
+  background: #6c3c97; /* color Zelle */
+  color: #fff;
+}
+.zelle-btn:hover {
+  background: #5a2f7a;
+  transform: scale(1.05);
+}
+
+
 
 
 
