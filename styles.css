@@ -264,8 +264,8 @@ body.loading {
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -275,8 +275,8 @@ body.loading {
 
 .countdown-floral {
   position: absolute;
-  width: 520px;   /* Aumenta el tamaño del marco */
-  height: 580px;  /* Aumenta el tamaño del marco */
+  width: 440px;   /* Aumenta el tamaño del marco */
+  height: 500px;  /* Aumenta el tamaño del marco */
   top: 50%;
   left: 46%;
   transform: translate(-50%, -50%);
@@ -312,7 +312,7 @@ body.loading {
 .countdown-numbers {
   display: flex;
   justify-content: center;
-  gap: 28px;
+  gap: 22px;
   margin-bottom: 18px;
 }
 
@@ -1598,20 +1598,20 @@ Tips & Notas
 }
 
 .amazon-btn {
-  background: #ff9900; /* color Amazon */
+  background: var(--caramel-brown); /* color Amazon */
   color: #fff;
 }
 .amazon-btn:hover {
-  background: #e68a00;
+  background: var(--caramel-brown);
   transform: scale(1.05);
 }
 
 .zelle-btn {
-  background: #6c3c97; /* color Zelle */
+  background:  var(--sage-green); /* color Zelle */
   color: #fff;
 }
 .zelle-btn:hover {
-  background: #5a2f7a;
+  background: var(--sage-green);
   transform: scale(1.05);
 }
 
