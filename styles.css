@@ -127,7 +127,7 @@ body.loading {
   margin-bottom: 24px;
 }
 .rings-icon ion-icon {
-  font-size: 90px;
+  font-size: 80px;
   color: #8fa18b;
   border: 2px solid #8fa18b;
   border-radius: 50%;
@@ -136,16 +136,16 @@ body.loading {
 
 .landing-names {
   font-family: 'Dancing Script', cursive;
-  font-size: 4rem;
+  font-size: 3.2rem;
   color: #8fa18b;
   margin: 0 0 10px 0;
-  font-weight: 400;
+  font-weight: 410;
 }
 
 .landing-phrase {
   color: #a6a9b0;
-  font-size: 1.5rem;
-  margin-bottom: 24px;
+  font-size: 1 rem;
+  margin-bottom: 20px;
 }
 
 .landing-divider {
@@ -264,8 +264,8 @@ body.loading {
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  width: 350px;
-  height: 350px;
+  width: 280px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -275,8 +275,8 @@ body.loading {
 
 .countdown-floral {
   position: absolute;
-  width: 440px;   /* Aumenta el tamaño del marco */
-  height: 500px;  /* Aumenta el tamaño del marco */
+  width: 380px;   /* Aumenta el tamaño del marco */
+  height: 380px;  /* Aumenta el tamaño del marco */
   top: 50%;
   left: 46%;
   transform: translate(-50%, -50%);
@@ -303,17 +303,18 @@ body.loading {
 
 .countdown-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #7a8b7a;
   margin-bottom: 18px;
   font-weight: 400;
+  justify-content: center;
 }
 
 .countdown-numbers {
   display: flex;
   justify-content: center;
-  gap: 22px;
-  margin-bottom: 18px;
+  gap: 20px;
+  margin-bottom: 16px;
 }
 
 .countdown-numbers div {
@@ -323,7 +324,7 @@ body.loading {
 }
 
 .countdown-numbers span {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #3d4e47;
   font-family: 'Playfair Display', serif;
@@ -349,6 +350,7 @@ body.loading {
    ======================= */
 
 .elegant-separator{
+  min-height: 20vh;
   --badge-top: 50%;        /* súbelo/bájalo afinando este valor */
   background: #fafbfa;
   padding: 36px 0 72px;
@@ -413,7 +415,7 @@ body.loading {
 /* Ceremonia */
 .ceremonia-section {
   background: #fafafa;
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -433,8 +435,8 @@ body.loading {
   background: #eef3ee;
   border-radius: 18px;
   padding: 36px 36px 24px 36px;
-  min-width: 340px;
-  max-width: 420px;
+  min-width: 300px;
+  max-width: 340px;
   flex: 1 1 340px;
   display: flex;
   flex-direction: column;
@@ -523,7 +525,7 @@ body.loading {
   border: none;
   border-radius: 10px;
   padding: 14px 0;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   cursor: pointer;
@@ -553,6 +555,7 @@ body.loading {
 
 /* === Separador Fiesta === */
 .fiesta-separator {
+  min-height: 30vh;
   position: relative;
   width: 100%;
 }
@@ -566,8 +569,8 @@ body.loading {
 /* Posición del PNG centrado */
 .custom-image-slot {
   position: absolute;
-  top: 60%;
-  left: 50%;
+  top: 22%;
+  left:50%;
   transform: translate(-50%, -50%);
 }
 
@@ -584,6 +587,7 @@ body.loading {
    ======================= */
 
 .section-separator {
+  max-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -602,7 +606,7 @@ body.loading {
 
 .fiesta-section {
   background: #fafbfa;
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -627,7 +631,7 @@ body.loading {
   border-radius: 18px;
   padding: 36px 36px 24px 36px;
   min-width: 340px;
-  max-width: 420px;
+  max-width: 340px;
   flex: 1 1 340px;
   display: flex;
   flex-direction: column;
@@ -722,7 +726,7 @@ body.loading {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   text-align: center;
   display: block;
 }
@@ -755,7 +759,7 @@ body.loading {
 
 .retratos-section {
   background: #fafbfa;
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -765,8 +769,8 @@ body.loading {
 .retratos-section .section-title {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 2rem;
+  gap: 6px;
+  font-size: 1.85rem;
   font-family: 'Dancing Script', cursive;
   color: #fafafa;
 }
@@ -811,7 +815,6 @@ body.loading {
   background: #e8ede8;
   border: none;
   border-radius: 50%;
-  width: 48px;
   height: 48px;
   display: flex;
   align-items: center;
