@@ -4,12 +4,22 @@ document.addEventListener('DOMContentLoaded', function() {
   const welcomeScreen = document.getElementById("welcome-screen");
 
   if (enterBtn && welcomeScreen) {
-    enterBtn.addEventListener("click", () => {
-      welcomeScreen.classList.add("fade-out");
-      document.body.classList.remove("loading");
-      setTimeout(() => welcomeScreen.classList.add("hidden"), 800);
-    });
-  }
+  enterBtn.addEventListener("click", () => {
+    welcomeScreen.classList.add("fade-out");
+    document.body.classList.remove("loading");
+
+    setTimeout(() => {
+      welcomeScreen.classList.add("hidden");
+
+      // 🔽 Desplazar hacia la portada (landing)
+      const portada = document.getElementById("landing-cover");
+      if (portada) {
+        portada.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 800);
+  });
+}
+
 
   // Lógica para el botón de música global (siempre visible)
   const musicBtn = document.getElementById('music-btn');
