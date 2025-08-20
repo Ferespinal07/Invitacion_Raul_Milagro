@@ -38,9 +38,6 @@
         <ion-icon name="heart-outline"></ion-icon>
         <span></span>
       </div>
-      <button class="landing-btn" id="landing-btn">
-        <ion-icon name="play-outline"></ion-icon>
-      </button>
     </div>
   </section>
 
@@ -540,22 +537,7 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="script.js"></script>
-  <script>
-    // Oculta la portada y muestra el resto al hacer click en el botón
-    document.addEventListener('DOMContentLoaded', function() {
-      const landingBtn = document.getElementById('landing-btn');
-      const landingCover = document.getElementById('landing-cover');
-      if (landingBtn && landingCover) {
-        landingBtn.addEventListener('click', function() {
-          landingCover.style.opacity = '0';
-          landingCover.style.pointerEvents = 'none';
-          setTimeout(() => {
-            landingCover.style.display = 'none';
-          }, 400);
-        });
-      }
-    });
-  </script>
+
 
   <script>
   // Oculta la pantalla de bienvenida al hacer click en el botón INGRESAR

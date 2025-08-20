@@ -3,13 +3,23 @@ document.addEventListener('DOMContentLoaded', function() {
   const enterBtn = document.getElementById("enter-btn");
   const welcomeScreen = document.getElementById("welcome-screen");
 
-  if (enterBtn && welcomeScreen) {
-    enterBtn.addEventListener("click", () => {
-      welcomeScreen.classList.add("fade-out");
-      document.body.classList.remove("loading");
-      setTimeout(() => welcomeScreen.classList.add("hidden"), 800);
-    });
-  }
+if (enterBtn && welcomeScreen) {
+  enterBtn.addEventListener("click", () => {
+    welcomeScreen.classList.add("fade-out");
+    document.body.classList.remove("loading");
+
+    setTimeout(() => {
+      welcomeScreen.classList.add("hidden");
+
+      // 🔽 Desplazar hacia la portada (landing)
+      const portada = document.getElementById("landing-cover");
+      if (portada) {
+        portada.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 800);
+  });
+}
+
 
   // Lógica para el botón de música global (siempre visible)
   const musicBtn = document.getElementById('music-btn');
@@ -180,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* ====== RSVP por WhatsApp ====== */
 /* REEMPLAZA estos datos con los tuyos */
-const RSVP_PHONE = '8295194031'; // ej: México 52 + número
+const RSVP_PHONE = '18295194031'; // ej: México 52 + número
 const COUPLE_NAMES = 'Raul & Milagro'; // para el mensaje
 const EVENT_DATE = 'Sábado 12 de Octubre'; // opcional
 const EVENT_PLACE = 'Salón Jardines del Lago'; // opcional
@@ -224,4 +234,71 @@ if (quickSi) {
   const msg = buildRsvpMessage('si', '', '');
   quickSi.setAttribute('href', `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(msg)}`);
 }
+
+
+/* =========================
+   Links Google Calendar y Maps
+   ========================= */
+
+// EDITA el año / fecha / horarios aquí:
+const EVENT_YEAR = 2025;
+
+const CEREMONY = {
+  title: 'Ceremonia de boda - Raul & Milagro',
+  // 11 de octubre, 2:30 PM a 4:00 PM
+  start: new Date(EVENT_YEAR, 9, 11, 14, 30, 0), // mes 9 = octubre
+  end:   new Date(EVENT_YEAR, 9, 11, 16, 0, 0),
+  location: 'Parroquia Nuestra Señora, Av. San Isidro 207, San José',
+  details: 'Acompáñanos en nuestra ceremonia.'
+};
+
+const PARTY = {
+  title: 'Fiesta de Celebración - Raul & Milagro',
+  // 11 de octubre, 8:00 PM a 11:59 PM (ajusta si quieres más horas)
+  start: new Date(EVENT_YEAR, 9, 11, 20, 0, 0),
+  end:   new Date(EVENT_YEAR, 9, 11, 23, 59, 0),
+  location: 'Salón Jardines del Sol, Calle Primavera 123, San José',
+  details: '¡A celebrar juntos!'
+};
+
+// Utilidades
+function toGCalDate(dt) {
+  // YYYYMMDDTHHMMSS (hora local del usuario)
+  const pad = n => String(n).padStart(2, '0');
+  const y = dt.getFullYear();
+  const m = pad(dt.getMonth() + 1);
+  const d = pad(dt.getDate());
+  const hh = pad(dt.getHours());
+  const mm = pad(dt.getMinutes());
+  const ss = pad(dt.getSeconds());
+  return `${y}${m}${d}T${hh}${mm}${ss}`;
+}
+
+function buildGCalLink({ title, start, end, location, details }) {
+  const base = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
+  const text = `&text=${encodeURIComponent(title)}`;
+  const dates = `&dates=${toGCalDate(start)}/${toGCalDate(end)}`;
+  const loc = `&location=${encodeURIComponent(location)}`;
+  const det = `&details=${encodeURIComponent(details || '')}`;
+  return `${base}${text}${dates}${loc}${det}`;
+}
+
+function buildMapsLink(query) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+// Colocar links en los botones
+document.addEventListener('DOMContentLoaded', () => {
+  const ceremonySave = document.getElementById('ceremony-save');
+  const ceremonyMaps = document.getElementById('ceremony-maps');
+  const partySave = document.getElementById('party-save');
+  const partyMaps = document.getElementById('party-maps');
+
+  if (ceremonySave) ceremonySave.href = buildGCalLink(CEREMONY);
+  if (ceremonyMaps) ceremonyMaps.href = buildMapsLink(CEREMONY.location);
+
+  if (partySave) partySave.href = buildGCalLink(PARTY);
+  if (partyMaps) partyMaps.href = buildMapsLink(PARTY.location);
+});
+
 
