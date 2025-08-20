@@ -70,7 +70,8 @@ body.loading {
 }
 
 .bienvenida-linea {
-  width: 120px;
+  width: 100%;
+  max-width: 120px;
   height: 3px;
   background: #fff;
   margin: 0 auto 18px auto;
@@ -157,7 +158,8 @@ body.loading {
 }
 .landing-divider span {
   display: block;
-  width: 60px;
+  width: 100%;
+  max-width: 60px;
   height: 2px;
   background: #dbe3d4;
   border-radius: 2px;
@@ -171,7 +173,8 @@ body.loading {
   background: #8fa18b;
   border: none;
   border-radius: 50%;
-  width: 56px;
+  max-width: 56px;
+  width: 100%;
   height: 56px;
   display: flex;
   align-items: center;
@@ -205,7 +208,8 @@ body.loading {
   background: #8fa18b;
   border: none;
   border-radius: 50%;
-  width: 56px;
+  max-width: 56px;
+  width: 100%;
   height: 56px;
   display: flex;
   align-items: center;
@@ -264,7 +268,8 @@ body.loading {
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  width: 280px;
+  max-width: 280px;
+  width: 100%;
   height: 280px;
   display: flex;
   align-items: center;
@@ -275,8 +280,8 @@ body.loading {
 
 .countdown-floral {
   position: absolute;
-  width: 380px;   /* Aumenta el tamaño del marco */
-  height: 380px;  /* Aumenta el tamaño del marco */
+  width: 130%;   /* Aumenta el tamaño del marco */
+  height: auto;  /* Aumenta el tamaño del marco */
   top: 50%;
   left: 46%;
   transform: translate(-50%, -50%);

@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* ====== RSVP por WhatsApp ====== */
 /* REEMPLAZA estos datos con los tuyos */
-const RSVP_PHONE = '8295194031'; // ej: México 52 + número
+const RSVP_PHONE = '18295194031'; // ej: México 52 + número
 const COUPLE_NAMES = 'Raul & Milagro'; // para el mensaje
 const EVENT_DATE = 'Sábado 12 de Octubre'; // opcional
 const EVENT_PLACE = 'Salón Jardines del Lago'; // opcional
