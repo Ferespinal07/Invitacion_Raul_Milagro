@@ -1471,8 +1471,7 @@ Tips & Notas
 }
 
 .fotos-qr{
-  max-width:320px;
-  width:100%;
+  width:min(320px, 78vw);
   height:auto;
   background:#fff;
   border-radius:12px;
@@ -1604,7 +1603,7 @@ Tips & Notas
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   padding: 18px 10px 14px 10px;      /* Menos padding */
   max-width: 320px;                  /* Más angosto */
-  width: 100%;
+  width: 96vw;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -1901,4 +1900,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+
 
