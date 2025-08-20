@@ -268,8 +268,7 @@ body.loading {
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  max-width: 280px;
-  width: 100%;
+  width: 280px;
   height: 280px;
   display: flex;
   align-items: center;
