@@ -837,6 +837,39 @@ body.loading {
 }
 
 
+/* Carrusel: flechas superpuestas y siempre a la vista */
+.retratos-carousel {
+  position: relative;
+  gap: 0;                       /* quitamos hueco lateral que empujaba flechas */
+}
+
+.retratos-polaroid {
+  position: relative;
+  width: clamp(260px, 86vw, 360px); /* un poco más ancho en móvil */
+  margin: 0 56px;                   /* deja espacio "virtual" para las flechas */
+}
+
+.retratos-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  z-index: 5;
+}
+.retratos-arrow.left  { left: 6px; }
+.retratos-arrow.right { right: 6px; }
+
+/* Animación bonita al cambiar de foto */
+@keyframes retrato-reveal {
+  from { opacity: 0; transform: translateY(12px) scale(.98); filter: blur(2px); }
+  to   { opacity: 1; transform: none;                    filter: none; }
+}
+.retratos-polaroid.animating img,
+.retratos-polaroid.animating .retratos-caption {
+  animation: retrato-reveal .48s ease forwards;
+}
+
+
 /*=====================
    SEPARADOR ELEGANTE
    ======================= */
@@ -1875,5 +1908,26 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
   * { animation: none !important; transition: none !important; }
 }
 
+/*-----------------
+Celebracion y retratos  
+------------------*/
+/* Títulos: una sola línea y tamaño fluido */
+.section-title-celebracion,
+.retratos-section .section-title {
+  white-space: nowrap;             /* no permitir salto de línea */
+  overflow: hidden;                /* por si el dispositivo es ultra angosto */
+  text-overflow: ellipsis;         /* recorta con "…" si no entra */
+  letter-spacing: .5px;
+}
+
+/* Tamaño fluido, sin romper layout */
+.section-title-celebracion {
+  font-size: clamp(1.4rem, 5.2vw, 2rem);
+  padding: 10px clamp(20px, 6vw, 48px);
+}
+.retratos-section .section-title {
+  font-size: clamp(1.3rem, 5vw, 1.85rem);
+  padding: 10px clamp(18px, 6vw, 40px);
+}
 
 

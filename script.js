@@ -3,23 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const enterBtn = document.getElementById("enter-btn");
   const welcomeScreen = document.getElementById("welcome-screen");
 
-if (enterBtn && welcomeScreen) {
-  enterBtn.addEventListener("click", () => {
-    welcomeScreen.classList.add("fade-out");
-    document.body.classList.remove("loading");
-
-    setTimeout(() => {
-      welcomeScreen.classList.add("hidden");
-
-      // 🔽 Desplazar hacia la portada (landing)
-      const portada = document.getElementById("landing-cover");
-      if (portada) {
-        portada.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 800);
-  });
-}
-
+  if (enterBtn && welcomeScreen) {
+    enterBtn.addEventListener("click", () => {
+      welcomeScreen.classList.add("fade-out");
+      document.body.classList.remove("loading");
+      setTimeout(() => welcomeScreen.classList.add("hidden"), 800);
+    });
+  }
 
   // Lógica para el botón de música global (siempre visible)
   const musicBtn = document.getElementById('music-btn');
@@ -78,15 +68,34 @@ if (enterBtn && welcomeScreen) {
   let current = 0;
   const polaroid = document.getElementById('retratos-polaroid');
   const dots = document.getElementById('retratos-dots') ? document.getElementById('retratos-dots').children : [];
+  
   function showRetrato(idx) {
-    if (!polaroid) return;
-    polaroid.querySelector('img').src = retratos[idx].img;
-    polaroid.querySelector('img').alt = retratos[idx].caption;
-    polaroid.querySelector('.retratos-caption').textContent = retratos[idx].caption;
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.toggle('active', i === idx);
-    }
+  if (!polaroid) return;
+
+  // Marca de animación (se quita sola al terminar)
+  polaroid.classList.remove('animating'); // por si venía de otra
+  // Forzamos reflow para reiniciar la animación
+  void polaroid.offsetWidth;
+
+  // Cambia imagen y textos
+  const img = polaroid.querySelector('img');
+  const cap = polaroid.querySelector('.retratos-caption');
+  img.src = retratos[idx].img;
+  img.alt = retratos[idx].caption;
+  cap.textContent = retratos[idx].caption;
+
+  // Dots activos
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.toggle('active', i === idx);
   }
+
+  // Dispara animación
+  polaroid.classList.add('animating');
+  img.addEventListener('animationend', () => {
+    polaroid.classList.remove('animating');
+  }, { once: true });
+}
+
   if (polaroid) {
     document.querySelector('.retratos-arrow.left').onclick = function() {
       current = (current - 1 + retratos.length) % retratos.length;
