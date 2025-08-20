@@ -1769,3 +1769,135 @@ Tips & Notas
 }
 .rsvp-send:hover{ filter:brightness(.95); }
 
+/* ===========================
+   FIX PACK: responsive + anti-overflow
+   Pegar al FINAL del archivo
+   =========================== */
+
+/* 0) Viewport seguro y box-sizing coherente */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after { box-sizing: inherit; min-width: 0; }
+
+html, body { overflow-x: clip; } /* evita scroll lateral por decorativos */
+
+/* 1) Imágenes y media siempre fluidos */
+img, svg, video, canvas { max-width: 100%; height: auto; }
+
+/* 2) Tipografías y espacios fluidos */
+:root {
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+.landing-names { font-size: clamp(2.2rem, 6vw, 4rem); }
+.landing-phrase { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+
+/* 3) Botones fijos: evita que se pisen música vs landing */
+.music-btn { bottom: calc(32px + var(--safe-b)); right: 32px; }
+@media (max-width: 480px) {
+  .landing-btn { right: calc(32px + 64px); } /* corre un poco a la izquierda */
+}
+
+/* 4) Secciones a pantalla completa: usa 100dvh (corrige 100vh en móviles) */
+.landing-cover,
+.countdown-section,
+.ceremonia-section,
+.fiesta-section,
+.retratos-section,
+.musica-section,
+.dresscode-section,
+.tips-section,
+.fotos-section,
+.regalos-section,
+.rsvp-section {
+  min-height: 100dvh;
+}
+
+/* 5) Countdown: quita tamaños fijos y usa vmin + aspect */
+.countdown-circle {
+  width: min(80vmin, 420px);
+  height: min(80vmin, 420px);
+}
+.countdown-floral {
+  width: 130%;
+  height: auto;
+  left: 50%; /* centrado real */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* no tapa toques */
+}
+
+/* 6) Tarjetas y columnas: elimina min-width 340px que rompía móviles angostos */
+.ceremonia-info,
+.fiesta-info,
+.ceremonia-actions,
+.fiesta-actions {
+  min-width: 0;         /* anula min-width previos */
+  width: min(420px, 100%);
+  flex: 1 1 300px;      /* deja que rompa línea bonito */
+}
+
+/* 7) Polaroids: fluidas y con ratio estable, sin desbordes */
+.retratos-polaroid { width: clamp(260px, 70vw, 340px); }
+.retratos-polaroid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 29 / 32;      /* mantiene forma sin height fijo */
+  object-fit: cover;
+}
+
+/* 8) Decoración en separadores y PNG centrado: que no cause overflow ni tape */
+.custom-image-slot { pointer-events: none; }
+.custom-image-slot img { width: min(230px, 60vw); }
+.elegant-separator .waves { height: auto; } /* deja que el SVG sea fluido */
+
+/* 9) Overlays y modales: siempre a pantalla completa y tarjetas con width fluida */
+.modal-sugerencia,
+.modal-dresscode,
+.modal-tips,
+.modal-regalos {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-sugerencia.active,
+.modal-dresscode.active,
+.modal-tips.active,
+.modal-regalos.active { display: flex; }
+
+.modal-overlay { position: fixed; inset: 0; width: 100vw; height: 100dvh; }
+
+.modal-content,
+.modal-content-tips,
+.modal-content-regalos {
+  width: min(92vw, 380px);   /* no usar 40vw en móviles */
+}
+
+/* 10) Arreglo de propiedad inválida: debería ser visible */
+.tips-card { overflow: visible; }  /* antes decías: overflow: shown; */
+
+/* 11) Scroll-down arrow más prudente en móviles pequeños */
+.scroll-down-arrow { font-size: clamp(2rem, 8vw, 3.5rem); }
+
+/* 12) Mejoras de accesibilidad en hover para táctiles y reduce motion */
+@media (hover: none) {
+  .landing-btn:hover,
+  .music-btn:hover,
+  .retratos-arrow:hover,
+  .fiesta-btn:hover,
+  .ceremonia-btn:hover,
+  .musica-btn:hover,
+  .dresscode-btn:hover,
+  .tips-btn:hover,
+  .regalos-btn:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+
