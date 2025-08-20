@@ -1110,7 +1110,7 @@ Dress Code
   background: #eef3ee;
   border-radius: 20px;
   padding: 40px 32px 32px 32px;
-  max-width: 480px;
+  max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1264,7 +1264,7 @@ Tips & Notas
   background: var(--caramel-brown); /* Fondo tarjeta */
   border-radius: 20px;
   padding: 32px 22px 22px 22px;
-  max-width: 480px;
+  max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1463,7 +1463,7 @@ Tips & Notas
   box-shadow:0 8px 32px rgba(0,0,0,.08);
   padding:28px 22px 26px 22px;
   width:100%;
-  max-width:480px;
+  max-width:400px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -1471,7 +1471,7 @@ Tips & Notas
 }
 
 .fotos-qr{
-  width:min(320px, 78vw);
+  width:min(300px, 78vw);
   height:auto;
   background:#fff;
   border-radius:12px;
@@ -1521,7 +1521,7 @@ Tips & Notas
   background: #eef3ee;
   border-radius: 20px;
   padding: 32px 22px 22px 22px;
-  max-width: 480px;
+  max-width: 380px;
   width: 100%;
   display: flex;
   flex-direction: column;
