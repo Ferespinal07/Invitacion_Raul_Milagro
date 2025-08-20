@@ -365,7 +365,7 @@ body.loading {
 
 .elegant-separator .waves{
   width: 100%;
-  height: 140px;
+  height: auto;
   display: block;
 }
 
@@ -374,7 +374,8 @@ body.loading {
   left: 50%;
   top: var(--badge-top);    /* más arriba para alinearlo con las líneas */
   transform: translate(-50%, -50%);
-  width: 170px;
+  max-width: 170px;
+  width: 100%;
   height: 170px;
   border-radius: 50%;
   display: grid;
@@ -385,7 +386,7 @@ body.loading {
 /* Imagen del badge en el separador elegante */
 .badge-img{
   width: 80%;
-  height: 80%;
+  height: auto;
   object-fit: contain;       /* evita deformaciones */
   border-radius: 50%;        /* forma circular, opcional */
   background: #fff;          /* círculo blanco como el anterior */
@@ -440,6 +441,7 @@ body.loading {
   background: #eef3ee;
   border-radius: 18px;
   padding: 36px 36px 24px 36px;
+  width: 100%;
   min-width: 300px;
   max-width: 340px;
   flex: 1 1 340px;
@@ -476,7 +478,8 @@ body.loading {
 .ceremonia-icon {
   background: #cfd8cf;
   border-radius: 50%;
-  width: 38px;
+  max-width: 38px;
+  width: 100%;
   height: 38px;
   display: flex;
   align-items: center;
@@ -516,6 +519,7 @@ body.loading {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  width: 100%;
   min-width: 320px;
   max-width: 400px;
   flex: 1 1 320px;
@@ -580,7 +584,8 @@ body.loading {
 }
 
 .custom-image-slot img {
-  width: 230px; /* ajusta tamaño */
+  max-width: 230px; /* ajusta tamaño */
+  width: 100%;
   height: auto;
 }
 
@@ -635,6 +640,7 @@ body.loading {
   background: #fff;
   border-radius: 18px;
   padding: 36px 36px 24px 36px;
+  width: 100%;
   min-width: 340px;
   max-width: 340px;
   flex: 1 1 340px;
@@ -672,8 +678,8 @@ body.loading {
 .fiesta-icon {
   background: #c9bab3;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  max-width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -712,6 +718,7 @@ body.loading {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  width: 100%;
   min-width: 320px;
   max-width: 400px;
   flex: 1 1 320px;
@@ -800,7 +807,8 @@ body.loading {
 }
 
 .retratos-polaroid img {
-  width: 290px;
+  max-width: 290px;
+  width: 100%;
   height: 320px;
   object-fit: cover;
   border-radius: 2px;
@@ -842,7 +850,8 @@ body.loading {
   margin-top: 18px;
 }
 .retratos-dots .dot {
-  width: 12px;
+  max-width: 12px;
+  width: 100%;
   height: 12px;
   background: #dbe3d4;
   border-radius: 50%;
@@ -868,7 +877,7 @@ body.loading {
 
 .elegant-separator .waves{
   width: 100%;
-  height: 140px;
+  height: auto;
   display: block;
 }
 
@@ -878,7 +887,7 @@ body.loading {
   top: var(--badge-top);    /* más arriba para alinearlo con las líneas */
   transform: translate(-50%, -50%);
   width: 170px;
-  height: 170px;
+  height: auto;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -971,7 +980,11 @@ body.loading {
   display: none;
   position: fixed;
   z-index: 4000;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; 
+  top: 0; 
+  max-width: 100vw;
+  width: 100%; 
+  height: auto;
   align-items: center;
   justify-content: center;
 }
@@ -980,7 +993,11 @@ body.loading {
 }
 .modal-overlay {
   position: fixed;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; 
+  top: 0; 
+  max-width: 100vw;
+  width: 100%;
+  height: auto;
   background: rgba(0,0,0,0.18);
   z-index: 1;
 }
@@ -991,14 +1008,15 @@ body.loading {
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   padding: 48px 32px 32px 32px;
   max-width: 370px;
-  width: 95vw;
+  width: 100%;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .modal-floral-cancion img {
-  width: 180px;
+  max-width: 180px;
+  width: 100%;
   position: absolute;
   top: -38px;
   left: 18%;
@@ -1018,8 +1036,9 @@ body.loading {
   background: #8a925e;
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  max-width: 32px;
+  width: 100%;
+  height: auto;
   color: #fff;
   display: flex;
   align-items: center;
@@ -1138,7 +1157,7 @@ Dress Code
   display: none;
   position: fixed;
   z-index: 4000;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; top: 0; max-width: 100vw; width: 100%; height: auto;
   align-items: center;
   justify-content: center;
 }
@@ -1147,7 +1166,7 @@ Dress Code
 }
 .modal-overlay {
   position: fixed;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; top: 0; width: 100%; max-width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.18);
   z-index: 1;
 }
@@ -1158,14 +1177,15 @@ Dress Code
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   padding: 24px 12px 18px 12px;
   max-width: 340px;
-  width: 40vw;
+  width: 100%;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .modal-floral-dresscode img {
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
   position: absolute;
   top: -30px;
   left: 18%;
@@ -1185,8 +1205,9 @@ Dress Code
   background: #8a925e;
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  max-width: 32px;
+  width: 100%;
+  height: auto;
   color: #fff;
   display: flex;
   align-items: center;
@@ -1312,7 +1333,7 @@ Tips & Notas
   .tips-deco-corner{
     top: -10px;
     left: -8px;
-    width: 36vw;               /* un poco más grande en móviles */
+    width: 100%;               /* un poco más grande en móviles */
   }
 }
 
@@ -1321,7 +1342,7 @@ Tips & Notas
   display: none;
   position: fixed;
   z-index: 4000;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; top: 0; width: 100%; max-width: 100vw; height: 100vh;
   align-items: center;
   justify-content: center;
 }
@@ -1330,7 +1351,7 @@ Tips & Notas
 }
 .modal-overlay {
   position: fixed;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; top: 0; width: 100%; max-width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.18);
   z-index: 1;
 }
@@ -1341,14 +1362,15 @@ Tips & Notas
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   padding: 24px 12px 18px 12px;
   max-width: 340px;
-  width: 95vw;
+  width: 100%;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .modal-floral-tips img {
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
   position: absolute;
   top: -85px;
   left: 8%;
@@ -1368,7 +1390,8 @@ Tips & Notas
   background: var(--terracotta);
   border: none;
   border-radius: 50%;
-  width: 32px;
+  max-width: 32px;
+  width: 100%;
   height: 32px;
   color: #fff;
   display: flex;
@@ -1544,7 +1567,7 @@ Tips & Notas
   display: none;
   position: fixed;
   z-index: 4000;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; top: 0; width: 100%; max-width: 100vw; height: 100vh;
   align-items: center;
   justify-content: center;
 }
@@ -1559,7 +1582,8 @@ Tips & Notas
 }
 
 .modal-floral-behind img {
-  width: 170px; /* Ajusta el tamaño según prefieras */
+  max-width: 170px; /* Ajusta el tamaño según prefieras */
+  width: 100%;
   display: block;
 }
 
@@ -1568,7 +1592,7 @@ Tips & Notas
 }
 .modal-overlay {
   position: fixed;
-  left: 0; top: 0; width: 100vw; height: 100vh;
+  left: 0; top: 0; width: 100%; max-width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.18);
   z-index: 1;
 }
@@ -1707,7 +1731,11 @@ Tips & Notas
   display:grid; place-items:center; box-shadow:0 12px 28px rgba(0,0,0,.12);
   margin:-62px auto 12px;
 }
-.rsvp-modal__badge svg{ width:38px; height:38px; }
+.rsvp-modal__badge svg{ 
+  width:38px; 
+  height:38px;
+ }
+
 .rsvp-modal__title{
   font-family:'Playfair Display', serif;
   color:var(--deep-forest);
