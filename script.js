@@ -206,53 +206,52 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/* ====== RSVP por WhatsApp (único botón + opciones en modal) ====== */
+document.addEventListener('DOMContentLoaded', () => {
+  // Configuración
+  const RSVP_PHONE   = '18295194031';          // formato internacional sin "+"
+  const COUPLE_NAMES = 'Raul & Milagro';
+  const EVENT_DATE   = 'Viernes 11 de Octubre'; // ajusta si corresponde
+  const EVENT_PLACE  = 'Salón Jardines del Lago';
 
-/* ====== RSVP por WhatsApp ====== */
-/* REEMPLAZA estos datos con los tuyos */
-const RSVP_PHONE = '18295194031'; // ej: México 52 + número
-const COUPLE_NAMES = 'Raul & Milagro'; // para el mensaje
-const EVENT_DATE = 'Sábado 12 de Octubre'; // opcional
-const EVENT_PLACE = 'Salón Jardines del Lago'; // opcional
+  // Elementos
+  const openBtn  = document.getElementById('open-rsvp-modal');
+  const modal    = document.getElementById('rsvp-modal');
+  const closeEls = modal ? modal.querySelectorAll('[data-close-modal], .rsvp-modal__close') : [];
+  const sendBtn  = document.getElementById('rsvp-send');
 
-// Abrir / cerrar modal
-const openBtn = document.getElementById('open-rsvp-modal');
-const modal = document.getElementById('rsvp-modal');
-const closeEls = modal ? modal.querySelectorAll('[data-close-modal] , .rsvp-modal__close') : [];
+  const directInput = document.getElementById('rsvp-direct');
+  const directBtn   = document.getElementById('rsvp-direct-send');
 
-openBtn?.addEventListener('click', () => modal?.classList.add('is-open'));
-closeEls.forEach(el => el.addEventListener('click', () => modal.classList.remove('is-open')));
+  // Helpers
+  function buildRsvpMessage(attend, name, note) {
+    const saludo = name ? `Hola, soy ${name}. ` : 'Hola. ';
+    const baseSi = `Confirmo mi asistencia a la boda de ${COUPLE_NAMES}${EVENT_DATE ? ` el ${EVENT_DATE}` : ''}${EVENT_PLACE ? ` en ${EVENT_PLACE}` : ''}.`;
+    const baseNo = `Con mucha pena no podré asistir a la boda de ${COUPLE_NAMES}${EVENT_DATE ? ` el ${EVENT_DATE}` : ''}.`;
+    const extra   = note ? ` Nota: ${note}.` : '';
+    const gracias = ' ¡Gracias por la invitación!';
+    return saludo + (attend === 'si' ? baseSi : baseNo) + extra + gracias;
+  }
+  function openWA(text) {
+    const url = `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(text)}`;
+    const w = window.open(url, '_blank');
+    if (!w) window.location.href = url; // fallback si bloquea pop-up
+  }
 
-// Construcción del mensaje
-function buildRsvpMessage(attend, name, note) {
-  const saludo = name ? `Hola, soy ${name}. ` : 'Hola. ';
-  const baseSi = `Confirmo mi asistencia a la boda de ${COUPLE_NAMES}${EVENT_DATE ? ` el ${EVENT_DATE}` : ''}${EVENT_PLACE ? ` en ${EVENT_PLACE}` : ''}.`;
-  const baseNo = `Con mucha pena no podré asistir a la boda de ${COUPLE_NAMES}${EVENT_DATE ? ` el ${EVENT_DATE}` : ''}.`;
-  const extra = note ? ` Nota: ${note}.` : '';
-  const gracias = ' ¡Gracias por la invitación!';
-  return saludo + (attend === 'si' ? baseSi : baseNo) + extra + gracias;
-}
+  // Abrir/cerrar modal
+  openBtn?.addEventListener('click', () => modal?.classList.add('is-open'));
+  closeEls.forEach(el => el.addEventListener('click', () => modal.classList.remove('is-open')));
 
-function openWhatsAppWith(message) {
-  const url = `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(message)}`;
-  window.open(url, '_blank');
-}
+  // Envío estructurado (Sí/No + nombre + nota)
+  sendBtn?.addEventListener('click', () => {
+    const choice = document.querySelector('input[name="rsvpChoice"]:checked')?.value || 'si';
+    const name = document.getElementById('rsvp-name')?.value?.trim() || '';
+    const note = document.getElementById('rsvp-note')?.value?.trim() || '';
+    openWA(buildRsvpMessage(choice, name, note));
+  });
 
-// Envío desde el modal
-const sendBtn = document.getElementById('rsvp-send');
-sendBtn?.addEventListener('click', () => {
-  const choice = document.querySelector('input[name="rsvpChoice"]:checked')?.value || 'si';
-  const name = document.getElementById('rsvp-name')?.value.trim();
-  const note = document.getElementById('rsvp-note')?.value.trim();
-  const msg = buildRsvpMessage(choice, name, note);
-  openWhatsAppWith(msg);
 });
 
-// Confirmación ultra-rápida (solo un clic)
-const quickSi = document.getElementById('quick-rsvp-si');
-if (quickSi) {
-  const msg = buildRsvpMessage('si', '', '');
-  quickSi.setAttribute('href', `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(msg)}`);
-}
 
 
 /* =========================

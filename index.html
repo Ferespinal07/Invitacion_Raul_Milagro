@@ -56,7 +56,7 @@
     <div class="countdown-circle">
       <div class="countdown-floral">
         <!-- Puedes usar una imagen SVG decorativa aquí si lo deseas -->
-         <img src="assets/marco11.png" alt="Marco decorativo">
+         <img src="assets/19.svg" alt="Marco decorativo">
         </div>
         <div class="countdown-content">
           <div class="countdown-title">Faltan</div>
@@ -88,9 +88,9 @@
   </svg>
 
   <!-- Badge central con imagen -->
- <!-- <div class="divider-badge">
-    <img src="assets/anillos2.png" alt="Anillos" class="badge-img" loading="lazy">
-  </div> -->
+  <div class="divider-badge">
+    <img src="assets/anillo.svg" alt="Anillos" class="badge-img" loading="lazy">
+  </div>
 </section>
 
 
@@ -163,9 +163,9 @@
   </svg>
 
   <!-- Contenedor para tu PNG -->
- <!-- <div class="custom-image-slot">
-    <img src="/assets/detallehojas.png" alt="Decoración" />
-  </div> -->
+ <div class="custom-image-slot">
+    <img src="/assets/florcentral.svg" alt="Decoración" />
+  </div> 
 </section>
 
 
@@ -276,6 +276,29 @@
   <!--<div class="divider-badge">
     <img src="assets/copa1.png" alt="Copa" class="badge-img-copa" loading="lazy">
   </div> -->
+</section>
+
+
+
+
+<!-- Acápite bíblico -->
+<section id="versiculo" class="verse-hero" aria-label="Versículo bíblico">
+  <div class="verse-card">
+    <h2 class="verse-heading">Eclesiastés 4:9–12</h2>
+
+    <blockquote class="verse-text">
+      <p>
+        Mejores son dos que uno; porque tienen mejor paga de su trabajo.
+        Porque si cayeren, el uno levantará a su compañero; mas ¡ay del solo!
+        que cuando cayere, no habrá segundo que lo levante.
+        También si dos durmieren juntos, se calentarán mutuamente;
+        mas ¿cómo se calentará uno solo?
+        Y si alguno prevaleciere contra uno, dos le resistirán;
+        y cordón de tres dobleces no se rompe presto.
+      </p>
+      <footer class="verse-source"><ion-icon name="heart-outline"></ion-icon></footer>
+    </blockquote>
+  </div>
 </section>
 
 
@@ -473,8 +496,6 @@
   </div>
 </div>
 
-
-
 <!-- ======================================
      CONFIRMACIÓN DE ASISTENCIA (WhatsApp)
      ====================================== -->
@@ -484,18 +505,15 @@
 
   <div class="rsvp-card">
     <div class="rsvp-icon">
-      <!-- pequeño ícono de confeti -->
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M2 22l6-16 10 10L2 22zm15.5-14.5l2-2M14 3l1.5 1.5M20.5 9.5L22 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </div>
 
-    <button id="open-rsvp-modal" class="rsvp-cta">
+    <!-- ÚNICO botón visible -->
+    <button id="open-rsvp-modal" class="rsvp-cta" type="button">
       CONFIRMAR ASISTENCIA
     </button>
-
-    <!-- O confirmación ultra-rápida (sin modal): -->
-    <a id="quick-rsvp-si" class="rsvp-link-quick" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
   </div>
 
   <!-- Modal -->
@@ -513,12 +531,12 @@
 
       <h3 id="rsvp-title" class="rsvp-modal__title">¿Asistes a la celebración?</h3>
 
+      <!-- Envío estructurado -->
       <div class="rsvp-modal__options">
         <label class="rsvp-radio">
           <input type="radio" name="rsvpChoice" value="si" checked>
           <span>¡Sí, confirmo!</span>
         </label>
-
         <label class="rsvp-radio">
           <input type="radio" name="rsvpChoice" value="no">
           <span>No puedo <span aria-hidden="true">😔</span></span>
@@ -530,10 +548,10 @@
         <input id="rsvp-note" type="text" placeholder="Algún dato importante (opcional)">
       </div>
 
-      <button id="rsvp-send" class="rsvp-send">ENVIAR POR WHATSAPP</button>
-    </div>
-  </div>
+      <button id="rsvp-send" class="rsvp-send" type="button">ENVIAR POR WHATSAPP</button>
+
 </section>
+
 
 
 <!-- Banner final -->
