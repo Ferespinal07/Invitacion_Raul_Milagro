@@ -382,9 +382,9 @@ body.loading {
   left: 50%;
   top: var(--badge-top);    /* más arriba para alinearlo con las líneas */
   transform: translate(-50%, -50%);
-  max-width: 170px;
+  max-width: 140px;
   width: 100%;
-  height: 170px;
+  height: auto;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -573,32 +573,49 @@ body.loading {
 
 
 /* === Separador Fiesta === */
-.fiesta-separator {
-  min-height: 30vh;
+/*=====================
+   SEPARADOR ELEGANTE
+   ======================= */
+
+.fiesta-separator{
+  min-height: 20vh;
+  --badge-top: 50%;        /* súbelo/bájalo afinando este valor */
+  background: #fafbfa;
+  padding: 36px 0 72px;
   position: relative;
-  width: 100%;
+  overflow: hidden;
 }
 
-.waves {
+.fiesta-separator .waves{
+  width: 100%;
+  height: auto;
   display: block;
-  width: 100%;
-  height: auto;
 }
 
-/* Posición del PNG centrado */
-.custom-image-slot {
+.divider-badge2{
   position: absolute;
-  top: 35%;
-  left:50%;
+  left: 50%;
+  top: var(--badge-top);    /* más arriba para alinearlo con las líneas */
   transform: translate(-50%, -50%);
-}
-
-.custom-image-slot img {
-  max-width: 230px; /* ajusta tamaño */
+  max-width: 110px;
   width: 100%;
   height: auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;  /* el círculo ya lo pinta el SVG */
 }
 
+/* Imagen del badge en el separador elegante */
+.badge-img-fiesta{
+  width: 100%;
+  height: auto;
+  object-fit: contain;       /* evita deformaciones */
+  border-radius: 50%;        /* forma circular, opcional */
+  background: #fff;          /* círculo blanco como el anterior */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* sombra suave */
+  padding: 5px;             /* deja un borde interno para “marco” */
+}
 
 
 
@@ -903,6 +920,7 @@ body.loading {
 .retratos-polaroid.animating .retratos-caption {
   animation: retrato-reveal .48s ease forwards;
 }
+
 
 
 /*=====================
