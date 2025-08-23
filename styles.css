@@ -108,7 +108,7 @@ body.loading {
    PORTADA (LANDING)
    ======================= */
 .landing-cover {
-  min-height: 100vh;
+  min-height: 80vh;
   background: #fafbfa;
   display: flex;
   align-items: center;
@@ -137,7 +137,7 @@ body.loading {
 
 .landing-names {
   font-family: 'Dancing Script', cursive;
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   color: #8fa18b;
   margin: 0 0 10px 0;
   font-weight: 410;
@@ -145,7 +145,7 @@ body.loading {
 
 .landing-phrase {
   color: #a6a9b0;
-  font-size: 1 rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
@@ -258,9 +258,9 @@ body.loading {
   width: 130%;   /* Aumenta el tamaño del marco */
   height: auto;  /* Aumenta el tamaño del marco */
   top: 50%;
-  left: 46%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -274,12 +274,26 @@ body.loading {
   display: block;
 }
 
+.countdown-marco{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 143%;
+  height: auto;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;                        /* debajo del ::before */
+}
+
 .countdown-content {
   position: relative;
   z-index: 2;
   width: 100%;
   text-align: center;
 }
+
 
 .countdown-title {
   font-family: 'Playfair Display', serif;
@@ -356,6 +370,8 @@ body.loading {
   font-size: 2.2rem;
   color: #7a8b7a;
 }
+
+
 
 
 /*=====================
@@ -597,7 +613,7 @@ body.loading {
   left: 50%;
   top: var(--badge-top);    /* más arriba para alinearlo con las líneas */
   transform: translate(-50%, -50%);
-  max-width: 110px;
+  max-width: 140px;
   width: 100%;
   height: auto;
   border-radius: 50%;
@@ -608,7 +624,7 @@ body.loading {
 
 /* Imagen del badge en el separador elegante */
 .badge-img-fiesta{
-  width: 100%;
+  width: 80%;
   height: auto;
   object-fit: contain;       /* evita deformaciones */
   border-radius: 50%;        /* forma circular, opcional */
@@ -1026,6 +1042,21 @@ body.loading {
 }
 
 
+.modal-floral-biblia {
+  position: absolute;
+  top: 300px; /* Ajusta según tu diseño */
+  transform: translateX(105%);
+  z-index: 4000; /* Detrás de la tarjeta */
+  pointer-events: none;
+}
+
+.modal-floral-biblia img {
+  max-width: 170px; /* Ajusta el tamaño según prefieras */
+  width: 100%;
+  display: block;
+}
+
+
 /*==========================
    MÚSICA DE LA FIESTA
    ===================== */
@@ -1123,7 +1154,7 @@ body.loading {
   z-index: 1;
 }
 .modal-content {
-  position: relative;
+  position: center;
   background: #fff;
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
@@ -1135,12 +1166,13 @@ body.loading {
   flex-direction: column;
   align-items: center;
 }
+
 .modal-floral-cancion img {
   max-width: 180px;
   width: 100%;
   position: absolute;
-  top: -38px;
-  left: 18%;
+  top: -48px;
+  left: 12%;
   transform: translateX(-50%);
   z-index: 3;
 }
@@ -1154,7 +1186,7 @@ body.loading {
   position: absolute;
   top: 18px;
   right: 18px;
-  background: #8a925e;
+  background: #7a8b7a;
   border: none;
   border-radius: 50%;
   max-width: 32px;
@@ -1169,7 +1201,9 @@ body.loading {
 }
 .modal-close ion-icon {
   font-size: 1.5rem;
+  color: #ffffff;
 }
+
 .modal-title {
   font-family: 'Playfair Display', serif;
   color: #23422c;
@@ -1179,6 +1213,7 @@ body.loading {
   margin-top: 10px;
   text-align: center;
 }
+
 .modal-form {
   width: 100%;
   display: flex;
@@ -1200,7 +1235,7 @@ body.loading {
   border-bottom: 1.5px solid #8fa18b;
 }
 .modal-submit {
-  background: #8a925e;
+  background: #7a8b7a;
   color: #fff;
   border: none;
   border-radius: 18px;
@@ -1213,7 +1248,7 @@ body.loading {
   transition: background 0.2s;
 }
 .modal-submit:hover {
-  background: #b7a96a;
+  background: #aab7aa;
 }
 
 /*=================
@@ -1282,6 +1317,8 @@ Dress Code
   align-items: center;
   justify-content: center;
 }
+
+
 .modal-dresscode.active {
   display: flex;
 }
@@ -1295,10 +1332,10 @@ Dress Code
   position: relative;
   background: #fff;
   border-radius: 22px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-  padding: 24px 12px 18px 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  padding: 12px 6px 9px 6px;
   max-width: 340px;
-  width: 100%;
+  width: 80%;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -1308,14 +1345,14 @@ Dress Code
   max-width: 200px;
   width: 100%;
   position: absolute;
-  top: -30px;
-  left: 18%;
+  top: 350px;
+  left: 10%;
   transform: translateX(-50%);
   z-index: 3;
 }
 .modal-icon ion-icon {
   font-size: 2rem;
-  color: #8fa18b;
+  color: #fafafa;
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -1363,8 +1400,9 @@ Dress Code
 }
 .modal-outfit-img {
   width: 100%;
-  max-width: 200px;
-  margin: 0 auto 1px auto;
+  max-width: 160px;
+  height: auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -1493,14 +1531,14 @@ Tips & Notas
   max-width: 200px;
   width: 100%;
   position: absolute;
-  top: -85px;
-  left: 8%;
+  top: -75px;
+  left: 12%;
   transform: translateX(-55%);
   z-index: 3;
 }
 .modal-icon ion-icon {
   font-size: 2.2rem;
-  color: var(--burnt-orange);
+  color: var(--sage-green);
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -1508,7 +1546,7 @@ Tips & Notas
   position: absolute;
   top: 18px;
   right: 18px;
-  background: var(--terracotta);
+  background: var(--sage-green);
   border: none;
   border-radius: 50%;
   max-width: 32px;
@@ -1695,8 +1733,8 @@ Tips & Notas
 
 .modal-floral-behind {
   position: absolute;
-  top: 110px; /* Ajusta según tu diseño */
-  left: 41%;
+  top: 35px; /* Ajusta según tu diseño */
+  left: 22%;
   transform: translateX(-50%);
   z-index: 4000; /* Detrás de la tarjeta */
   pointer-events: none;
@@ -1940,6 +1978,37 @@ Tips & Notas
   letter-spacing: .3px;
 }
 
+.modal-floral-behind2 {
+  position: absolute;
+  top: 120px; /* Ajusta según tu diseño */
+  left: 10%;
+  transform: translateX(-50%);
+  z-index: 4000; /* Detrás de la tarjeta */
+  pointer-events: none;
+}
+
+.modal-floral-behind2 img {
+  max-width: 170px; /* Ajusta el tamaño según prefieras */
+  width: 100%;
+  display: block;
+}
+
+
+.modal-floral-behind3 {
+  position: absolute;
+  top: 18px; /* Ajusta según tu diseño */
+  transform: translateX(225%);
+  z-index: 4000; /* Detrás de la tarjeta */
+  pointer-events: none;
+}
+
+.modal-floral-behind3 img {
+  max-width: 140px; /* Ajusta el tamaño según prefieras */
+  width: 100%;
+  display: block;
+}
+
+
 
 
 /* ===========================
@@ -2095,6 +2164,55 @@ Celebracion y retratos
   font-size: clamp(1.5rem, 5.6vw, 2.1rem);
   padding: 10px clamp(20px, 6.5vw, 44px);
   line-height: 1.1;
+}
+
+
+
+/* ===== Scroll reveal (aparición al hacer scroll) ===== */
+[data-reveal]{
+  --reveal-dur: .65s;
+  --reveal-delay: 0ms;
+  --reveal-ease: cubic-bezier(.21,.61,.35,1);
+  opacity: 0;
+  transform: translateY(14px);
+  filter: none;
+  transition:
+    opacity var(--reveal-dur) var(--reveal-ease) var(--reveal-delay),
+    transform var(--reveal-dur) var(--reveal-ease) var(--reveal-delay),
+    filter var(--reveal-dur) var(--reveal-ease) var(--reveal-delay);
+  will-change: opacity, transform, filter;
+}
+
+/* Variantes */
+[data-reveal="fade"]      { transform: none; }
+[data-reveal="fade-up"]   { transform: translateY(16px); }
+[data-reveal="fade-down"] { transform: translateY(-16px); }
+[data-reveal="left"]      { transform: translateX(-22px); }
+[data-reveal="right"]     { transform: translateX(22px); }
+[data-reveal="zoom-in"]   { transform: scale(.96); }
+[data-reveal="blur-in"]   { filter: blur(6px); }
+
+/* Estado visible */
+.is-visible{
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Stagger (efecto en cascada para hijos) */
+[data-stagger] > *{ /* el delay por hijo lo setea el JS con --reveal-delay */
+  opacity: 0;
+}
+
+/* Respeta accesibilidad: sin animaciones si el usuario lo pide */
+@media (prefers-reduced-motion: reduce){
+  [data-reveal],
+  [data-stagger] > *{
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }
 
 

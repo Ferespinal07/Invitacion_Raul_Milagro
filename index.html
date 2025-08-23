@@ -52,13 +52,20 @@
 
 
   <!-- Cuenta regresiva -->
-  <section id="countdown-section" class="countdown-section">
+  <section id="countdown-section" class="countdown-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
     <div class="countdown-circle">
       <div class="countdown-floral">
         <!-- Puedes usar una imagen SVG decorativa aquí si lo deseas -->
-         <img src="assets/19.svg" alt="Marco decorativo">
-        </div>
-        <div class="countdown-content">
+        <img src="assets/19.svg" alt="Marco decorativo">
+      </div>
+
+       <div class="countdown-marco">
+        <!-- Puedes usar una imagen SVG decorativa aquí si lo deseas -->
+        <img src="assets/decoracion.svg" alt="Marco dorado">
+      </div>
+
+        
+        <div class="countdown-content" data-reveal="zoom-in" style="--reveal-dur:.7s">
           <div class="countdown-title">Faltan</div>
           <div class="countdown-numbers" id="countdown">
             <div><span id="days">00</span><span class="label">días</span></div>
@@ -76,7 +83,7 @@
 
 
 <!-- === Separador elegante antes de la ceremonia === -->
-<section class="elegant-separator" aria-hidden="true">
+<section class="elegant-separator" aria-hidden="true" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <!-- Ondas -->
   <svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none">
     <path d="M0,70 C200,30 400,110 600,70 C800,30 1000,110 1200,70 C1300,50 1400,60 1440,55"
@@ -98,10 +105,10 @@
 <section id="ceremonia" class="ceremonia-section">
   <!-- Separador de sección -->
   <div class="section-separator">
-    <span class="section-title">Ceremonia</span>
+    <span class="section-title" data-reveal="zoom-in" style="--reveal-dur:.7s">Ceremonia</span>
   </div>
 
-  <div class="ceremonia-content">
+  <div class="ceremonia-content" data-reveal="zoom-in" style="--reveal-dur:.7s">
     <div class="ceremonia-info">
       <div class="ceremonia-dia">
         <div class="ceremonia-dia-titulo">DÍA</div>
@@ -129,7 +136,7 @@
         <div class="ceremonia-lugar-direccion">Av. San Isidro 207, San José</div>
       </div>
     </div>
-<div class="ceremonia-actions">
+<div class="ceremonia-actions" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <!-- Guarda la ceremonia en Google Calendar -->
   <a id="ceremony-save"
      class="ceremonia-btn save-date"
@@ -151,7 +158,7 @@
 </section>
 
   <!-- separador fiesta -->
-<section class="fiesta-separator" aria-hidden="true">
+<section class="fiesta-separator" aria-hidden="true" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <!-- Ondas -->
   <svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none">
     <path d="M0,70 C200,30 400,110 600,70 C800,30 1000,110 1200,70 C1300,50 1400,60 1440,55"
@@ -175,10 +182,10 @@
 <section id="fiesta" class="fiesta-section">
   <!-- Separador de sección -->
   <div class="section-separator">
-    <span class="section-title-celebracion">Fiesta de Celebración</span>
+    <span class="section-title-celebracion" data-reveal="zoom-in" style="--reveal-dur:.7s">Fiesta de Celebración</span>
   </div>
 
-  <div class="fiesta-content">
+  <div class="fiesta-content" data-reveal="zoom-in" style="--reveal-dur:.7s">
     <!-- Ahora la info va a la derecha y los botones a la izquierda -->
     <div class="fiesta-info">
       <div class="fiesta-dia">
@@ -207,7 +214,7 @@
         <div class="fiesta-lugar-direccion">Calle Primavera 123, San José</div>
       </div>
     </div>
-<div class="fiesta-actions">
+<div class="fiesta-actions" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <!-- Guarda la fiesta en Google Calendar -->
   <a id="party-save"
      class="fiesta-btn save-date"
@@ -232,7 +239,7 @@
 
 
 <!-- Retratos de Nuestro Amor -->
-<section id="retratos" class="retratos-section">
+<section id="retratos" class="retratos-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="section-separator">
     <span class="section-title">
       <ion-icon name="camera-outline"></ion-icon>
@@ -262,11 +269,15 @@
 
 
 <!-- Acápite bíblico -->
-<section id="versiculo" class="verse-hero" aria-label="Versículo bíblico">
+<section id="versiculo" class="verse-hero" aria-label="Versículo bíblico" data-reveal="zoom-in" style="--reveal-dur:.7s">
+  <div class="modal-floral-biblia">
+    <img src="assets/17.svg" alt="Decoración" />
+  </div>
+
   <div class="verse-card">
     <h2 class="verse-heading">Eclesiastés 4:9–12</h2>
 
-    <blockquote class="verse-text">
+    <blockquote class="verse-text" data-reveal="fade-up" style="--reveal-dur:.7s">
       <p>
         Mejores son dos que uno; porque tienen mejor paga de su trabajo.
         Porque si cayeren, el uno levantará a su compañero; mas ¡ay del solo!
@@ -283,7 +294,7 @@
 
 
 <!-- Música de la Fiesta -->
-<section id="musica" class="musica-section">
+<section id="musica" class="musica-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="section-separator">
     <span class="section-title">Fiesta</span>
   </div>
@@ -301,12 +312,12 @@
 </section>
 
 <!-- Modal sugerir canción -->
-<div class="modal-sugerencia" id="modal-sugerencia">
+<div class="modal-sugerencia" id="modal-sugerencia" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="modal-overlay" id="cerrar-modal"></div>
   <div class="modal-content">
-    <!--<div class="modal-floral-cancion">
-      <img src="assets/Bordehojas.png" alt="Decoración" />      
-    </div> -->
+    <div class="modal-floral-cancion">
+      <img src="assets/14.svg" alt="Decoración" />      
+    </div> 
     <div class="modal-icon">
       <ion-icon name="musical-notes-outline"></ion-icon>
     </div>
@@ -325,7 +336,7 @@
 
 
 <!-- Dress Code -->
-<section id="dresscode" class="dresscode-section">
+<section id="dresscode" class="dresscode-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="dresscode-card">
     <div class="dresscode-icon">
       <ion-icon name="shirt-outline"></ion-icon>
@@ -337,12 +348,12 @@
 </section>
 
 <!-- Modal Dress Code -->
-<div class="modal-dresscode" id="modal-dresscode">
+<div class="modal-dresscode" id="modal-dresscode" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="modal-overlay" id="cerrar-modal-dresscode"></div>
   <div class="modal-content">
-    <!-- <div class="modal-floral-dresscode">
-      <img src="assets/Bordehojas.png" alt="Decoración" />
-    </div> -->
+    <div class="modal-floral-dresscode">
+      <img src="assets/16.svg" alt="Decoración" />
+    </div>
     <div class="modal-icon">
       <ion-icon name="bowtie-outline"></ion-icon>
     </div>
@@ -359,7 +370,7 @@
 
 
 <!-- Tips & Notas -->
-<section id="tips" class="tips-section">
+<section id="tips" class="tips-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="tips-card">
     <!-- Imagen decorativa en esquina -->
     <!-- <img src="assets/hojaSEPARADAS.png" alt="" class="tips-deco-corner" aria-hidden="true"> -->
@@ -375,12 +386,12 @@
 
 
 <!-- Modal Tips & Notas -->
-<div class="modal-tips" id="modal-tips">
+<div class="modal-tips" id="modal-tips" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="modal-overlay" id="cerrar-modal-tips"></div>
   <div class="modal-content-tips">
-   <!-- <div class="modal-floral-tips">
-      <img src="assets/detallehojas.png" alt="Decoración" />
-    </div> -->
+    <div class="modal-floral-tips">
+      <img src="assets/17.svg" alt="Decoración" />
+    </div> 
     <div class="modal-icon">
       <ion-icon name="clipboard-outline"></ion-icon>
     </div>
@@ -399,7 +410,7 @@
 
 
 <!-- Compartir Fotos -->
-<section id="fotos" class="fotos-section">
+<section id="fotos" class="fotos-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="fotos-heading">
     Compartimos este<br>día junto a ti
   </div>
@@ -432,7 +443,7 @@
 
 
 <!-- Apartado de Regalos -->
-<section id="regalos" class="regalos-section">
+<section id="regalos" class="regalos-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="regalos-card">
     <div class="regalos-icon">
       <ion-icon name="gift-outline"></ion-icon>
@@ -446,13 +457,13 @@
 </section>
 
 <!-- Modal Regalos -->
-<div class="modal-regalos" id="modal-regalos">
+<div class="modal-regalos" id="modal-regalos" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="modal-overlay" id="cerrar-modal-regalos"></div>
 
   <!-- Imagen floral detrás -->
-  <!-- <div class="modal-floral-behind">
-    <img src="assets/Rosasblancas.png" alt="Decoración" />
-  </div> -->
+  <div class="modal-floral-behind">
+    <img src="assets/14.svg" alt="Decoración" />
+  </div>
 
   <div class="modal-content-regalos">
     <div class="modal-icon">
@@ -479,7 +490,7 @@
 <!-- ======================================
      CONFIRMACIÓN DE ASISTENCIA (WhatsApp)
      ====================================== -->
-<section id="rsvp" class="rsvp-section">
+<section id="rsvp" class="rsvp-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
   <div class="rsvp-heading">Confirmación</div>
   <p class="rsvp-subtitle">¿Nos acompañas en este día tan especial?</p>
 
@@ -497,7 +508,7 @@
   </div>
 
   <!-- Modal -->
-  <div id="rsvp-modal" class="rsvp-modal" aria-hidden="true">
+  <div id="rsvp-modal" class="rsvp-modal" aria-hidden="true" data-reveal="zoom-in" style="--reveal-dur:.7s">
     <div class="rsvp-modal__backdrop" data-close-modal></div>
 
     <div class="rsvp-modal__card" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
@@ -535,7 +546,17 @@
 
 
 <!-- Banner final -->
-<section id="despedida" class="farewell-banner" aria-label="Mensaje final">
+<section id="despedida" class="farewell-banner" aria-label="Mensaje final" data-reveal="zoom-in" style="--reveal-dur:.7s">
+    <!-- Imagen floral detrás -->
+  <div class="modal-floral-behind2">
+    <img src="assets/21.svg" alt="Decoración" />
+  </div>
+
+   <div class="modal-floral-behind3">
+    <img src="assets/22.svg" alt="Decoración" />
+  </div>
+  
+  
   <div class="farewell-inner">
     <div class="farewell-names">Raul & Milagro</div>
 

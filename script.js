@@ -320,3 +320,36 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* ===== Scroll reveal: IntersectionObserver ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.add('is-visible');
+        // Si no quieres que se repita al salir/entrar, deja de observar
+        if (!el.hasAttribute('data-repeat')) obs.unobserve(el);
+      } else if (el.hasAttribute('data-repeat')) {
+        el.classList.remove('is-visible');
+      }
+    });
+  }, { root: null, threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+
+  // Stagger: asigna delays a los hijos
+  document.querySelectorAll('[data-stagger]').forEach(container => {
+    const step = parseInt(container.getAttribute('data-stagger'), 10) || 100; // ms
+    Array.from(container.children).forEach((child, i) => {
+      // Si el hijo no tiene data-reveal, dale uno por defecto
+      if (!child.hasAttribute('data-reveal')) child.setAttribute('data-reveal', 'fade-up');
+      child.style.setProperty('--reveal-delay', `${i * step}ms`);
+      io.observe(child);
+    });
+  });
+
+  // Observa todos los elementos marcados con data-reveal (que no estén dentro de data-stagger)
+  document.querySelectorAll('[data-reveal]:not([data-stagger] > *)')
+    .forEach(el => io.observe(el));
+});
+
+
+
