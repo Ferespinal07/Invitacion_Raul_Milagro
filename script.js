@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Lógica para la cuenta regresiva
-  const eventDate = new Date("2025-12-20T17:00:00"); // Cambia a tu fecha y hora
+  const eventDate = new Date("2025-11-22T17:00:00"); // Cambia a tu fecha y hora
   function updateCountdown() {
     const now = new Date();
     const diff = eventDate - now;
@@ -211,8 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Configuración
   const RSVP_PHONE   = '18295194031';          // formato internacional sin "+"
   const COUPLE_NAMES = 'Raul & Milagro';
-  const EVENT_DATE   = 'Viernes 11 de Octubre'; // ajusta si corresponde
-  const EVENT_PLACE  = 'Salón Jardines del Lago';
+  const EVENT_DATE   = 'Sábado 22 de Noviembre'; // ajusta si corresponde
+  const EVENT_PLACE  = 'Salón de Iglesia de la Fe';
 
   // Elementos
   const openBtn  = document.getElementById('open-rsvp-modal');
@@ -263,19 +263,19 @@ const EVENT_YEAR = 2025;
 
 const CEREMONY = {
   title: 'Ceremonia de boda - Raul & Milagro',
-  // 11 de octubre, 2:30 PM a 4:00 PM
-  start: new Date(EVENT_YEAR, 9, 11, 14, 30, 0), // mes 9 = octubre
-  end:   new Date(EVENT_YEAR, 9, 11, 16, 0, 0),
-  location: 'Parroquia Nuestra Señora, Av. San Isidro 207, San José',
+  // 22 de Noviembre, 5:00 PM a 6:30 PM
+  start: new Date(EVENT_YEAR, 9, 22, 17, 0, 0), // mes 9 = octubre
+  end:   new Date(EVENT_YEAR, 9, 22, 18, 30, 0),
+  location: 'Iglesia de la Fe, 1014 Liberty St, Allentown, PA 18102',
   details: 'Acompáñanos en nuestra ceremonia.'
 };
 
 const PARTY = {
   title: 'Fiesta de Celebración - Raul & Milagro',
-  // 11 de octubre, 8:00 PM a 11:59 PM (ajusta si quieres más horas)
-  start: new Date(EVENT_YEAR, 9, 11, 20, 0, 0),
-  end:   new Date(EVENT_YEAR, 9, 11, 23, 59, 0),
-  location: 'Salón Jardines del Sol, Calle Primavera 123, San José',
+  // 22 de Noviembre, 7:00 PM a 11:59 PM (ajusta si quieres más horas)
+  start: new Date(EVENT_YEAR, 9, 22, 19, 0, 0),
+  end:   new Date(EVENT_YEAR, 9, 22, 23, 59, 0),
+  location: 'Salón de Iglesia de la Fe, 1014 Liberty St, Allentown, PA 18102',
   details: '¡A celebrar juntos!'
 };
 
@@ -302,7 +302,7 @@ function buildGCalLink({ title, start, end, location, details }) {
 }
 
 function buildMapsLink(query) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  return `https://www.google.com/maps/place/Iglesia+de+Fe/@40.6072049,-75.4818574,21z/data=!4m15!1m8!3m7!1s0x89c439827016024b:0xa9e4e46eda9edb48!2s1014+Liberty+St,+Allentown,+PA+18102,+EE.+UU.!3b1!8m2!3d40.6071952!4d-75.4817796!16s%2Fg%2F11c167jkqh!3m5!1s0x89c439827aa34cb5:0x9ddfd31ffb898fc9!8m2!3d40.6072703!4d-75.4817521!16s%2Fg%2F11cnbz6hxn?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D`;
 }
 
 // Colocar links en los botones
