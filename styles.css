@@ -108,7 +108,7 @@ body.loading {
    PORTADA (LANDING)
    ======================= */
 .landing-cover {
-  min-height: 80vh;
+  min-height: 20vh;
   background: #fafbfa;
   display: flex;
   align-items: center;
@@ -232,7 +232,7 @@ body.loading {
    ======================= */
   
 .countdown-section {
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -814,7 +814,7 @@ body.loading {
 
 .retratos-section {
   background: #fafbfa;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1255,7 +1255,7 @@ body.loading {
 Dress Code
 =================*/
 .dresscode-section {
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1415,7 +1415,7 @@ Tips & Notas
 
 /* Tarjeta Tips & Notas */
 .tips-section {
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1594,7 +1594,7 @@ Tips & Notas
    COMPARTIR FOTOS
    ======================= */
 .fotos-section{
-  min-height: 60vh;
+  min-height: 20vh;
   background:#fafbfa;
   display:flex;
   flex-direction:column;
@@ -1672,7 +1672,7 @@ Tips & Notas
 ===============*/
 
 .regalos-section {
-  min-height: 60vh;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
