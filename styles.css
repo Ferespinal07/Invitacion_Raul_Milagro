@@ -1346,7 +1346,7 @@ Dress Code
   max-width: 170px;
   width: 100%;
   position: absolute;
-  top: 300px;
+  top: -65px;
   left: 5%;
   transform: translateX(-50%);
   z-index: 3;
@@ -1737,7 +1737,7 @@ Tips & Notas
 .modal-floral-behind {
   position: absolute;
   top: 35px; /* Ajusta según tu diseño */
-  left: 22%;
+  left: 36%;
   transform: translateX(-50%);
   z-index: 4000; /* Detrás de la tarjeta */
   pointer-events: none;
@@ -1983,8 +1983,8 @@ Tips & Notas
 
 .modal-floral-behind2 {
   position: absolute;
-  top: 120px; /* Ajusta según tu diseño */
-  left: 10%;
+  top: 150px; /* Ajusta según tu diseño */
+  left: 16%;
   transform: translateX(-50%);
   z-index: 4000; /* Detrás de la tarjeta */
   pointer-events: none;
@@ -1999,8 +1999,8 @@ Tips & Notas
 
 .modal-floral-behind3 {
   position: absolute;
-  top: 18px; /* Ajusta según tu diseño */
-  transform: translateX(225%);
+  top: 22px; /* Ajusta según tu diseño */
+  transform: translateX(725px);
   z-index: 4000; /* Detrás de la tarjeta */
   pointer-events: none;
 }
