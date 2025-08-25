@@ -1045,7 +1045,7 @@ body.loading {
 .modal-floral-biblia {
   position: absolute;
   top: 360px; /* Ajusta según tu diseño */
-  transform: translateX(165%);
+  transform: translateX(110%);
   z-index: 4000; /* Detrás de la tarjeta */
   pointer-events: none;
 }
@@ -1871,7 +1871,7 @@ Tips & Notas
 .rsvp-modal{ position:fixed; inset:0; display:none; z-index:90; }
 .rsvp-modal.is-open{ display:block; }
 .rsvp-modal__backdrop{
-  position:absolute; inset:0; background:rgba(0,0,0,.35);
+  position:absolute; inset:0; background:#fafbfa(250, 253, 250);
   backdrop-filter:saturate(80%) blur(2px);
 }
 .rsvp-modal__card{
@@ -1910,7 +1910,7 @@ Tips & Notas
 .rsvp-radio{
   display:flex; align-items:center; gap:8px; cursor:pointer;
   background:#f5f7f5; padding:10px 14px; border-radius:999px;
-  border:1px solid rgba(143,161,139,.25);
+  border:1px solid rgba(255, 255, 255, 0.25);
   user-select:none;
 }
 .rsvp-radio input{ accent-color:var(--olive, #7a7f40); }
@@ -1983,8 +1983,8 @@ Tips & Notas
 
 .modal-floral-behind2 {
   position: absolute;
-  top: 150px; /* Ajusta según tu diseño */
-  left: 16%;
+  top: 115px; /* Ajusta según tu diseño */
+  left: 10%;
   transform: translateX(-50%);
   z-index: 4000; /* Detrás de la tarjeta */
   pointer-events: none;
@@ -2000,7 +2000,7 @@ Tips & Notas
 .modal-floral-behind3 {
   position: absolute;
   top: 22px; /* Ajusta según tu diseño */
-  transform: translateX(725px);
+  transform: translateX(320px);
   z-index: 4000; /* Detrás de la tarjeta */
   pointer-events: none;
 }
