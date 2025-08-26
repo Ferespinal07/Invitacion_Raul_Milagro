@@ -206,6 +206,35 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+
+/* ===== Regalos: enlaces + micro-animación ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  // 🔗 Reemplaza por tu URL real de Amazon
+  const AMAZON_LIST_URL = 'https://www.amazon.com/wedding/registry/17U7CB7CCT0DS'; // ejemplo
+  const ZELLE_URL       = 'https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEFTQ0FOSU8iLCJhY3Rpb24iOiJwYXltZW50IiwidG9rZW4iOiJ0YXNjYW5pb21hcnRpbmV6QGljbG91ZC5jb20ifQ==';
+
+  const giftBtn  = document.getElementById('gift-btn');
+  const zelleBtn = document.getElementById('zelle-btn');
+
+  if (giftBtn)  giftBtn.href  = AMAZON_LIST_URL;
+  if (zelleBtn) zelleBtn.href = ZELLE_URL;
+
+  // Efecto "Zoom In" en icono + botón cuando tocan la tarjeta
+  document.querySelectorAll('.tappable').forEach(card => {
+    const trigger = () => {
+      card.classList.add('tap-animate');
+      // quita la clase al terminar (evita que quede pegada)
+      setTimeout(() => card.classList.remove('tap-animate'), 220);
+    };
+    card.addEventListener('pointerdown', trigger, { passive: true });
+    // también al pulsar Enter/Espacio si la tarjeta es focusable
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') trigger();
+    });
+  });
+});
+
+
 /* ====== RSVP por WhatsApp (único botón + opciones en modal) ====== */
 document.addEventListener('DOMContentLoaded', () => {
   // Configuración

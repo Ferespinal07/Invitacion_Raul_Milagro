@@ -29,30 +29,37 @@
     </div>
   </div>
 
+
+
   <!-- Portada tipo landing -->
   <section id="landing-cover" class="landing-cover">
     <div class="landing-content">
-      <div class="rings-icon">
-        <ion-icon name="infinite-outline"></ion-icon>
+
+      <div class="foto-portada">
+        <img src="assets/portadaorg.png" alt="Raul & Milagro" class="foto-img" loading="lazy">
       </div>
-      <h1 class="landing-names">Raul & Milagro</h1>
-      <p class="landing-phrase">Dos almas, un corazón, un destino</p>
-      <div class="landing-divider">
-        <span></span>
-        <ion-icon name="heart-outline"></ion-icon>
-        <span></span>
+
+      <div class="foto-nombres">
+        <img src="assets/nombres.png" alt="Raul & Milagro" class="foto-img" loading="lazy">
       </div>
+
+        <!-- Flecha animada para deslizar -->
+      <div class="scroll-down-arrow">
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </div>
+
     </div>
   </section>
 
-  <!-- Flecha animada para deslizar -->
-<div class="scroll-down-arrow">
-  <ion-icon name="chevron-down-outline"></ion-icon>
-</div>
 
 
   <!-- Cuenta regresiva -->
   <section id="countdown-section" class="countdown-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
+
+      <div class="foto-conteo">
+        <img src="assets/fondos (5).png" alt="Raul & Milagro" class="foto-img" loading="lazy">
+      </div>
+
     <div class="countdown-circle">
       <div class="countdown-floral">
         <!-- Puedes usar una imagen SVG decorativa aquí si lo deseas -->
@@ -112,7 +119,7 @@
     <div class="ceremonia-info">
       <div class="ceremonia-dia">
         <div class="ceremonia-dia-titulo">DÍA</div>
-        <div class="ceremonia-dia-fecha">Sábado 22 de Noviembre - 5:00 pm</div>
+        <div class="ceremonia-dia-fecha">Sábado 22 de Noviembre - 5:30 pm</div>
       </div>
       <div class="ceremonia-detalles">
         <div class="ceremonia-detalle">
@@ -126,13 +133,13 @@
           <span class="ceremonia-icon"><ion-icon name="time-outline"></ion-icon></span>
           <div>
             <div class="ceremonia-detalle-label">Hora</div>
-            <div class="ceremonia-detalle-valor">5:00 PM</div>
+            <div class="ceremonia-detalle-valor">5:30 PM</div>
           </div>
         </div>
       </div>
       <div class="ceremonia-lugar">
         <div class="ceremonia-lugar-label">LUGAR</div>
-        <div class="ceremonia-lugar-nombre">Iglesia de la Fe</div>
+        <div class="ceremonia-lugar-nombre">Iglesia de Fe</div>
         <div class="ceremonia-lugar-direccion">1014 Liberty St, Allentown, PA 18102</div>
       </div>
     </div>
@@ -190,7 +197,7 @@
     <div class="fiesta-info">
       <div class="fiesta-dia">
         <div class="fiesta-dia-titulo">DÍA</div>
-        <div class="fiesta-dia-fecha">Sábado 22 de Noviembre - 7:00 pm</div>
+        <div class="fiesta-dia-fecha">Sábado 22 de Noviembre</div>
       </div>
       <div class="fiesta-detalles">
         <div class="fiesta-detalle">
@@ -204,7 +211,7 @@
           <span class="fiesta-icon"><ion-icon name="wine-outline"></ion-icon></span>
           <div>
             <div class="fiesta-detalle-label">Brindis</div>
-            <div class="fiesta-detalle-valor">Cócteles y bebidas</div>
+            <div class="fiesta-detalle-valor">Celebremos juntos nuestro amor!</div>
           </div>
         </div>
       </div>
@@ -443,49 +450,80 @@
 
 
 <!-- Apartado de Regalos -->
+
 <section id="regalos" class="regalos-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
-  <div class="regalos-card">
-    <div class="regalos-icon">
-      <ion-icon name="gift-outline"></ion-icon>
-    </div>
-    <div class="regalos-title">Regalos</div>
-    <div class="regalos-desc">
-      Tu presencia es nuestro mayor regalo. Si deseas obsequiarnos algo, hemos preparado algunas opciones que nos ayudarán a comenzar nuestra nueva vida juntos.
-    </div>
-    <button class="regalos-btn" id="abrir-regalos">Ver más</button>
+
+  <div class="regalos-heading">
+   Regalos
   </div>
+
+  <p class="regalos-subtitle">
+    Gracias por acompañarnos en este día tan especial.
+    Si deseas obsequiarnos algo, estas son las formas en que puedes ayudarnos a comenzar nuestra nueva vida juntos.
+  </p>
+
+  <!-- Tarjeta: Lista de regalos (Amazon) -->
+  <article class="card gift-card tappable" data-reveal="fade-up">
+    <div class="card-head">
+      <div class="card-icon tap-target">
+        <ion-icon name="gift-outline" aria-hidden="true"></ion-icon>
+      </div>
+      <div class="card-titles">
+        <h3 class="card-title">Lista de Regalos</h3>
+        <p class="card-sub">Para nuestro nuevo hogar</p>
+      </div>
+    </div>
+
+    <p class="card-desc">
+      Hemos creado una lista especial con artículos que nos ayudarán a decorar y equipar nuestro hogar. Desde utensilios de cocina
+      hasta detalles decorativos.
+    </p>
+
+    <div class="card-tags" aria-hidden="true">
+      <span>Cocina</span><span>Decoración</span><span>Hogar</span>
+    </div>
+
+    <a id="gift-btn" class="btn tap-target" href="#" target="_blank" rel="noopener">
+      <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
+      <span>Ver lista en Amazon</span>
+    </a>
+  </article>
+
+  <!-- Tarjeta: Zelle -->
+  <article class="card zelle-card tappable" data-reveal="fade-up" style="--card-tone:#6f846f;">
+    <div class="card-head">
+      <div class="card-icon tap-target">
+        <span class="z-badge">Z</span>
+      </div>
+      <div class="card-titles">
+        <h3 class="card-title">Zelle</h3>
+        <p class="card-sub">Contribución digital</p>
+      </div>
+    </div>
+
+    <p class="card-desc">
+      Envia tu regalo directamente a traves de Zelle aqui te dejamos la informacion de nuestra cuenta en común.
+    </p>
+
+    <div class="zelle-fields">
+      <div class="field">
+        <label>Email para Zelle</label>
+        <div class="value" id="zelle-email">usuario@correo.com</div>
+      </div>
+      <div class="field">
+        <label>Nombre del destinatario</label>
+        <div class="value" id="zelle-name">Nombre Apellido</div>
+      </div>
+    </div>
+
+    <a id="zelle-btn" class="btn outline tap-target" href="#" target="_blank" rel="noopener">
+      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+      <span>Abrir Zelle</span>
+    </a>
+  </article>
+
 </section>
 
-<!-- Modal Regalos -->
-<div class="modal-regalos" id="modal-regalos" data-reveal="zoom-in" style="--reveal-dur:.7s">
-  <div class="modal-overlay" id="cerrar-modal-regalos"></div>
-
-  <!-- Imagen floral detrás -->
-  <div class="modal-floral-behind">
-    <img src="assets/14.svg" alt="Decoración" />
-  </div>
-
-  <div class="modal-content-regalos">
-    <div class="modal-icon">
-      <ion-icon name="gift-outline"></ion-icon>
-    </div>
-    <button class="modal-close" id="cerrar-modal-regalos-btn" aria-label="Cerrar">
-      <ion-icon name="close-outline"></ion-icon>
-    </button>
-
-    <div class="modal-text-regalos">
-      El mejor regalo es tu compañía, pero si deseas apoyarnos, aquí tienes dos opciones:
-    </div>
-
-    <div class="modal-opciones-regalos">
-      <a href="https://www.amazon.com/wedding/registry/17U7CB7CCT0DS" target="_blank" 
-         class="regalo-btn amazon-btn">Lista de Regalos en Amazon</a>
-
-      <a href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEFTQ0FOSU8iLCJhY3Rpb24iOiJwYXltZW50IiwidG9rZW4iOiJ0YXNjYW5pb21hcnRpbmV6QGljbG91ZC5jb20ifQ==" target="_blank" 
-         class="regalo-btn zelle-btn">Hacer Regalo por Zelle</a>
-    </div>
-  </div>
-</div>
 
 <!-- ======================================
      CONFIRMACIÓN DE ASISTENCIA (WhatsApp)

@@ -19,7 +19,7 @@ body {
   font-family: 'Calibri', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
+  background-color: #ffffff;
   color: #333;
   font-size: 1.2rem;
   line-height: 1.6;
@@ -104,71 +104,71 @@ body.loading {
   transform: scale(1.05);
 }
 
+/*-------------------- 
+  Foto portada
+---------------------*/
+/* capa de la foto de fondo */
+.foto-portada {
+  position: relative;
+  inset: 0;               /* ocupa todo el alto/ancho de la sección */
+  z-index: 0;             /* por debajo de todo */
+  pointer-events: none;   /* no bloquea toques/clicks */
+}
+.foto-portada .foto-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* cubre sin deformarse */
+  display: block;
+}
+
+/* capa de la foto de fondo */
+.foto-nombres {
+  position: relative;
+  inset: 0;               /* ocupa todo el alto/ancho de la sección */
+  z-index: 0;             /* por debajo de todo */
+  pointer-events: none;   /* no bloquea toques/clicks */
+}
+.foto-nombres .foto-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* cubre sin deformarse */
+  display: block;
+}
+
+
 /* =======================
    PORTADA (LANDING)
    ======================= */
-.landing-cover {
-  min-height: 20vh;
-  background: #fafbfa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 100;
-}
+
 
 .landing-content {
   text-align: center;
+  background: #ffffff;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.rings-icon {
-  margin-bottom: 24px;
-}
-.rings-icon ion-icon {
-  font-size: 80px;
-  color: #8fa18b;
-  border: 2px solid #8fa18b;
-  border-radius: 50%;
-  padding: 16px;
+.landing-cover {
+  position: relative;
+  overflow: hidden;
 }
 
-.landing-names {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3.6rem;
-  color: #8fa18b;
-  margin: 0 0 10px 0;
-  font-weight: 410;
+.landing-cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
 }
 
-.landing-phrase {
-  color: #a6a9b0;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.landing-cover .landing-content {
+  position: relative;
+  z-index: 2;
 }
-
-.landing-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-.landing-divider span {
-  display: block;
-  width: 100%;
-  max-width: 60px;
-  height: 2px;
-  background: #dbe3d4;
-  border-radius: 2px;
-}
-.landing-divider ion-icon {
-  color: #b2b7b0;
-  font-size: 20px;
-}
-
 
 /*===========================
    BOTÓN DE MÚSICA
@@ -201,20 +201,28 @@ body.loading {
   font-size: 2rem;
 }
 
+
+
+
 /*===========================
    FLECHA PARA DESLIZAR
    ======================= */
 
-.scroll-down-arrow {
+.scroll-down-arrow{
+  position: absolute;
+  left: 50%;
+  bottom: clamp(12px, 4vh, 28px);
+  transform: translateX(-50%);
+  z-index: 5;                 /* por encima de la foto */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 10px auto;
-  font-size: 3.5rem;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  font-size: clamp(28px, 7vw, 44px);
   color: var(--sage-green);
-  width: 100%;
-  background: #fafafa; /* o tu degradado */
-  padding: 18px 0 18px 0;
+  background: transparent;
 }
 
 .scroll-down-arrow ion-icon {
@@ -287,6 +295,25 @@ body.loading {
   z-index: 1;                        /* debajo del ::before */
 }
 
+/* capa de la foto de fondo */
+.foto-conteo{
+  position: absolute;
+  inset: 0;               /* ocupa todo el alto/ancho de la sección */
+  z-index: 0;             /* por debajo de todo */
+  pointer-events: none;   /* no bloquea toques/clicks */
+}
+.foto-conteo .foto-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* cubre sin deformarse */
+  display: block;
+}
+
+/* contenido por encima del fondo */
+.countdown-section > :not(.foto-conteo){
+  position: relative;
+  z-index: 2;
+}
 .countdown-content {
   position: relative;
   z-index: 2;
@@ -1670,145 +1697,124 @@ Tips & Notas
 /*===============
     Regalos
 ===============*/
+/* Título y subtítulo al estilo "Compartir fotos" */
+.regalos-heading{
+  font-family:'Dancing Script', cursive;
+  color:#23422c;             /* verde elegante, acorde a la paleta */
+  text-align:center;
+  line-height:1.1;
+  font-size:clamp(2.2rem, 6vw, 3.2rem);
+  margin:0 0 10px 0;
+}
 
-.regalos-section {
-  min-height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 0;
-  background: #fafbfa;
+.regalos-subtitle{
+  color:#a6a9b0;
+  font-family:'Playfair Display', serif;
+  font-size:1.15rem;
+  text-align:center;
+  margin:0 0 26px 0;
 }
-.regalos-card {
-  background: #eef3ee;
-  border-radius: 20px;
-  padding: 32px 22px 22px 22px;
-  max-width: 380px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+
+
+
+
+/* ===== Regalos (cards) ===== */
+.gifts-section{
+  display: grid;
+  gap: 18px;
+  width: min(820px, 92vw);
+  margin: 0 auto;
 }
-.regalos-icon ion-icon {
-  font-size: 3rem;
-  color: #8fa18b;
-  margin-bottom: 10px;
+
+.card{
+  --tone:#8fa18b;                 /* tono por defecto (verde) */
+  --bg: #f3f7f3;
+  background: linear-gradient(180deg, #f8faf8 0%, var(--bg) 100%);
+  border: 1px solid rgba(143,161,139,.18);
+  padding: 16px 16px 14px;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.06);
 }
-.regalos-title {
+
+.card-head{ display:flex; gap:12px; align-items:center; }
+.card-icon{
+  width: 44px; height: 44px; border-radius: 12px;
+  display:grid; place-items:center;
+  background: rgba(143,161,139,.18);
+  color: var(--tone);
+  flex: 0 0 auto;
+}
+.card-icon ion-icon{ font-size: 22px; }
+
+.card-title{
   font-family: 'Dancing Script', cursive;
-  color: #7a8b7a;
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.35rem,4.6vw,1.7rem);
+  color: #6b7c5e; margin: 0;
 }
-.regalos-desc {
-  color: #a6a9b0;
-  font-size: 1.15rem;
-  margin-bottom: 28px;
-  text-align: center;
+.card-sub{ margin:0; color:#8fa18b; font-size:.95rem; }
+
+.card-desc{
+  margin: 12px 2px 10px;
+  color: #7e8990;
+  line-height: 1.55;
 }
-.regalos-btn {
-  background: #7a8b7a;
-  color: #fff;
+.card-desc2{
+  margin: 12px 2px 10px;
+  color: #fafbfa;
+  line-height: 1.55;
+}
+
+.card-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.card-tags span{
+  padding:6px 10px; border-radius: 20px;
+  font-size:.85rem; color:#5d6b60; background:#e8ede8;
+}
+
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  justify-content:center; width:100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight:700; font-family:'Playfair Display', serif;
+  color:#fff; background: linear-gradient(180deg, #8fa18b, #6f846f);
   border: none;
-  border-radius: 10px;
-  padding: 14px 0;
-  width: 90%;
-  font-size: 1.1rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+  text-decoration:none;
 }
-.regalos-btn:hover {
-  background: #8fa18b;
+.btn.outline{
+  background: #fff; color: #4c5d4e;
+  border: 1.5px solid #6f846f;
 }
 
-/* Modal Regalos */
-.modal-regalos {
-  display: none;
-  position: fixed;
-  z-index: 4000;
-  left: 0; top: 0; width: 100%; max-width: 100vw; height: 100vh;
-  align-items: center;
-  justify-content: center;
+.zelle-card{
+  --tone: var(--card-tone, #6f846f);
+  --bg: #e6eee5;
+}
+.zelle-card .card-icon{
+  background: rgba(255,255,255,.18); color:#fff;
+}
+.zelle-card .card-title{ color:#fff; }
+.zelle-card .card-sub{ color:#e9f0e9; }
+.zelle-card{
+  background: linear-gradient(180deg, #7a8b7a 0%, #6f846f 100%);
+  color:#f6fbf6;
+}
+.zelle-fields{ display:grid; gap:10px; margin: 8px 2px 12px; }
+.zelle-fields .field{ background: rgba(255,255,255,.1); border-radius: 12px; padding:10px 12px; }
+.zelle-fields label{ display:block; font-size:.75rem; opacity:.85; letter-spacing:.5px; text-transform:uppercase; }
+.zelle-fields .value{ font-weight:700; }
+
+/* ==== Micro-animación: Zoom In en icono y botón al tocar la tarjeta ==== */
+.tappable .tap-target{ transform: scale(1); }
+.tappable.tap-animate .tap-target{
+  animation: tapZoom .22s ease-out;
+}
+@keyframes tapZoom{
+  0% { transform: scale(.95); filter: saturate(1.05); }
+  100%{ transform: scale(1); }
 }
 
-.modal-floral-behind {
-  position: absolute;
-  top: 35px; /* Ajusta según tu diseño */
-  left: 36%;
-  transform: translateX(-50%);
-  z-index: 4000; /* Detrás de la tarjeta */
-  pointer-events: none;
-}
-
-.modal-floral-behind img {
-  max-width: 170px; /* Ajusta el tamaño según prefieras */
-  width: 100%;
-  display: block;
-}
-
-.modal-regalos.active {
-  display: flex;
-}
-.modal-overlay {
-  position: fixed;
-  left: 0; top: 0; width: 100%; max-width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.18);
-  z-index: 1;
-}
-.modal-content-regalos {
-  position: relative;
-  background: #fff;
-  border-radius: 22px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-  padding: 18px 10px 14px 10px;      /* Menos padding */
-  max-width: 320px;                  /* Más angosto */
-  width: 96vw;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.modal-opciones-regalos {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  margin-top: 12px;
-}
-
-.regalo-btn {
-  display: block;
-  text-align: center;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.amazon-btn {
-  background: var(--caramel-brown); /* color Amazon */
-  color: #fff;
-}
-.amazon-btn:hover {
-  background: var(--caramel-brown);
-  transform: scale(1.05);
-}
-
-.zelle-btn {
-  background:  var(--sage-green); /* color Zelle */
-  color: #fff;
-}
-.zelle-btn:hover {
-  background: var(--sage-green);
-  transform: scale(1.05);
-}
-
+/* Accesibilidad: foco visible en botón */
+.btn:focus-visible{ outline: 2px solid #6f846f; outline-offset: 2px; }
 
 
 
