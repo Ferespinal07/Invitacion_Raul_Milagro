@@ -209,6 +209,7 @@ body.loading {
    ======================= */
 
 .scroll-down-arrow{
+  min-height: 30vh;  
   position: absolute;
   left: 50%;
   bottom: clamp(12px, 4vh, 28px);
@@ -314,6 +315,7 @@ body.loading {
   position: relative;
   z-index: 2;
 }
+
 .countdown-content {
   position: relative;
   z-index: 2;
@@ -432,17 +434,19 @@ body.loading {
   display: grid;
   place-items: center;
   background: transparent;  /* el círculo ya lo pinta el SVG */
+  z-index: 0;
 }
 
 /* Imagen del badge en el separador elegante */
 .badge-img{
-  width: 80%;
+  width: 100%;
   height: auto;
   object-fit: contain;       /* evita deformaciones */
   border-radius: 50%;        /* forma circular, opcional */
   background: #fff;          /* círculo blanco como el anterior */
   box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* sombra suave */
-  padding: 5px;             /* deja un borde interno para “marco” */
+  padding: 5px;   
+  z-index: 1;          /* deja un borde interno para “marco” */
 }
 
 
@@ -472,22 +476,47 @@ body.loading {
 
 
 /* Ceremonia */
-.ceremonia-section {
-  background: #fafafa;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px 60px 20px;
-}
-
 .ceremonia-content {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1050px;
+}
+
+/* La sección es el contenedor de referencia */
+.ceremonia-section{
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;   /* por si tarda en cargar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* 👇 espacio “seguro” para el listón que está en la imagen */
+  padding: clamp(310px, 26vw, 190px) 20px 60px;  /* top | left/right | bottom */
+}
+
+/* El fondo NO debe empujar el contenido */
+.fondo-ceremonia{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.fondo-ceremonia .foto-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Todo el contenido por encima del fondo */
+.ceremonia-section > :not(.fondo-ceremonia){
+  position: relative;
+  z-index: 2;
 }
 
 .ceremonia-info {
@@ -694,6 +723,40 @@ body.loading {
 }
 
 
+/* La sección es el contenedor de referencia */
+.fiesta-section{
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;   /* por si tarda en cargar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* 👇 espacio “seguro” para el listón que está en la imagen */
+  padding: clamp(310px, 26vw, 190px) 20px 60px;  /* top | left/right | bottom */
+}
+
+/* El fondo NO debe empujar el contenido */
+.fondo-fiesta{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.fondo-fiesta .foto-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Todo el contenido por encima del fondo */
+.fiesta-section > :not(.fondo-fiesta){
+  position: relative;
+  z-index: 2;
+}
+
 
 
 .fiesta-content {
@@ -839,13 +902,39 @@ body.loading {
    RETRATOS DE NUESTRO AMOR
    ===================== */
 
-.retratos-section {
-  background: #fafbfa;
-  min-height: 20vh;
+
+/* La sección es el contenedor de referencia */
+.retratos-section{
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;   /* por si tarda en cargar */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px 60px 20px;
+
+  /* 👇 espacio “seguro” para el listón que está en la imagen */
+  padding: clamp(310px, 26vw, 190px) 20px 60px;  /* top | left/right | bottom */
+}
+
+/* El fondo NO debe empujar el contenido */
+.fondo-retratos{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.fondo-retratos .foto-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Todo el contenido por encima del fondo */
+.retratos-section > :not(.fondo-retratos){
+  position: relative;
+  z-index: 2;
 }
 
 .retratos-section .section-title {
@@ -1011,75 +1100,18 @@ body.loading {
 
 
 /* ===== Acápite bíblico con imagen de fondo ===== */
-.verse-hero{
-  --veil: rgba(255,255,255,.65);
+
+/* capa de la foto de fondo */
+.fondo-versiculo {
   position: relative;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: clamp(32px, 6vw, 72px) 20px;
-  background: #eef3ee url('assets/fondos.svg') center/cover no-repeat;
-  overflow: hidden;
+  inset: 0;               /* ocupa todo el alto/ancho de la sección */
+  z-index: 0;             /* por debajo de todo */
+  pointer-events: none;   /* no bloquea toques/clicks */
 }
-.verse-hero::before{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    radial-gradient(1200px 500px at 50% 10%, var(--veil), transparent 70%),
-    linear-gradient(to bottom, var(--veil), rgba(255,255,255,.45) 40%, var(--veil));
-  pointer-events:none;
-}
-.verse-card{
-  position: relative;
-  z-index: 1;
-  width: min(700px, 92vw);
-  background: rgba(255,255,255,.62);
-  border: 1px solid rgba(143,161,139,.22);
-  border-radius: 22px;
-  box-shadow: 0 14px 48px rgba(0,0,0,.08);
-  padding: clamp(22px, 4.5vw, 40px);
-  text-align: center;
-  backdrop-filter: blur(2px);
-}
-.verse-heading{
-  font-family: 'Dancing Script', cursive;
-  color: var(--sage-green);
-  font-size: clamp(1.8rem, 6vw, 2.6rem);
-  margin: 0 0 8px 0;
-  letter-spacing: .5px;
-}
-.verse-text{
-  margin: 0;
-  color: #23422c;
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.05rem, 3.4vw, 1.3rem);
-  line-height: 1.7;
-}
-.verse-text p{ margin: 0; }
-.verse-source{
-  margin-top: 10px;
-  font-size: 1.5rem;
-  color: #7a8b7a;
-  letter-spacing: .3px;
-}
-
-/* Respeto al botón de música (espacio inferior seguro en móviles) */
-@media (max-width: 480px){
-  .verse-hero{ padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px)); }
-}
-
-
-.modal-floral-biblia {
-  position: absolute;
-  top: 360px; /* Ajusta según tu diseño */
-  transform: translateX(110%);
-  z-index: 4000; /* Detrás de la tarjeta */
-  pointer-events: none;
-}
-
-.modal-floral-biblia img {
-  max-width: 200px; /* Ajusta el tamaño según prefieras */
+.fondo-versiculo .foto-img{
   width: 100%;
+  height: 100%;
+  object-fit: cover;      /* cubre sin deformarse */
   display: block;
 }
 
@@ -1090,18 +1122,53 @@ body.loading {
 
 .musica-section {
   background: #fafbfa;
-  min-height: 60vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 20px 60px 20px;
 }
+
+/* La sección es el contenedor de referencia */
+.musica-section{
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;   /* por si tarda en cargar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* 👇 espacio “seguro” para el listón que está en la imagen */
+  padding: clamp(310px, 26vw, 190px) 20px 60px;  /* top | left/right | bottom */
+}
+
+/* El fondo NO debe empujar el contenido */
+.fondo-musica{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.fondo-musica .foto-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Todo el contenido por encima del fondo */
+.musica-section > :not(.fondo-musica){
+  position: relative;
+  z-index: 2;
+}
+
 .musica-subtitle {
   color: #a6a9b0;
   font-size: 1.3rem;
   text-align: center;
   margin-bottom: 32px;
-  margin-top: 18px;
+  margin-top: -50px;
   font-family: 'Playfair Display', serif;
 }
 .musica-card {
@@ -1234,7 +1301,7 @@ body.loading {
 .modal-title {
   font-family: 'Playfair Display', serif;
   color: #23422c;
-  font-size: 1.4rem;
+  font-size: 0.5rem;
   font-weight: 700;
   margin-bottom: 18px;
   margin-top: 10px;
@@ -1716,106 +1783,40 @@ Tips & Notas
 }
 
 
+/* La sección es el contenedor de referencia */
+.regalos-section{
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;   /* por si tarda en cargar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+
+}
+
+/* El fondo NO debe empujar el contenido */
+.fondo-regalos{
+  position: relative;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.fondo-regalos .foto-img{
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Todo el contenido por encima del fondo */
+.regalos-section > :not(.fondo-regalos){
+  position: relative;
+  z-index: 2;
+}
 
 /* ===== Regalos (cards) ===== */
-.gifts-section{
-  display: grid;
-  gap: 18px;
-  width: min(820px, 92vw);
-  margin: 0 auto;
-}
-
-.card{
-  --tone:#8fa18b;                 /* tono por defecto (verde) */
-  --bg: #f3f7f3;
-  background: linear-gradient(180deg, #f8faf8 0%, var(--bg) 100%);
-  border: 1px solid rgba(143,161,139,.18);
-  padding: 16px 16px 14px;
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(0,0,0,.06);
-}
-
-.card-head{ display:flex; gap:12px; align-items:center; }
-.card-icon{
-  width: 44px; height: 44px; border-radius: 12px;
-  display:grid; place-items:center;
-  background: rgba(143,161,139,.18);
-  color: var(--tone);
-  flex: 0 0 auto;
-}
-.card-icon ion-icon{ font-size: 22px; }
-
-.card-title{
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.35rem,4.6vw,1.7rem);
-  color: #6b7c5e; margin: 0;
-}
-.card-sub{ margin:0; color:#8fa18b; font-size:.95rem; }
-
-.card-desc{
-  margin: 12px 2px 10px;
-  color: #7e8990;
-  line-height: 1.55;
-}
-.card-desc2{
-  margin: 12px 2px 10px;
-  color: #fafbfa;
-  line-height: 1.55;
-}
-
-.card-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
-.card-tags span{
-  padding:6px 10px; border-radius: 20px;
-  font-size:.85rem; color:#5d6b60; background:#e8ede8;
-}
-
-.btn{
-  display:inline-flex; align-items:center; gap:8px;
-  justify-content:center; width:100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  font-weight:700; font-family:'Playfair Display', serif;
-  color:#fff; background: linear-gradient(180deg, #8fa18b, #6f846f);
-  border: none;
-  text-decoration:none;
-}
-.btn.outline{
-  background: #fff; color: #4c5d4e;
-  border: 1.5px solid #6f846f;
-}
-
-.zelle-card{
-  --tone: var(--card-tone, #6f846f);
-  --bg: #e6eee5;
-}
-.zelle-card .card-icon{
-  background: rgba(255,255,255,.18); color:#fff;
-}
-.zelle-card .card-title{ color:#fff; }
-.zelle-card .card-sub{ color:#e9f0e9; }
-.zelle-card{
-  background: linear-gradient(180deg, #7a8b7a 0%, #6f846f 100%);
-  color:#f6fbf6;
-}
-.zelle-fields{ display:grid; gap:10px; margin: 8px 2px 12px; }
-.zelle-fields .field{ background: rgba(255,255,255,.1); border-radius: 12px; padding:10px 12px; }
-.zelle-fields label{ display:block; font-size:.75rem; opacity:.85; letter-spacing:.5px; text-transform:uppercase; }
-.zelle-fields .value{ font-weight:700; }
-
-/* ==== Micro-animación: Zoom In en icono y botón al tocar la tarjeta ==== */
-.tappable .tap-target{ transform: scale(1); }
-.tappable.tap-animate .tap-target{
-  animation: tapZoom .22s ease-out;
-}
-@keyframes tapZoom{
-  0% { transform: scale(.95); filter: saturate(1.05); }
-  100%{ transform: scale(1); }
-}
-
-/* Accesibilidad: foco visible en botón */
-.btn:focus-visible{ outline: 2px solid #6f846f; outline-offset: 2px; }
-
 
 
 
