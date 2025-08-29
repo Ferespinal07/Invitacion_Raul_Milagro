@@ -19,7 +19,7 @@ body {
   font-family: 'Calibri', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #fafbfa;
   color: #333;
   font-size: 1.2rem;
   line-height: 1.6;
@@ -107,6 +107,8 @@ body.loading {
 /*-------------------- 
   Foto portada
 ---------------------*/
+
+
 /* capa de la foto de fondo */
 .foto-portada {
   position: relative;
@@ -143,7 +145,7 @@ body.loading {
 
 .landing-content {
   text-align: center;
-  background: #ffffff;
+  background: #fafbfa;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -317,7 +319,7 @@ body.loading {
 }
 
 .countdown-content {
-  position: relative;
+  position: absolute;
   z-index: 2;
   width: 100%;
   text-align: center;
@@ -1764,24 +1766,6 @@ Tips & Notas
 /*===============
     Regalos
 ===============*/
-/* Título y subtítulo al estilo "Compartir fotos" */
-.regalos-heading{
-  font-family:'Dancing Script', cursive;
-  color:#23422c;             /* verde elegante, acorde a la paleta */
-  text-align:center;
-  line-height:1.1;
-  font-size:clamp(2.2rem, 6vw, 3.2rem);
-  margin:0 0 10px 0;
-}
-
-.regalos-subtitle{
-  color:#a6a9b0;
-  font-family:'Playfair Display', serif;
-  font-size:1.15rem;
-  text-align:center;
-  margin:0 0 26px 0;
-}
-
 
 /* La sección es el contenedor de referencia */
 .regalos-section{
@@ -1792,8 +1776,6 @@ Tips & Notas
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
 }
 
 /* El fondo NO debe empujar el contenido */
@@ -1817,6 +1799,69 @@ Tips & Notas
 }
 
 /* ===== Regalos (cards) ===== */
+
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  justify-content:center; width:100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight:700; font-family:'Playfair Display', serif;
+  color:#fff; background: linear-gradient(180deg, #8fa18b, #6f846f);
+  border: none;
+  text-decoration:none;
+}
+.btn.outline{
+  background: #fff; color: #4c5d4e;
+  border: 1.5px solid #6f846f;
+}
+
+
+
+.regalos-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  min-width: 320px;
+  max-width: 400px;
+  flex: 1 1 320px;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.regalos-btn {
+  background: #7a8b7a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 0;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0;
+  text-align: center;
+  display: block;
+}
+.regalos-btn.amazon {
+  background: #7a8b7a;
+}
+.regalos-btn.zelle {
+  background: #fff;
+  color: #7a8b7a;
+  border: 2px solid #7a8b7a;
+  margin-top: 8px;
+}
+.regalos-btn:hover {
+  background: #8fa18b;
+  color: #fff;
+}
+.regalos-btn.zelle:hover {
+  background: #e8ede8;
+  color: #7a8b7a;
+}
 
 
 
