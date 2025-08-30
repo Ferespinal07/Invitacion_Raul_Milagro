@@ -2010,6 +2010,16 @@ Tips & Notas
   position:absolute; inset:0; background:#fafbfa(250, 253, 250);
   backdrop-filter:saturate(80%) blur(2px);
 }
+
+/* Asegura que el modal RSVP esté por encima de todo */
+.rsvp-modal { z-index: 5000; }
+
+/* Backdrop con color válido (el valor actual es inválido) */
+.rsvp-modal__backdrop{
+  background: rgba(0,0,0,.22);
+  backdrop-filter: saturate(80%) blur(2px);
+}
+
 .rsvp-modal__card{
   position:relative;
   width:min(92vw, 520px); margin:12vh auto 0;
