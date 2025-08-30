@@ -213,7 +213,7 @@ body.loading {
    ======================= */
 
 .scroll-down-arrow{
-  min-height: 30vh;  
+  min-height:240vh;  
   position: absolute;
   left: 50%;
   bottom: clamp(12px, 4vh, 28px);

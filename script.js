@@ -282,6 +282,16 @@ document.addEventListener('DOMContentLoaded', () => {
   openBtn?.addEventListener('click', () => modal?.classList.add('is-open'));
   closeEls.forEach(el => el.addEventListener('click', () => modal.classList.remove('is-open')));
 
+  // Fallback robusto: si el primer click no enganchara por cualquier razón,
+// esto asegura abrir el modal siempre que se pulse el botón de la tarjeta.
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('#open-rsvp-modal');
+    if (!trigger) return;
+    const modal = document.getElementById('rsvp-modal');
+    if (modal) modal.classList.add('is-open');
+  });
+
+
   // Envío estructurado (Sí/No + nombre + nota)
   sendBtn?.addEventListener('click', () => {
     const choice = document.querySelector('input[name="rsvpChoice"]:checked')?.value || 'si';
