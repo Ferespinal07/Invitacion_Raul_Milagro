@@ -181,7 +181,7 @@ body.loading {
   bottom: 32px;
   right: 32px;
   z-index: 3000;
-  background: #8fa18b;
+  background: #8fa18b6b;
   border: none;
   border-radius: 50%;
   max-width: 56px;
@@ -199,9 +199,11 @@ body.loading {
   transform: scale(1.08);
 }
 .music-btn ion-icon {
-  color: #fff;
+  color: #ffffff99;
   font-size: 2rem;
 }
+
+
 
 
 
@@ -243,6 +245,7 @@ body.loading {
    ======================= */
   
 .countdown-section {
+  position: relative;
   min-height: 20vh;
   display: flex;
   align-items: center;
@@ -1685,6 +1688,42 @@ Tips & Notas
 }
 
 
+/* === Ajustes de separación Dress Code y Tips & Notas === */
+
+/* Mantener márgenes laterales seguros en ambas secciones */
+.dresscode-section,
+.tips-section {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Tarjetas: más compactas y sin pegarse a los bordes */
+.dresscode-card,
+.tips-card {
+  max-width: 360px;              /* antes 400px */
+  margin: 0 auto;                /* centradas siempre */
+  padding: 28px 20px;            /* menos relleno interno */
+}
+
+/* Reducir espacio vertical de las secciones */
+.dresscode-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.tips-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* En pantallas pequeñas, asegúrate que no se peguen a los lados */
+@media (max-width: 480px) {
+  .dresscode-card,
+  .tips-card {
+    max-width: 92%;              /* nunca tocar bordes */
+  }
+}
+
+
 
 /* =======================
    COMPARTIR FOTOS
@@ -1772,10 +1811,17 @@ Tips & Notas
   position: relative;
   overflow: hidden;
   background: #fafafa;   /* por si tarda en cargar */
-  min-height: 100vh;
+  min-height: auto;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (min-width: 992px){
+  .regalos-section{
+    min-height: 100vh; /* solo en escritorio */
+  }
 }
 
 /* El fondo NO debe empujar el contenido */
@@ -1815,7 +1861,9 @@ Tips & Notas
   border: 1.5px solid #6f846f;
 }
 
-
+#rsvp.rsvp-section {
+  margin-top: -20px;    /* acerca más la sección de RSVP a Regalos */
+}
 
 .regalos-actions {
   display: flex;
@@ -1846,12 +1894,12 @@ Tips & Notas
   display: block;
 }
 .regalos-btn.amazon {
-  background: #7a8b7a;
+  background: var(--sage-green);
 }
 .regalos-btn.zelle {
   background: #fff;
-  color: #7a8b7a;
-  border: 2px solid #7a8b7a;
+  color: var(--caramel-brown);
+  border: 2px solid var(--caramel-brown);
   margin-top: 8px;
 }
 .regalos-btn:hover {
@@ -1859,18 +1907,54 @@ Tips & Notas
   color: #fff;
 }
 .regalos-btn.zelle:hover {
-  background: #e8ede8;
-  color: #7a8b7a;
+  background: #c5b4ac;
+  color: var(--caramel-brown);
 }
 
+/* === Ajustes de botones en sección Regalos === */
+.regalos-section {
+  position: relative; /* referencia para posicionamiento absoluto */
+}
+
+.regalos-actions {
+  position: absolute;
+  inset: 0;          /* ocupa toda la sección */
+  pointer-events: none; /* evita que bloquee el scroll/clicks en otros lados */
+}
+
+/* Cada botón posicionado manualmente */
+#regalos-amazon,
+#regalos-zelle {
+  position: absolute;
+  pointer-events: auto; /* vuelve a ser clickeable */
+  width: auto;
+  max-width: 130px;
+  padding: 12px 18px;
+  font-size: 0.85rem;
+}
+
+/* Amazon → abajo a la derecha */
+#regalos-amazon {
+  bottom: 125%;   /* ajusta según tu imagen */
+  right: 6%;    /* ajusta según tu imagen */
+}
+
+/* Zelle → arriba a la izquierda */
+#regalos-zelle {
+  top: -90%;     /* ajusta según tu imagen */
+  left: 8%;     /* ajusta según tu imagen */
+}
 
 
 /* =======================
    CONFIRMACIÓN (WhatsApp)
    ======================= */
 .rsvp-section{
+  margin-top: -20px;    /* acerca más la sección de RSVP a Regalos */
   min-height: 20vh;
   background:#fafbfa;
+
+  
   padding:60px 20px;
   display:flex; flex-direction:column; align-items:center;
 }

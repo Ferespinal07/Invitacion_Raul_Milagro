@@ -54,39 +54,38 @@
 
 
   <!-- Cuenta regresiva -->
-  <section id="countdown-section" class="countdown-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
+<section id="countdown-section" class="countdown-section">
 
-      <div class="foto-conteo">
-        <img src="assets/portada3-.png" alt="Raul & Milagro" class="foto-img" loading="lazy">
+  <!-- Fondo SIN animación -->
+  <div class="foto-conteo">
+    <img src="assets/portada3-.png" alt="Raul & Milagro" class="foto-img" loading="lazy">
+  </div>
+
+  <!-- Círculo con animación -->
+  <div class="countdown-circle" data-reveal="zoom-in" style="--reveal-dur:.7s">
+    <div class="countdown-floral">
+      <img src="assets/19.svg" alt="Marco decorativo">
+    </div>
+
+    <div class="countdown-marco">
+      <img src="assets/decoracion.svg" alt="Marco dorado">
+    </div>
+
+    <div class="countdown-content" data-reveal="zoom-in" style="--reveal-dur:.7s">
+      <div class="countdown-title">Faltan</div>
+      <div class="countdown-numbers" id="countdown">
+        <div><span id="days">00</span><span class="label">días</span></div>
+        <div><span id="hours">00</span><span class="label">hs</span></div>
+        <div><span id="minutes">00</span><span class="label">min</span></div>
+        <div><span id="seconds">00</span><span class="label">seg</span></div>
       </div>
-
-    <div class="countdown-circle">
-      <div class="countdown-floral">
-        <!-- Puedes usar una imagen SVG decorativa aquí si lo deseas -->
-        <img src="assets/19.svg" alt="Marco decorativo">
-      </div>
-
-       <div class="countdown-marco">
-        <!-- Puedes usar una imagen SVG decorativa aquí si lo deseas -->
-        <img src="assets/decoracion.svg" alt="Marco dorado">
-      </div>
-
-        
-        <div class="countdown-content" data-reveal="zoom-in" style="--reveal-dur:.7s">
-          <div class="countdown-title">Faltan</div>
-          <div class="countdown-numbers" id="countdown">
-            <div><span id="days">00</span><span class="label">días</span></div>
-            <div><span id="hours">00</span><span class="label">hs</span></div>
-            <div><span id="minutes">00</span><span class="label">min</span></div>
-            <div><span id="seconds">00</span><span class="label">seg</span></div>
-          </div>
-          <div class="countdown-heart">
-            <ion-icon name="heart-outline"></ion-icon>
-          </div>
-        </div>
+      <div class="countdown-heart">
+        <ion-icon name="heart-outline"></ion-icon>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
   <!-- === Separador elegante antes de la ceremonia === -->

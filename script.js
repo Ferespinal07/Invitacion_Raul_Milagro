@@ -4,46 +4,74 @@ document.addEventListener('DOMContentLoaded', function() {
   const welcomeScreen = document.getElementById("welcome-screen");
 
   if (enterBtn && welcomeScreen) {
-  enterBtn.addEventListener("click", () => {
-    welcomeScreen.classList.add("fade-out");
-    document.body.classList.remove("loading");
+enterBtn.addEventListener("click", () => {
+  welcomeScreen.classList.add("fade-out");
+  document.body.classList.remove("loading");
 
-    setTimeout(() => {
-      welcomeScreen.classList.add("hidden");
+  // 🔊 Iniciar la música al ingresar
+  const audio = document.getElementById('bg-music');
+  const musicIcon = document.getElementById('music-icon');
+  if (audio && audio.paused) {
+    audio.play().then(() => {
+      if (musicIcon) musicIcon.setAttribute('name', 'pause-outline');
+    }).catch(err => console.warn("No se pudo iniciar la música automáticamente:", err));
+  }
 
-      // 🔽 Desplazar hacia la portada (landing)
-      const portada = document.getElementById("landing-cover");
-      if (portada) {
-        portada.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 800);
-  });
+  setTimeout(() => {
+    welcomeScreen.classList.add("hidden");
+
+    // 🔽 Desplazar hacia la portada (landing)
+    const portada = document.getElementById("landing-cover");
+    if (portada) {
+      portada.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 800);
+});
+
 }
 
 
-  // Lógica para el botón de música global (siempre visible)
-  const musicBtn = document.getElementById('music-btn');
-  const musicIcon = document.getElementById('music-icon');
-  const audio = document.getElementById('bg-music');
-  let isPlaying = false;
+// Lógica para el botón de música global (oculto en bienvenida)
+const musicBtn = document.getElementById('music-btn');
+const musicIcon = document.getElementById('music-icon');
+const audio = document.getElementById('bg-music');
+let isPlaying = false;
 
-  if (musicBtn && audio && musicIcon) {
-    musicBtn.addEventListener('click', function() {
-      if (audio.paused) {
-        audio.play();
-        musicIcon.setAttribute('name', 'pause-outline');
-        isPlaying = true;
-      } else {
-        audio.pause();
-        musicIcon.setAttribute('name', 'play-outline');
-        isPlaying = false;
+if (musicBtn && audio && musicIcon) {
+  // Al inicio: ocultar el botón mientras la bienvenida esté activa
+  const welcomeScreen = document.getElementById('welcome-screen');
+  if (welcomeScreen) {
+    musicBtn.style.display = 'none';
+    // Cuando se oculte la bienvenida, volvemos a mostrarlo
+    const observer = new MutationObserver(() => {
+      if (welcomeScreen.classList.contains('hidden') || welcomeScreen.style.display === 'none') {
+        musicBtn.style.display = 'flex';
+        observer.disconnect();
       }
     });
-    audio.addEventListener('ended', function() {
+    observer.observe(welcomeScreen, { attributes: true, attributeFilter: ['class', 'style'] });
+  }
+
+  // Lógica de play/pause
+  musicBtn.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play();
+      musicIcon.setAttribute('name', 'pause-outline');
+      isPlaying = true;
+    } else {
+      audio.pause();
       musicIcon.setAttribute('name', 'play-outline');
       isPlaying = false;
-    });
-  }
+    }
+  });
+
+  // Al terminar la canción (si no está en loop)
+  audio.addEventListener('ended', function () {
+    musicIcon.setAttribute('name', 'play-outline');
+    isPlaying = false;
+  });
+}
+
 
   // Lógica para la cuenta regresiva
   const eventDate = new Date("2025-11-22T17:00:00"); // Cambia a tu fecha y hora
@@ -189,50 +217,21 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Modal Regalos
-document.addEventListener('DOMContentLoaded', function() {
-  const abrirRegalos = document.getElementById('abrir-regalos');
-  const modalRegalos = document.getElementById('modal-regalos');
-  const cerrarRegalos1 = document.getElementById('cerrar-modal-regalos');
-  const cerrarRegalos2 = document.getElementById('cerrar-modal-regalos-btn');
-  if (abrirRegalos && modalRegalos) {
-    abrirRegalos.onclick = () => modalRegalos.classList.add('active');
-  }
-  if (cerrarRegalos1 && modalRegalos) {
-    cerrarRegalos1.onclick = () => modalRegalos.classList.remove('active');
-  }
-  if (cerrarRegalos2 && modalRegalos) {
-    cerrarRegalos2.onclick = () => modalRegalos.classList.remove('active');
-  }
-});
 
 
-/* ===== Regalos: enlaces + micro-animación ===== */
+/* ===== Regalos: enlaces ===== */
 document.addEventListener('DOMContentLoaded', () => {
-  // 🔗 Reemplaza por tu URL real de Amazon
-  const AMAZON_LIST_URL = 'https://www.amazon.com/wedding/registry/17U7CB7CCT0DS'; // ejemplo
-  const ZELLE_URL       = 'https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEFTQ0FOSU8iLCJhY3Rpb24iOiJwYXltZW50IiwidG9rZW4iOiJ0YXNjYW5pb21hcnRpbmV6QGljbG91ZC5jb20ifQ==';
+  // 🔗 Links reales
+  const AMAZON_LIST_URL = 'https://www.amazon.com/wedding/registry/17U7CB7CCT0DS'; // reemplaza con tu lista real
+  const ZELLE_URL       = 'https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiTU9ESUZJQ0FSIn0='; // reemplaza con tu QR real
 
-  const giftBtn  = document.getElementById('gift-btn');
-  const zelleBtn = document.getElementById('zelle-btn');
+  const amazonBtn = document.getElementById('regalos-amazon');
+  const zelleBtn  = document.getElementById('regalos-zelle');
 
-  if (giftBtn)  giftBtn.href  = AMAZON_LIST_URL;
-  if (zelleBtn) zelleBtn.href = ZELLE_URL;
-
-  // Efecto "Zoom In" en icono + botón cuando tocan la tarjeta
-  document.querySelectorAll('.tappable').forEach(card => {
-    const trigger = () => {
-      card.classList.add('tap-animate');
-      // quita la clase al terminar (evita que quede pegada)
-      setTimeout(() => card.classList.remove('tap-animate'), 220);
-    };
-    card.addEventListener('pointerdown', trigger, { passive: true });
-    // también al pulsar Enter/Espacio si la tarjeta es focusable
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') trigger();
-    });
-  });
+  if (amazonBtn) amazonBtn.href = AMAZON_LIST_URL;
+  if (zelleBtn)  zelleBtn.href  = ZELLE_URL;
 });
+
 
 
 /* ====== RSVP por WhatsApp (único botón + opciones en modal) ====== */
@@ -261,11 +260,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const gracias = ' ¡Gracias por la invitación!';
     return saludo + (attend === 'si' ? baseSi : baseNo) + extra + gracias;
   }
+  
   function openWA(text) {
-    const url = `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(text)}`;
-    const w = window.open(url, '_blank');
-    if (!w) window.location.href = url; // fallback si bloquea pop-up
-  }
+  const url = `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(text)}`;
+
+  // Opción 1: redirigir directamente (seguro en todos los navegadores)
+  window.location.href = url;
+
+  // 👉 Si prefieres abrir en nueva pestaña sin bloqueo:
+  // const link = document.createElement('a');
+  // link.href = url;
+  // link.target = "_blank";
+  // link.rel = "noopener";
+  // document.body.appendChild(link);
+  // link.click();
+  // document.body.removeChild(link);
+}
+
 
   // Abrir/cerrar modal
   openBtn?.addEventListener('click', () => modal?.classList.add('is-open'));
