@@ -5,11 +5,11 @@
   --warm-taupe: #D2BEB0;
   --golden-beige: #E6C48D;
   --champagne: #F4E8D4;
-  --burnt-orange: #C75B39;
-  --dusty-rose: #CD8C90;
-  --caramel-brown: #746159;
-  --terracotta: #C2613F;
-  --sage-green: #9CA88E;
+  --burnt-orange: #c9a58e;
+  --dusty-rose: #C59992;
+  --caramel-brown: #79533f;
+  --terracotta: #a0705b;
+  --sage-green: #849f7d;
 }
 
 /* =======================
@@ -40,7 +40,7 @@ body.loading {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--sage-green);
+  background: var(--warm-taupe);
   z-index: 2000;
   transition: opacity 0.8s ease;
   padding: 40px;
@@ -86,7 +86,7 @@ body.loading {
 }
 
 .bienvenida-btn {
-  background: #4e7458;
+  background: var(--terracotta);
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -100,7 +100,7 @@ body.loading {
 }
 
 .bienvenida-btn:hover {
-  background: #46654e;
+  background: var(--burnt-orange);
   transform: scale(1.05);
 }
 
@@ -181,7 +181,7 @@ body.loading {
   bottom: 32px;
   right: 32px;
   z-index: 3000;
-  background: #8fa18b6b;
+  background: var(--dusty-rose);
   border: none;
   border-radius: 50%;
   max-width: 56px;
@@ -195,7 +195,7 @@ body.loading {
   transition: background 0.2s, transform 0.2s;
 }
 .music-btn:hover {
-  background: #a7b9a0;
+  background: var(--warm-taupe);
   transform: scale(1.08);
 }
 .music-btn ion-icon {
@@ -213,7 +213,7 @@ body.loading {
    ======================= */
 
 .scroll-down-arrow{
-  min-height:240vh;  
+  min-height:90vh;  
   position: absolute;
   left: 50%;
   bottom: clamp(12px, 4vh, 28px);
@@ -260,6 +260,7 @@ body.loading {
   max-width: 220px;
   width: 100%;
   height: auto;
+  z-index: 3;                        /* encima del marco */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,7 +275,7 @@ body.loading {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 0;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -332,7 +333,7 @@ body.loading {
 .countdown-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #7a8b7a;
+  color: var(--terracotta);
   margin-bottom: 10px;
   font-weight: 400;
   justify-content: center;
@@ -386,13 +387,13 @@ body.loading {
 .countdown-numbers span {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #3d4e47;
+  color: var(--caramel-brown);
   font-family: 'Playfair Display', serif;
 }
 
 .countdown-numbers .label {
   font-size: 1rem;
-  color: #7a8b7a;
+  color: var(--sage-green);
   font-weight: 400;
   margin-top: 2px;
 }
@@ -402,7 +403,7 @@ body.loading {
 }
 .countdown-heart ion-icon {
   font-size: 2.2rem;
-  color: #7a8b7a;
+  color: var(--terracotta);
 }
 
 
@@ -444,13 +445,13 @@ body.loading {
 
 /* Imagen del badge en el separador elegante */
 .badge-img{
-  width: 100%;
+  width: 85%;
   height: auto;
   object-fit: contain;       /* evita deformaciones */
   border-radius: 50%;        /* forma circular, opcional */
   background: #fff;          /* círculo blanco como el anterior */
   box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* sombra suave */
-  padding: 5px;   
+  padding: 8px;
   z-index: 1;          /* deja un borde interno para “marco” */
 }
 
@@ -525,7 +526,8 @@ body.loading {
 }
 
 .ceremonia-info {
-  background: #eef3ee;
+  /*background: #eef3ee;*/
+  background: #fddedd5f;
   border-radius: 18px;
   padding: 36px 36px 24px 36px;
   width: 100%;
@@ -539,13 +541,13 @@ body.loading {
 }
 
 .ceremonia-dia-titulo {
-  color: #b2b7b0;
+  color: var(--terracotta);
   font-size: 1rem;
   letter-spacing: 2px;
   margin-bottom: 6px;
 }
 .ceremonia-dia-fecha {
-  color: #6b7c5e;
+  color: var(--terracotta);
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 18px;
@@ -563,7 +565,7 @@ body.loading {
   gap: 14px;
 }
 .ceremonia-icon {
-  background: #cfd8cf;
+  background: #edb7b1;
   border-radius: 50%;
   max-width: 38px;
   width: 100%;
@@ -571,33 +573,33 @@ body.loading {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6b7c5e;
+  color: #7c625e;
   font-size: 1.5rem;
 }
 .ceremonia-detalle-label {
-  color: #b2b7b0;
+  color: var(--terracotta);
   font-size: 0.95rem;
 }
 .ceremonia-detalle-valor {
-  color: #6b7c5e;
+  color: var(--dusty-rose);
   font-size: 1.1rem;
   font-weight: 500;
 }
 
 .ceremonia-lugar-label {
-  color: #b2b7b0;
+  color: var(--dusty-rose);
   font-size: 1rem;
   letter-spacing: 2px;
   margin-bottom: 4px;
   margin-top: 10px;
 }
 .ceremonia-lugar-nombre {
-  color: #6b7c5e;
+  color: var(--terracotta);
   font-size: 1.15rem;
   font-weight: 600;
 }
 .ceremonia-lugar-direccion {
-  color: #a6a9b0;
+  color: var(--terracotta);
   font-size: 1rem;
   margin-top: 2px;
 }
@@ -616,7 +618,7 @@ body.loading {
 }
 
 .ceremonia-btn {
-  background: #7a8b7a;
+  background: var(--terracotta);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -631,21 +633,21 @@ body.loading {
   display: block;
 }
 .ceremonia-btn.save-date {
-  background: #7a8b7a;
+  background: var(--dusty-rose);
 }
 .ceremonia-btn.outline {
   background: #fff;
-  color: #7a8b7a;
-  border: 2px solid #7a8b7a;
+  color: var(--dusty-rose);
+  border: 2px solid var(--dusty-rose);
   margin-top: 8px;
 }
 .ceremonia-btn:hover {
-  background: #8fa18b;
+  background: #c6857b;
   color: #fff;
 }
 .ceremonia-btn.outline:hover {
-  background: #e8ede8;
-  color: #7a8b7a;
+  background: #e5c3be;
+  color: #d08377;
 }
 
 
@@ -881,20 +883,20 @@ body.loading {
   display: block;
 }
 .fiesta-btn.save-date {
-  background: var(--caramel-brown);
+  background: #765848;
 }
 .fiesta-btn.outline {
   background: #fff;
-  color: var(--caramel-brown);
-  border: 2px solid var(--caramel-brown);
+  color: #765848;
+  border: 2px solid #765848;
   margin-top: 8px;
 }
 .fiesta-btn:hover {
-  background: #887972;
+  background: #836c61;
   color: #fff;
 }
 .fiesta-btn.outline:hover {
-  background: #c9bab3;
+  background: #694e4090;
   color: var(--caramel-brown);
 }
 /*======================
@@ -989,7 +991,7 @@ body.loading {
 }
 
 .retratos-arrow {
-  background: #e8ede8;
+  background: #ede8ea;
   border: none;
   border-radius: 50%;
   height: 48px;
@@ -1190,12 +1192,12 @@ body.loading {
 }
 .musica-icon ion-icon {
   font-size: 3rem;
-  color: #8fa18b;
+  color: #5f705b;
   margin-bottom: 10px;
 }
 .musica-pregunta {
   font-family: 'Playfair Display', serif;
-  color: #7a8b7a;
+  color: #5f705b;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 8px;
@@ -1208,7 +1210,7 @@ body.loading {
   text-align: center;
 }
 .musica-btn {
-  background: #8fa18b;
+  background: #5f705b;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -1223,7 +1225,7 @@ body.loading {
   margin-top: 10px;
 }
 .musica-btn:hover {
-  background: #a7b9a0;
+  background: #799270;
 }
 
 /* Modal sugerencia */
@@ -1267,11 +1269,11 @@ body.loading {
 }
 
 .modal-floral-cancion img {
-  max-width: 180px;
+  max-width: 175px;
   width: 100%;
   position: absolute;
-  top: -48px;
-  left: 12%;
+  top: -70px;
+  left: 6%;
   transform: translateX(-50%);
   z-index: 3;
 }
@@ -1308,8 +1310,8 @@ body.loading {
   color: #23422c;
   font-size: 0.5rem;
   font-weight: 700;
-  margin-bottom: 18px;
-  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-top: 12px;
   text-align: center;
 }
 
@@ -1365,7 +1367,7 @@ Dress Code
   background: #eef3ee;
   border-radius: 20px;
   padding: 40px 32px 32px 32px;
-  max-width: 400px;
+  max-width: 200px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1442,7 +1444,7 @@ Dress Code
   align-items: center;
 }
 .modal-floral-dresscode img {
-  max-width: 170px;
+  max-width: 190px;
   width: 100%;
   position: absolute;
   top: -65px;
@@ -1479,7 +1481,7 @@ Dress Code
 .modal-title {
   font-family: 'Playfair Display', serif;
   color: #23422c;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1px;
   margin-top: -35px;
@@ -1487,20 +1489,20 @@ Dress Code
 }
 .modal-subtitle {
   color: #7a8b7a;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 1px;
   text-align: center;
 }
 .modal-outfit-ideas {
   color: #a6a9b0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1px;
   text-align: center;
 }
 .modal-outfit-img {
   width: 100%;
-  max-width: 140px;
+  max-width: 210px;
   height: auto;
   margin-top: -10px;
   display: block;
@@ -1522,7 +1524,7 @@ Tips & Notas
   background: #fafbfa; /* Fondo suave */
 }
 .tips-card {
-  background: var(--caramel-brown); /* Fondo tarjeta */
+  background: #f5e2e2; /* Fondo tarjeta */
   border-radius: 20px;
   padding: 32px 22px 22px 22px;
   max-width: 400px;
@@ -1534,12 +1536,12 @@ Tips & Notas
 }
 .tips-icon ion-icon {
   font-size: 3rem;
-  color: white;
+  color: var(--dusty-rose);
   margin-bottom: 10px;
 }
 .tips-title {
   font-family: 'Dancing Script', cursive;
-  color: white;
+  color: var(--dusty-rose);
   font-size: 2rem;
   margin-bottom: 10px;
 }
@@ -1551,8 +1553,8 @@ Tips & Notas
 }
 .tips-btn {
   background: #fff;
-  color: var(--caramel-brown);
-  border: 1.5px solid var(--caramel-brown);
+  color: #c59992;
+  border: 1.5px solid #c59992;
   border-radius: 10px;
   padding: 12px 0;
   width: 90%;
@@ -1563,8 +1565,8 @@ Tips & Notas
   transition: background 0.2s, color 0.2s;
 }
 .tips-btn:hover {
-  background: #a18c82;
-  color: var(--caramel-brown);
+  background: #e8c8c8;
+  color: #c6857b;
 }
 
 
@@ -1801,6 +1803,52 @@ Tips & Notas
 .fotos-btn:hover{ background:#8fa18b; }
 
 
+/*=====================
+   SEPARADOR ELEGANTE
+   ======================= */
+
+.elegant-separator-confirmacion{
+  min-height: 50vh;
+  --badge-top: 30%;        /* súbelo/bájalo afinando este valor */
+  background: #fafbfa;
+  padding: 36px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.elegant-separator-confirmacion .waves{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.divider-badge-confirmacion{
+  position: absolute;
+  left: 50%;
+  top: var(--badge-top);    /* más arriba para alinearlo con las líneas */
+  transform: translate(-50%, -50%);
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;  /* el círculo ya lo pinta el SVG */
+  z-index: 0;
+}
+
+/* Imagen del badge en el separador elegante */
+.badge-img-confirmacion{
+  width: 100%;
+  height: auto;
+  object-fit: contain;       /* evita deformaciones */
+  border-radius: 50%;        /* forma circular, opcional */
+  background: #fff;          /* círculo blanco como el anterior */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* sombra suave */
+  padding: 5px;   
+  z-index: 1;          /* deja un borde interno para “marco” */
+}
+
 
 /*===============
     Regalos
@@ -1820,7 +1868,7 @@ Tips & Notas
 
 @media (min-width: 992px){
   .regalos-section{
-    min-height: 100vh; /* solo en escritorio */
+    min-height: 20vh; /* solo en escritorio */
   }
 }
 
@@ -1833,7 +1881,7 @@ Tips & Notas
 }
 .fondo-regalos .foto-img{
   width: 100%;
-  height: 150%;
+  height: 10=-0%;
   object-fit: cover;
   display: block;
 }
@@ -1894,7 +1942,7 @@ Tips & Notas
   display: block;
 }
 .regalos-btn.amazon {
-  background: var(--sage-green);
+  background: var(--terracotta);
 }
 .regalos-btn.zelle {
   background: #fff;
@@ -1903,7 +1951,7 @@ Tips & Notas
   margin-top: 8px;
 }
 .regalos-btn:hover {
-  background: #8fa18b;
+  background: #d4aa8a;
   color: #fff;
 }
 .regalos-btn.zelle:hover {
@@ -1935,22 +1983,23 @@ Tips & Notas
 
 /* Amazon → abajo a la derecha */
 #regalos-amazon {
-  bottom: 125%;   /* ajusta según tu imagen */
-  right: 6%;    /* ajusta según tu imagen */
+  bottom: 17%;   /* ajusta según tu imagen */
+  right: 33%;    /* ajusta según tu imagen */
 }
 
 /* Zelle → arriba a la izquierda */
 #regalos-zelle {
-  top: -90%;     /* ajusta según tu imagen */
-  left: 8%;     /* ajusta según tu imagen */
+  top: 78%;     /* ajusta según tu imagen */
+  left: 34%;     /* ajusta según tu imagen */
 }
+
 
 
 /* =======================
    CONFIRMACIÓN (WhatsApp)
    ======================= */
 .rsvp-section{
-  margin-top: -20px;    /* acerca más la sección de RSVP a Regalos */
+  margin-top: 20px;    /* acerca más la sección de RSVP a Regalos */
   min-height: 20vh;
   background:#fafbfa;
 
@@ -2016,7 +2065,7 @@ Tips & Notas
 
 /* Backdrop con color válido (el valor actual es inválido) */
 .rsvp-modal__backdrop{
-  background: rgba(0,0,0,.22);
+  background: transparent;
   backdrop-filter: saturate(80%) blur(2px);
 }
 
@@ -2096,7 +2145,7 @@ Tips & Notas
 }
 .farewell-names{
   font-family: 'Dancing Script', cursive;
-  color: #7a8b7a;
+  color: var(--terracotta);
   font-size: clamp(2.4rem, 7vw, 4rem);
   line-height: 1;
   margin: 0;
@@ -2113,16 +2162,16 @@ Tips & Notas
   width: 64px;
   max-width: 22vw;
   height: 2px;
-  background: #dbe3d4;
+  background: #e3ddd4;
   border-radius: 2px;
 }
 .farewell-divider ion-icon{
-  color: #b2b7b0;
+  color: #e3ddd4;
   font-size: 20px;
 }
 .farewell-sub{
   font-family: 'Playfair Display', serif;
-  color: #6b7c5e;
+  color: var(--terracotta);
   font-size: clamp(1.1rem, 3.5vw, 1.6rem);
   letter-spacing: .3px;
 }
@@ -2314,6 +2363,8 @@ Celebracion y retratos
   padding: 10px clamp(20px, 6.5vw, 44px);
   line-height: 1.1;
 }
+
+
 
 
 
