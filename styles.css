@@ -1171,7 +1171,7 @@ body.loading {
 }
 
 .musica-subtitle {
-  color: #a6a9b0;
+  color: #b0aaa6;
   font-size: 1.3rem;
   text-align: center;
   margin-bottom: 32px;
@@ -1192,25 +1192,25 @@ body.loading {
 }
 .musica-icon ion-icon {
   font-size: 3rem;
-  color: #5f705b;
+  color: var(--terracotta);
   margin-bottom: 10px;
 }
 .musica-pregunta {
   font-family: 'Playfair Display', serif;
-  color: #5f705b;
+  color: var(--terracotta);
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 8px;
   text-align: center;
 }
 .musica-ayuda {
-  color: #a6a9b0;
+  color: #b0aaa6;
   font-size: 1.1rem;
   margin-bottom: 28px;
   text-align: center;
 }
 .musica-btn {
-  background: #5f705b;
+  background: var(--dusty-rose);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -1225,7 +1225,7 @@ body.loading {
   margin-top: 10px;
 }
 .musica-btn:hover {
-  background: #799270;
+  background: var(--terracotta);
 }
 
 /* Modal sugerencia */
@@ -1277,17 +1277,17 @@ body.loading {
   transform: translateX(-50%);
   z-index: 3;
 }
-.modal-icon ion-icon {
+.modal-icon-cancion ion-icon {
   font-size: 3.2rem;
-  color: #8fa18b;
-  margin-bottom: 18px;
-  margin-top: 40px;
+  color: var(--terracotta);
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
 .modal-close {
   position: absolute;
   top: 18px;
   right: 18px;
-  background: #7a8b7a;
+  background: var(--terracotta);
   border: none;
   border-radius: 50%;
   max-width: 32px;
@@ -1305,13 +1305,13 @@ body.loading {
   color: #ffffff;
 }
 
-.modal-title {
+.modal-title-cancion {
   font-family: 'Playfair Display', serif;
-  color: #23422c;
-  font-size: 0.5rem;
+  color: var(--terracotta);
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  margin-top: 12px;
+  margin-top: 4px;
   text-align: center;
 }
 
@@ -1329,14 +1329,14 @@ body.loading {
   font-size: 1rem;
   outline: none;
   background: transparent;
-  color: #23422c;
+  color: var(--terracotta);
   font-family: 'Playfair Display', serif;
 }
 .modal-form input:focus {
-  border-bottom: 1.5px solid #8fa18b;
+  border-bottom: 1.5px solid var(--dusty-rose);
 }
 .modal-submit {
-  background: #7a8b7a;
+  background: var(--dusty-rose);
   color: #fff;
   border: none;
   border-radius: 18px;
@@ -1349,7 +1349,7 @@ body.loading {
   transition: background 0.2s;
 }
 .modal-submit:hover {
-  background: #aab7aa;
+  background: var(--dusty-rose);
 }
 
 /*=================
@@ -1364,7 +1364,7 @@ Dress Code
   background: #fafbfa;
 }
 .dresscode-card {
-  background: #eef3ee;
+  background: #d6ae9657;
   border-radius: 20px;
   padding: 40px 32px 32px 32px;
   max-width: 200px;
@@ -1376,25 +1376,25 @@ Dress Code
 }
 .dresscode-icon ion-icon {
   font-size: 3rem;
-  color: #8fa18b;
+  color: var(--caramel-brown);
   margin-bottom: 10px;
 }
 .dresscode-title {
   font-family: 'Dancing Script', cursive;
-  color: #7a8b7a;
+  color: var(--caramel-brown);
   font-size: 2rem;
   margin-bottom: 10px;
 }
 .dresscode-desc {
-  color: #a6a9b0;
+  color: var(--terracotta);
   font-size: 1.15rem;
   margin-bottom: 28px;
   text-align: center;
 }
 .dresscode-btn {
   background: #fff;
-  color: #7a8b7a;
-  border: 1.5px solid #7a8b7a;
+  color: var(--caramel-brown);
+  border: 1.5px solid var(--caramel-brown);
   border-radius: 10px;
   padding: 12px 0;
   width: 90%;
@@ -1405,8 +1405,8 @@ Dress Code
   transition: background 0.2s, color 0.2s;
 }
 .dresscode-btn:hover {
-  background: #e8ede8;
-  color: #5c6d5c;
+  background: #f3e9e3;
+  color: var(--caramel-brown);
 }
 
 /* Modal Dress Code */
@@ -1458,11 +1458,11 @@ Dress Code
   margin-bottom: 10px;
   margin-top: 10px;
 }
-.modal-close {
+.modal-close-dresscode {
   position: absolute;
   top: 18px;
   right: 18px;
-  background: #8a925e;
+  background: var(--terracotta);
   border: none;
   border-radius: 50%;
   max-width: 32px;
@@ -1480,29 +1480,29 @@ Dress Code
 }
 .modal-title {
   font-family: 'Playfair Display', serif;
-  color: #23422c;
-  font-size: 1.5rem;
+  color: var(--caramel-brown);
+  font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 1px;
-  margin-top: -35px;
+  margin-top: -12px;
   text-align: center;
 }
 .modal-subtitle {
-  color: #7a8b7a;
-  font-size: 1rem;
+  color: var(--dusty-rose);
+  font-size: 0.9rem;
   font-weight: bold;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
   text-align: center;
 }
 .modal-outfit-ideas {
   color: #a6a9b0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-bottom: 1px;
   text-align: center;
 }
 .modal-outfit-img {
   width: 100%;
-  max-width: 210px;
+  max-width: 220px;
   height: auto;
   margin-top: -10px;
   display: block;
@@ -1524,7 +1524,7 @@ Tips & Notas
   background: #fafbfa; /* Fondo suave */
 }
 .tips-card {
-  background: #f5e2e2; /* Fondo tarjeta */
+  background: #d6ae9657; /* Fondo tarjeta */
   border-radius: 20px;
   padding: 32px 22px 22px 22px;
   max-width: 400px;
@@ -1642,7 +1642,7 @@ Tips & Notas
 }
 .modal-icon ion-icon {
   font-size: 2.2rem;
-  color: var(--sage-green);
+  color: var(--terracotta);
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -1650,7 +1650,7 @@ Tips & Notas
   position: absolute;
   top: 18px;
   right: 18px;
-  background: var(--sage-green);
+  background: var(--terracotta);
   border: none;
   border-radius: 50%;
   max-width: 32px;
@@ -1741,7 +1741,7 @@ Tips & Notas
 
 .fotos-heading{
   font-family:'Dancing Script', cursive;
-  color:#23422c;             /* verde elegante, acorde a la paleta */
+  color: var(--terracotta);             /* verde elegante, acorde a la paleta */
   text-align:center;
   line-height:1.1;
   font-size:clamp(2.2rem, 6vw, 3.2rem);
@@ -1749,7 +1749,7 @@ Tips & Notas
 }
 
 .fotos-subtitle{
-  color:#a6a9b0;
+  color:#b0aaa6;
   font-family:'Playfair Display', serif;
   font-size:1.15rem;
   text-align:center;
@@ -1757,7 +1757,7 @@ Tips & Notas
 }
 
 .fotos-card{
-  background:#eef3ee;        /* el mismo tono suave usado en otras tarjetas */
+  background:#d6ae9657;        /* el mismo tono suave usado en otras tarjetas */
   border-radius:20px;
   box-shadow:0 8px 32px rgba(0,0,0,.08);
   padding:28px 22px 26px 22px;
@@ -1779,7 +1779,7 @@ Tips & Notas
 }
 
 .fotos-legend{
-  color:#6b7c5e;
+  color: var(--dusty-rose);
   font-size:1.02rem;
   margin:14px 0 18px 0;
   text-align:center;
@@ -1787,7 +1787,7 @@ Tips & Notas
 }
 
 .fotos-btn{
-  background:#7a8b7a;        /* mismo estilo de botones de la web */
+  background:var(--dusty-rose);        /* mismo estilo de botones de la web */
   color:#fff;
   text-decoration:none;
   border:none;
@@ -1800,7 +1800,7 @@ Tips & Notas
   transition:background .2s;
   display:inline-block;
 }
-.fotos-btn:hover{ background:#8fa18b; }
+.fotos-btn:hover{ background: var(--terracotta); }
 
 
 /*=====================
