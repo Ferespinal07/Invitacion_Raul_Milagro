@@ -1475,8 +1475,8 @@ Dress Code
   cursor: pointer;
   z-index: 4;
 }
-.modal-close ion-icon {
-  font-size: 1.5rem;
+.modal-close-dresscode ion-icon {
+  font-size: 1.8rem;
 }
 .modal-title {
   font-family: 'Playfair Display', serif;
@@ -2414,5 +2414,76 @@ Celebracion y retratos
     filter: none !important;
   }
 }
+
+
+/* =======================
+   FIX MODAL RSVP EN MÓVILES
+   (pegar al final del archivo)
+======================= */
+
+/* 1) Contenedor del modal: visible como overlay centrado al abrir */
+.rsvp-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 10000; /* por encima de todo */
+}
+.rsvp-modal.is-open{
+  display: flex;             /* centra contenido */
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2) Backdrop siempre detrás de la tarjeta */
+.rsvp-modal__backdrop{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* Color válido + blur compatible: */
+  background: rgba(250, 251, 250, .65);  /* suavemente lechoso */
+  backdrop-filter: saturate(80%) blur(2px);
+}
+
+/* 3) Tarjeta del modal siempre por delante del backdrop */
+.rsvp-modal__card{
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 520px);
+  margin: 0;                 /* evita quedar “fuera” en pantallas bajas */
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.18);
+  padding: 28px 22px 26px;
+}
+
+/* 4) Botón de cierre siempre clicable por encima */
+.rsvp-modal__close{
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  z-index: 2;
+}
+
+/* 5) Neutraliza efectos de scroll-reveal dentro del modal
+      para que NADA quede con opacity:0 en móviles */
+.rsvp-modal [data-reveal],
+.rsvp-modal [data-stagger] > *{
+  transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* 6) Evita scroll de fondo cuando el modal está abierto */
+body:has(.rsvp-modal.is-open){
+  overflow: hidden;
+}
+
+/* 7) (Opcional) Mejora de tacto sobre el botón principal */
+.rsvp-send:active,
+.rsvp-cta:active{
+  transform: translateY(1px);
+}
+
 
 
