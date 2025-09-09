@@ -2031,6 +2031,18 @@ Tips & Notas
   padding:26px 22px;
   display:flex; flex-direction:column; align-items:center; gap:16px;
 }
+
+.rsvp-modal__card {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.rsvp-modal.is-open .rsvp-modal__card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 .rsvp-icon{
   width:68px; height:68px; border-radius:50%;
   background:#fff; color:var(--deep-forest, #41664c);
@@ -2053,19 +2065,19 @@ Tips & Notas
   text-decoration:underline; opacity:.8;
 }
 
-.rsvp-modal{ position:fixed; inset:0; display:none; z-index:90; }
+.rsvp-modal{ position:fixed; inset:0; display:none; z-index:1000; }
 .rsvp-modal.is-open{ display:block; }
 .rsvp-modal__backdrop{
-  position:absolute; inset:0; background:#fafbfa(250, 253, 250);
+  position:absolute; inset:0; background:rgba(0, 0, 0, 0.4);
   backdrop-filter:saturate(80%) blur(2px);
 }
 
 /* Asegura que el modal RSVP esté por encima de todo */
-.rsvp-modal { z-index: 50000; }
+.rsvp-modal { z-index: 1000; }
 
 /* Backdrop con color válido (el valor actual es inválido) */
 .rsvp-modal__backdrop{
-  background: rgba(250, 253, 250, 0.8);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: saturate(80%) blur(2px);
 }
 
