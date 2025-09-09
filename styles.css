@@ -2001,7 +2001,7 @@ Tips & Notas
 
 /* Sección principal de RSVP */
 .rsvp-section {
-  margin-top: 20px; /* Acerca más la sección de RSVP a Regalos */
+  margin-top: 20px;
   min-height: 20vh;
   background: #fafbfa;
   padding: 60px 20px;
@@ -2033,9 +2033,9 @@ Tips & Notas
   width: 100%;
   max-width: 460px;
   background: var(--soft-card, #d2ded2);
-  border: 1px solid rgba(143, 161, 139, .25);
+  border: 1px solid rgba(143, 161, 139, 0.25);
   border-radius: 22px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, .08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   padding: 26px 22px;
   display: flex;
   flex-direction: column;
@@ -2052,7 +2052,7 @@ Tips & Notas
   color: var(--deep-forest, #41664c);
   display: grid;
   place-items: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .rsvp-icon svg {
@@ -2068,11 +2068,11 @@ Tips & Notas
   border-radius: 999px;
   padding: 14px 28px;
   font-weight: 700;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   font-family: 'Playfair Display', serif;
   font-size: 1.02rem;
   cursor: pointer;
-  transition: transform .05s ease, background .2s;
+  transition: transform 0.05s ease, background 0.2s;
 }
 
 .rsvp-cta:hover {
@@ -2085,10 +2085,10 @@ Tips & Notas
 
 /* Link rápido */
 .rsvp-link-quick {
-  font-size: .95rem;
+  font-size: 0.95rem;
   color: var(--deep-forest, #23422c);
   text-decoration: underline;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 /* Modal principal */
@@ -2096,46 +2096,36 @@ Tips & Notas
   position: fixed;
   inset: 0;
   display: none;
-  z-index: 5000; /* Alto para estar por encima de todo, incluyendo decorativos florales */
-  overflow-y: auto; /* Permite scroll en móviles si el contenido es largo */
-}
-
-/* Estado abierto: Usa flex para centrar la tarjeta */
-.rsvp-modal.is-open {
-  display: flex;
+  z-index: 5000; /* Alto para superar decorativos florales (z-index: 4000) */
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  backdrop-filter: saturate(80%) blur(2px);
   align-items: center;
   justify-content: center;
-  opacity: 1 !important; /* Fuerza visibilidad completa */
-  visibility: visible !important;
 }
 
-/* Backdrop */
-.rsvp-modal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparente y más opaco para resaltar el modal */
-  backdrop-filter: saturate(80%) blur(2px);
-  z-index: -1; /* Detrás de la tarjeta */
+/* Estado abierto */
+.rsvp-modal.active { /* Cambiado a .active para coincidir con otros modales */
+  display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Tarjeta del modal */
 .rsvp-modal__card {
-  position: relative; /* Relative para centrado con flex del padre */
-  width: min(92vw, 520px);
-  margin: 0 auto; /* Centrado horizontal, flex maneja vertical */
+  position: relative;
+  width: min(92vw, 380px); /* Igual que modal-content en otros modales */
   background: #fff;
-  border-radius: 26px;
-  box-shadow: 0 18px 60px rgba(0, 0, 0, .18);
-  padding: 28px 22px 26px;
+  border-radius: 18px; /* Redondeado como otros modales */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  padding: 36px 24px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  visibility: visible !important; /* Fuerza visibilidad */
+  visibility: visible;
 }
 
-/* Animación al abrir */
-.rsvp-modal.is-open .rsvp-modal__card {
-  opacity: 1 !important;
+.rsvp-modal.active .rsvp-modal__card {
+  opacity: 1;
   transform: translateY(0);
 }
 
@@ -2164,7 +2154,7 @@ Tips & Notas
   color: var(--deep-forest, #23422c);
   display: grid;
   place-items: center;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
   margin: -62px auto 12px;
 }
 
@@ -2217,7 +2207,7 @@ Tips & Notas
 .rsvp-inputs input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding: 12px 6px;
   outline: none;
   font-size: 1rem;
@@ -2237,16 +2227,18 @@ Tips & Notas
   border-radius: 12px;
   padding: 14px;
   font-weight: 800;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   font-family: 'Playfair Display', serif;
   font-size: 1.02rem;
   cursor: pointer;
-  transition: filter .15s ease;
+  transition: filter 0.15s ease;
 }
 
 .rsvp-send:hover {
-  filter: brightness(.95);
+  filter: brightness(0.95);
 }
+
+
 
 
 /* ===== Banner final ===== */

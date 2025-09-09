@@ -233,14 +233,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 /* ====== RSVP por WhatsApp (único botón + opciones en modal) ====== */
 document.addEventListener('DOMContentLoaded', () => {
   // Configuración
-  const RSVP_PHONE   = '18295194031';          // formato internacional sin "+"
+  const RSVP_PHONE   = '18295194031';
   const COUPLE_NAMES = 'Raul & Milagro';
-  const EVENT_DATE   = 'Sábado 22 de Noviembre'; // ajusta si corresponde
-  const EVENT_PLACE  = 'Salón de Iglesia de la Fe';
+  const EVENT_DATE   = 'Sábado 22 de Noviembre';
+  const EVENT_PLACE  = 'Iglesia de Fe';
 
   // Elementos
   const openBtn  = document.getElementById('open-rsvp-modal');
@@ -262,46 +261,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   function openWA(text) {
-  const url = `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(text)}`;
-
-  // Opción 1: redirigir directamente (seguro en todos los navegadores)
-  window.location.href = url;
-
-  // 👉 Si prefieres abrir en nueva pestaña sin bloqueo:
-  // const link = document.createElement('a');
-  // link.href = url;
-  // link.target = "_blank";
-  // link.rel = "noopener";
-  // document.body.appendChild(link);
-  // link.click();
-  // document.body.removeChild(link);
-}
-
+    const url = `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(text)}`;
+    window.location.href = url;
+  }
 
   // Abrir/cerrar modal
-  openBtn?.addEventListener('click', () => modal?.classList.add('is-open'));
-  closeEls.forEach(el => el.addEventListener('click', () => modal.classList.remove('is-open')));
+  openBtn?.addEventListener('click', () => {
+    modal?.classList.add('active');
+    console.log('RSVP modal abierto'); // Para depuración
+  });
+  closeEls.forEach(el => el.addEventListener('click', () => modal.classList.remove('active')));
 
-  // Fallback robusto: si el primer click no enganchara por cualquier razón,
-// esto asegura abrir el modal siempre que se pulse el botón de la tarjeta.
+  // Fallback robusto
   document.addEventListener('click', (e) => {
     const trigger = e.target.closest('#open-rsvp-modal');
     if (!trigger) return;
     const modal = document.getElementById('rsvp-modal');
-    if (modal) modal.classList.add('is-open');
+    if (modal) modal.classList.add('active');
   });
 
-
-  // Envío estructurado (Sí/No + nombre + nota)
+  // Envío estructurado
   sendBtn?.addEventListener('click', () => {
     const choice = document.querySelector('input[name="rsvpChoice"]:checked')?.value || 'si';
     const name = document.getElementById('rsvp-name')?.value?.trim() || '';
     const note = document.getElementById('rsvp-note')?.value?.trim() || '';
     openWA(buildRsvpMessage(choice, name, note));
   });
-
 });
-
 
 
 /* =========================
