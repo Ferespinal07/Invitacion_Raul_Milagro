@@ -2061,11 +2061,11 @@ Tips & Notas
 }
 
 /* Asegura que el modal RSVP esté por encima de todo */
-.rsvp-modal { z-index: 1; }
+.rsvp-modal { z-index: 50000; }
 
 /* Backdrop con color válido (el valor actual es inválido) */
 .rsvp-modal__backdrop{
-  background: transparent;
+  background: rgba(250, 253, 250, 0.8);
   backdrop-filter: saturate(80%) blur(2px);
 }
 
