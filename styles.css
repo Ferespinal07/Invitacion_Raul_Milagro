@@ -2249,7 +2249,8 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 .dresscode-section,
 .tips-section,
 .fotos-section,
-.regalos-section {
+.regalos-section,
+.rsvp-section {
   min-height: 100dvh;
 }
 
@@ -2307,13 +2308,15 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 .modal-sugerencia.active,
 .modal-dresscode.active,
 .modal-tips.active,
-.modal-regalos.active { display: flex; }
+.modal-regalos.active,
+.rsvp-modal__card.active { display: flex; }
 
 .modal-overlay { position: fixed; inset: 0; width: 100vw; height: 100dvh; }
 
 .modal-content,
 .modal-content-tips,
-.modal-content-regalos {
+.modal-content-regalos,
+.rsvp-modal__card {
   width: min(92vw, 380px);   /* no usar 40vw en móviles */
 }
 
