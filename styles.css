@@ -1998,146 +1998,255 @@ Tips & Notas
 /* =======================
    CONFIRMACIÓN (WhatsApp)
    ======================= */
-.rsvp-section{
-  margin-top: 20px;    /* acerca más la sección de RSVP a Regalos */
+
+/* Sección principal de RSVP */
+.rsvp-section {
+  margin-top: 20px; /* Acerca más la sección de RSVP a Regalos */
   min-height: 20vh;
-  background:#fafbfa;
-
-  
-  padding:60px 20px;
-  display:flex; flex-direction:column; align-items:center;
-}
-.rsvp-heading{
-  font-family:'Dancing Script', cursive;
-  color:var(--deep-forest, #23422c);
-  text-align:center;
-  line-height:1.1;
-  font-size:clamp(2.2rem, 6vw, 3.2rem);
-  margin:0 0 8px 0;
-}
-.rsvp-subtitle{
-  color:var(--muted-text, #7f8c8d);
-  font-family:'Playfair Display', serif;
-  font-size:1.1rem;
-  text-align:center;
-  margin:0 0 26px 0;
-}
-.rsvp-card{
-  width:100%; max-width:460px;
-  background:var(--soft-card, #d2ded2);
-  border:1px solid rgba(143,161,139,.25);
-  border-radius:22px;
-  box-shadow:0 8px 32px rgba(0,0,0,.08);
-  padding:26px 22px;
-  display:flex; flex-direction:column; align-items:center; gap:16px;
+  background: #fafbfa;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Títulos y subtítulos */
+.rsvp-heading {
+  font-family: 'Dancing Script', cursive;
+  color: var(--deep-forest, #23422c);
+  text-align: center;
+  line-height: 1.1;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  margin: 0 0 8px 0;
+}
+
+.rsvp-subtitle {
+  color: var(--muted-text, #7f8c8d);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 0 26px 0;
+}
+
+/* Tarjeta de RSVP */
+.rsvp-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--soft-card, #d2ded2);
+  border: 1px solid rgba(143, 161, 139, .25);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .08);
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Icono de RSVP */
+.rsvp-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--deep-forest, #41664c);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+.rsvp-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+/* Botón CTA */
+.rsvp-cta {
+  background: #7e8e7e;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.02rem;
+  cursor: pointer;
+  transition: transform .05s ease, background .2s;
+}
+
+.rsvp-cta:hover {
+  background: #516a51;
+}
+
+.rsvp-cta:active {
+  transform: translateY(1px);
+}
+
+/* Link rápido */
+.rsvp-link-quick {
+  font-size: .95rem;
+  color: var(--deep-forest, #23422c);
+  text-decoration: underline;
+  opacity: .8;
+}
+
+/* Modal principal */
+.rsvp-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 5000; /* Alto para estar por encima de todo, incluyendo decorativos florales */
+  overflow-y: auto; /* Permite scroll en móviles si el contenido es largo */
+}
+
+/* Estado abierto: Usa flex para centrar la tarjeta */
+.rsvp-modal.is-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1 !important; /* Fuerza visibilidad completa */
+  visibility: visible !important;
+}
+
+/* Backdrop */
+.rsvp-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparente y más opaco para resaltar el modal */
+  backdrop-filter: saturate(80%) blur(2px);
+  z-index: -1; /* Detrás de la tarjeta */
+}
+
+/* Tarjeta del modal */
 .rsvp-modal__card {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: relative; /* Relative para centrado con flex del padre */
+  width: min(92vw, 520px);
+  margin: 0 auto; /* Centrado horizontal, flex maneja vertical */
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .18);
+  padding: 28px 22px 26px;
   opacity: 0;
   transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  visibility: visible !important; /* Fuerza visibilidad */
 }
+
+/* Animación al abrir */
 .rsvp-modal.is-open .rsvp-modal__card {
-  opacity: 1;
+  opacity: 1 !important;
   transform: translateY(0);
 }
 
-
-.rsvp-icon{
-  width:68px; height:68px; border-radius:50%;
-  background:#fff; color:var(--deep-forest, #41664c);
-  display:grid; place-items:center; box-shadow:0 8px 24px rgba(0,0,0,.08);
-}
-.rsvp-icon svg{ width:34px; height:34px; }
-
-.rsvp-cta{
-  background:#7e8e7e;
-  color:#fff; border:none; border-radius:999px;
-  padding:14px 28px; font-weight:700; letter-spacing:.3px;
-  font-family:'Playfair Display', serif; font-size:1.02rem;
-  cursor:pointer; transition:transform .05s ease, background .2s;
-}
-.rsvp-cta:hover{ background:#516a51; }
-.rsvp-cta:active{ transform:translateY(1px); }
-
-.rsvp-link-quick{
-  font-size:.95rem; color:var(--deep-forest, #23422c);
-  text-decoration:underline; opacity:.8;
+/* Botón de cierre */
+.rsvp-modal__close {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--sage-green);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
 }
 
-.rsvp-modal{ position:fixed; inset:0; display:none; z-index:1000; }
-.rsvp-modal.is-open{ display:block; }
-.rsvp-modal__backdrop{
-  position:absolute; inset:0; background:rgba(0, 0, 0, 0.4);
-  backdrop-filter:saturate(80%) blur(2px);
+/* Badge del modal */
+.rsvp-modal__badge {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--soft-card, #f2f5f2);
+  color: var(--deep-forest, #23422c);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+  margin: -62px auto 12px;
 }
 
-/* Asegura que el modal RSVP esté por encima de todo */
-.rsvp-modal { z-index: 1000; }
-
-/* Backdrop con color válido (el valor actual es inválido) */
-.rsvp-modal__backdrop{
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: saturate(80%) blur(2px);
+.rsvp-modal__badge svg {
+  width: 38px;
+  height: 38px;
 }
 
-.rsvp-modal__card{
-  position:absolute;left: 3%; top:0;
-  width:min(92vw, 520px); margin:12vh auto 0;
-  background:#fff; border-radius:26px;
-  box-shadow:0 18px 60px rgba(0,0,0,.18);
-  padding:28px 22px 26px;
-}
-.rsvp-modal__close{
-  position:absolute; right:14px; top:12px;
-  width:36px; height:36px; border-radius:50%;
-  border:none; background:var(--sage-green); color:#fff;
-  font-size:22px; line-height:1; cursor:pointer;
-}
-.rsvp-modal__badge{
-  width:76px; height:76px; border-radius:50%;
-  background:var(--soft-card, #f2f5f2); color:var(--deep-forest, #23422c);
-  display:grid; place-items:center; box-shadow:0 12px 28px rgba(0,0,0,.12);
-  margin:-62px auto 12px;
-}
-.rsvp-modal__badge svg{ 
-  width:38px; 
-  height:38px;
- }
-
-.rsvp-modal__title{
-  font-family:'Playfair Display', serif;
-  color:var(--deep-forest);
-  text-align:center; margin:8px 0 14px; font-size:1.4rem;
+/* Título del modal */
+.rsvp-modal__title {
+  font-family: 'Playfair Display', serif;
+  color: var(--deep-forest);
+  text-align: center;
+  margin: 8px 0 14px;
+  font-size: 1.4rem;
 }
 
-.rsvp-modal__options{
-  display:flex; gap:16px; justify-content:center; margin-bottom:12px;
+/* Opciones de radio */
+.rsvp-modal__options {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 12px;
 }
-.rsvp-radio{
-  display:flex; align-items:center; gap:8px; cursor:pointer;
-  background:#f5f7f5; padding:10px 14px; border-radius:999px;
-  border:1px solid rgba(255, 255, 255, 0.25);
-  user-select:none;
-}
-.rsvp-radio input{ accent-color:var(--olive, #7a7f40); }
 
-.rsvp-inputs{ display:flex; flex-direction:column; gap:12px; margin:10px 0 16px; }
-.rsvp-inputs input{
-  width:100%; border:none; border-bottom:1px solid rgba(0,0,0,.15);
-  padding:12px 6px; outline:none; font-size:1rem;
-  font-family:inherit;
+.rsvp-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: #f5f7f5;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  user-select: none;
 }
-.rsvp-inputs input:focus{ border-bottom-color:var(--olive, #7a7f40); }
 
-.rsvp-send{
-  width:100%; background:var(--sage-green); color:#fff; border:none;
-  border-radius:12px; padding:14px; font-weight:800; letter-spacing:.3px;
-  font-family:'Playfair Display', serif; font-size:1.02rem;
-  cursor:pointer; transition:filter .15s ease;
+.rsvp-radio input {
+  accent-color: var(--olive, #7a7f40);
 }
-.rsvp-send:hover{ filter:brightness(.95); }
 
+/* Inputs */
+.rsvp-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 10px 0 16px;
+}
+
+.rsvp-inputs input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+  padding: 12px 6px;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.rsvp-inputs input:focus {
+  border-bottom-color: var(--olive, #7a7f40);
+}
+
+/* Botón de envío */
+.rsvp-send {
+  width: 100%;
+  background: var(--sage-green);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.02rem;
+  cursor: pointer;
+  transition: filter .15s ease;
+}
+
+.rsvp-send:hover {
+  filter: brightness(.95);
+}
 
 
 /* ===== Banner final ===== */
