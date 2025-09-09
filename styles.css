@@ -2060,14 +2060,6 @@ Tips & Notas
   backdrop-filter:saturate(80%) blur(2px);
 }
 
-/* Asegura que el modal RSVP esté por encima de todo */
-.rsvp-modal { z-index: 50000; }
-
-/* Backdrop con color válido (el valor actual es inválido) */
-.rsvp-modal__backdrop{
-  background: transparent;
-  backdrop-filter: saturate(80%) blur(2px);
-}
 
 .rsvp-modal__card{
   position:relative;
