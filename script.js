@@ -233,22 +233,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* ====== Confirmación 2 ====== */
+document.addEventListener('DOMContentLoaded', function() {
+  // Elementos
+  const abrirConfirmacion = document.getElementById('abrir-confirmacion');
+  const modalConfirmacion = document.getElementById('modal-confirmacion');
+  const cerrarConfirmacion1 = document.getElementById('cerrar-modal-confirmacion');
+  const cerrarConfirmacion2 = document.getElementById('cerrar-modal-confirmacion-btn');
+
+  // Abrir modal
+  if (abrirConfirmacion && modalConfirmacion) {
+    abrirConfirmacion.onclick = () => {
+      modalConfirmacion.classList.add('active');
+      console.log('Modal Confirmación 2 abierto'); // Para depuración
+    };
+  }
+
+  // Cerrar modal (primer botón)
+  if (cerrarConfirmacion1 && modalConfirmacion) {
+    cerrarConfirmacion1.onclick = () => modalConfirmacion.classList.remove('active');
+  }
+
+  // Cerrar modal (segundo botón, opcional)
+  if (cerrarConfirmacion2 && modalConfirmacion) {
+    cerrarConfirmacion2.onclick = () => modalConfirmacion.classList.remove('active');
+  }
+});
+
+
 /* ====== RSVP por WhatsApp (único botón + opciones en modal) ====== */
 document.addEventListener('DOMContentLoaded', () => {
   // Configuración
   const RSVP_PHONE   = '18295194031';
   const COUPLE_NAMES = 'Raul & Milagro';
   const EVENT_DATE   = 'Sábado 22 de Noviembre';
-  const EVENT_PLACE  = 'Iglesia de Fe';
+  const EVENT_PLACE  = 'Salón de Iglesia de la Fe';
 
   // Elementos
   const openBtn  = document.getElementById('open-rsvp-modal');
   const modal    = document.getElementById('rsvp-modal');
   const closeEls = modal ? modal.querySelectorAll('[data-close-modal], .rsvp-modal__close') : [];
   const sendBtn  = document.getElementById('rsvp-send');
-
-  const directInput = document.getElementById('rsvp-direct');
-  const directBtn   = document.getElementById('rsvp-direct-send');
 
   // Helpers
   function buildRsvpMessage(attend, name, note) {
@@ -268,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Abrir/cerrar modal
   openBtn?.addEventListener('click', () => {
     modal?.classList.add('active');
-    console.log('RSVP modal abierto'); // Para depuración
+    console.log('RSVP modal abierto');
   });
   closeEls.forEach(el => el.addEventListener('click', () => modal.classList.remove('active')));
 

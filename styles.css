@@ -2013,7 +2013,7 @@ Tips & Notas
 /* Títulos y subtítulos */
 .rsvp-heading {
   font-family: 'Dancing Script', cursive;
-  color: var(--deep-forest, #23422c);
+  color: var(--terracotta);
   text-align: center;
   line-height: 1.1;
   font-size: clamp(2.2rem, 6vw, 3.2rem);
@@ -2021,7 +2021,7 @@ Tips & Notas
 }
 
 .rsvp-subtitle {
-  color: var(--muted-text, #7f8c8d);
+  color: var(--muted-text, #8d807f);
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   text-align: center;
@@ -2032,7 +2032,7 @@ Tips & Notas
 .rsvp-card {
   width: 100%;
   max-width: 460px;
-  background: var(--soft-card, #d2ded2);
+  background: var(--soft-card, #d6ae9657);
   border: 1px solid rgba(143, 161, 139, 0.25);
   border-radius: 22px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
@@ -2045,24 +2045,23 @@ Tips & Notas
 
 /* Icono de RSVP */
 .rsvp-icon {
-  width: 68px;
-  height: 68px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: #fff;
-  color: var(--deep-forest, #41664c);
+  background: #f3f5f28d;
+  color: #422f23;
   display: grid;
   place-items: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
-
 .rsvp-icon svg {
   width: 34px;
-  height: 34px;
+  height: auto;
 }
 
 /* Botón CTA */
 .rsvp-cta {
-  background: #7e8e7e;
+  background: var(--dusty-rose);
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -2076,7 +2075,7 @@ Tips & Notas
 }
 
 .rsvp-cta:hover {
-  background: #516a51;
+  background: #6a5551a8;
 }
 
 .rsvp-cta:active {
@@ -2086,7 +2085,7 @@ Tips & Notas
 /* Link rápido */
 .rsvp-link-quick {
   font-size: 0.95rem;
-  color: var(--deep-forest, #23422c);
+  color: var(--dusty-rose, #c59992);
   text-decoration: underline;
   opacity: 0.8;
 }
@@ -2097,7 +2096,7 @@ Tips & Notas
   inset: 0;
   display: none;
   z-index: 5000; /* Alto para superar decorativos florales (z-index: 4000) */
-  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  background: #fafbfa; /* Fondo semi-transparente */
   backdrop-filter: saturate(80%) blur(2px);
   align-items: center;
   justify-content: center;
@@ -2138,7 +2137,7 @@ Tips & Notas
   height: 36px;
   border-radius: 50%;
   border: none;
-  background: var(--sage-green);
+  background: var(--terracotta);
   color: #fff;
   font-size: 22px;
   line-height: 1;
@@ -2150,8 +2149,8 @@ Tips & Notas
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: var(--soft-card, #f2f5f2);
-  color: var(--deep-forest, #23422c);
+  background: var(--soft-card, #f5f3f2);
+  color: var(--terracotta, #c59992);
   display: grid;
   place-items: center;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
@@ -2166,7 +2165,7 @@ Tips & Notas
 /* Título del modal */
 .rsvp-modal__title {
   font-family: 'Playfair Display', serif;
-  color: var(--deep-forest);
+  color: #693d31;
   text-align: center;
   margin: 8px 0 14px;
   font-size: 1.4rem;
@@ -2185,7 +2184,7 @@ Tips & Notas
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  background: #f5f7f5;
+  background: #efdddd8a;
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -2193,7 +2192,7 @@ Tips & Notas
 }
 
 .rsvp-radio input {
-  accent-color: var(--olive, #7a7f40);
+  accent-color: var(--dusty-rose, #c59992);
 }
 
 /* Inputs */
@@ -2215,13 +2214,13 @@ Tips & Notas
 }
 
 .rsvp-inputs input:focus {
-  border-bottom-color: var(--olive, #7a7f40);
+  border-bottom-color: var(--dusty-rose, #c59992);
 }
 
 /* Botón de envío */
 .rsvp-send {
   width: 100%;
-  background: var(--sage-green);
+  background: var(--dusty-rose);
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -2237,6 +2236,8 @@ Tips & Notas
 .rsvp-send:hover {
   filter: brightness(0.95);
 }
+
+
 
 
 
