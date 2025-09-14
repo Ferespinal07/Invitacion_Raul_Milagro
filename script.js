@@ -233,49 +233,36 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* ====== Confirmación 2 ====== */
+
+/* ====== RSVP por WhatsApp ====== */
 document.addEventListener('DOMContentLoaded', function() {
+  // Configuración
+  const RSVP_PHONE   = '13477834988';
+  const COUPLE_NAMES = 'Raul & Milagro';
+  const EVENT_DATE   = 'Sábado 22 de Noviembre';
+  const EVENT_PLACE  = 'la Iglesia de la Fe';
+
   // Elementos
-  const abrirConfirmacion = document.getElementById('abrir-confirmacion');
-  const modalConfirmacion = document.getElementById('modal-confirmacion');
-  const cerrarConfirmacion1 = document.getElementById('cerrar-modal-confirmacion');
-  const cerrarConfirmacion2 = document.getElementById('cerrar-modal-confirmacion-btn');
+  const abrirRsvp = document.getElementById('open-rsvp-modal');
+  const modalRsvp = document.getElementById('rsvp-modal');
+  const cerrarRsvp = document.getElementById('rsvp-modal__close');
+  const sendBtn = document.getElementById('rsvp-send');
+  const inputs = document.querySelectorAll('#rsvp-name, #rsvp-note');
 
   // Abrir modal
-  if (abrirConfirmacion && modalConfirmacion) {
-    abrirConfirmacion.onclick = () => {
-      modalConfirmacion.classList.add('active');
-      console.log('Modal Confirmación 2 abierto'); // Para depuración
+  if (abrirRsvp && modalRsvp) {
+    abrirRsvp.onclick = () => {
+      modalRsvp.classList.add('active');
+      console.log('RSVP modal abierto'); // Para depuración
     };
   }
 
-  // Cerrar modal (primer botón)
-  if (cerrarConfirmacion1 && modalConfirmacion) {
-    cerrarConfirmacion1.onclick = () => modalConfirmacion.classList.remove('active');
+  // Cerrar modal
+  if (cerrarRsvp && modalRsvp) {
+    cerrarRsvp.onclick = () => modalRsvp.classList.remove('active');
   }
 
-  // Cerrar modal (segundo botón, opcional)
-  if (cerrarConfirmacion2 && modalConfirmacion) {
-    cerrarConfirmacion2.onclick = () => modalConfirmacion.classList.remove('active');
-  }
-});
-
-
-/* ====== RSVP por WhatsApp (único botón + opciones en modal) ====== */
-document.addEventListener('DOMContentLoaded', () => {
-  // Configuración
-  const RSVP_PHONE   = '18295194031';
-  const COUPLE_NAMES = 'Raul & Milagro';
-  const EVENT_DATE   = 'Sábado 22 de Noviembre';
-  const EVENT_PLACE  = 'Salón de Iglesia de la Fe';
-
-  // Elementos
-  const openBtn  = document.getElementById('open-rsvp-modal');
-  const modal    = document.getElementById('rsvp-modal');
-  const closeEls = modal ? modal.querySelectorAll('[data-close-modal], .rsvp-modal__close') : [];
-  const sendBtn  = document.getElementById('rsvp-send');
-
-  // Helpers
+  // Envío por WhatsApp
   function buildRsvpMessage(attend, name, note) {
     const saludo = name ? `Hola, soy ${name}. ` : 'Hola. ';
     const baseSi = `Confirmo mi asistencia a la boda de ${COUPLE_NAMES}${EVENT_DATE ? ` el ${EVENT_DATE}` : ''}${EVENT_PLACE ? ` en ${EVENT_PLACE}` : ''}.`;
@@ -284,33 +271,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const gracias = ' ¡Gracias por la invitación!';
     return saludo + (attend === 'si' ? baseSi : baseNo) + extra + gracias;
   }
-  
+
   function openWA(text) {
     const url = `https://wa.me/${RSVP_PHONE}?text=${encodeURIComponent(text)}`;
     window.location.href = url;
   }
 
-  // Abrir/cerrar modal
-  openBtn?.addEventListener('click', () => {
-    modal?.classList.add('active');
-    console.log('RSVP modal abierto');
-  });
-  closeEls.forEach(el => el.addEventListener('click', () => modal.classList.remove('active')));
+  if (sendBtn) {
+    sendBtn.onclick = () => {
+      const choice = document.querySelector('input[name="rsvpChoice"]:checked')?.value || 'si';
+      const name = document.getElementById('rsvp-name')?.value?.trim() || '';
+      const note = document.getElementById('rsvp-note')?.value?.trim() || '';
+      openWA(buildRsvpMessage(choice, name, note));
+    };
+  }
 
-  // Fallback robusto
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('#open-rsvp-modal');
-    if (!trigger) return;
-    const modal = document.getElementById('rsvp-modal');
-    if (modal) modal.classList.add('active');
-  });
-
-  // Envío estructurado
-  sendBtn?.addEventListener('click', () => {
-    const choice = document.querySelector('input[name="rsvpChoice"]:checked')?.value || 'si';
-    const name = document.getElementById('rsvp-name')?.value?.trim() || '';
-    const note = document.getElementById('rsvp-note')?.value?.trim() || '';
-    openWA(buildRsvpMessage(choice, name, note));
+  // Prevenir desplazamiento al enfocar inputs en móviles
+  inputs.forEach(input => {
+    input.addEventListener('focus', () => {
+      window.scrollTo(0, 0); // Forzar la página al inicio
+      document.body.style.overflow = 'visible'; // Evitar bloqueo de scroll
+    });
   });
 });
 

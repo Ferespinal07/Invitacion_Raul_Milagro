@@ -1993,8 +1993,6 @@ Tips & Notas
   left: 34%;     /* ajusta según tu imagen */
 }
 
-
-
 /* =======================
    CONFIRMACIÓN (WhatsApp)
    ======================= */
@@ -2008,6 +2006,7 @@ Tips & Notas
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; /* Asegura que la tarjeta no se desplace */
 }
 
 /* Títulos y subtítulos */
@@ -2041,6 +2040,7 @@ Tips & Notas
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  position: relative; /* Evita desplazamientos */
 }
 
 /* Icono de RSVP */
@@ -2054,6 +2054,7 @@ Tips & Notas
   place-items: center;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
+
 .rsvp-icon svg {
   width: 34px;
   height: auto;
@@ -2071,7 +2072,7 @@ Tips & Notas
   font-family: 'Playfair Display', serif;
   font-size: 1.02rem;
   cursor: pointer;
-  transition: transform 0.05s ease, background 0.2s;
+  transition: background 0.2s; /* Removida transform para evitar movimiento */
 }
 
 .rsvp-cta:hover {
@@ -2079,7 +2080,7 @@ Tips & Notas
 }
 
 .rsvp-cta:active {
-  transform: translateY(1px);
+  filter: brightness(0.95); /* Reemplaza transform por un efecto visual */
 }
 
 /* Link rápido */
@@ -2093,39 +2094,56 @@ Tips & Notas
 /* Modal principal */
 .rsvp-modal {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh; /* Evita que se reduzca con el teclado */
   display: none;
-  z-index: 5000; /* Alto para superar decorativos florales (z-index: 4000) */
-  background: #fafbfa; /* Fondo semi-transparente */
-  backdrop-filter: saturate(80%) blur(2px);
+  z-index: 5000;
+  background: rgba(0, 0, 0, 0.18); /* Fondo oscuro como Tips & Notas */
   align-items: center;
   justify-content: center;
+  touch-action: none; /* Evita scroll táctil en el modal */
 }
 
 /* Estado abierto */
-.rsvp-modal.active { /* Cambiado a .active para coincidir con otros modales */
+.rsvp-modal.active {
   display: flex;
   opacity: 1;
   visibility: visible;
 }
 
+/* Fondo del modal */
+.rsvp-modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.18);
+  z-index: 1;
+}
+
 /* Tarjeta del modal */
 .rsvp-modal__card {
   position: relative;
-  width: min(92vw, 380px); /* Igual que modal-content en otros modales */
+  width: min(92vw, 380px);
   background: #fff;
-  border-radius: 18px; /* Redondeado como otros modales */
+  border-radius: 18px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
   padding: 36px 24px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  visibility: visible;
+  transform: none; /* Removida transición translateY */
+  transition: opacity 0.3s ease; /* Solo transición de opacidad */
 }
 
 .rsvp-modal.active .rsvp-modal__card {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* Botón de cierre */
