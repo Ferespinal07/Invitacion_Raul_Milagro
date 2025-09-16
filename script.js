@@ -99,12 +99,12 @@ if (musicBtn && audio && musicIcon) {
   // Carrusel de retratos
   const retratos = [
     { img: 'assets/2-PHM04373.jpg', caption: 'Una pequeña muestra de nuestro amor' },
-    { img: 'assets/3-PHM04394.jpg', caption: 'Un día especial' },
-    { img: 'assets/4-PHM04451.jpg', caption: 'Momentos inolvidables' },
-    { img: 'assets/5-PHM04466.jpg', caption: 'Siempre juntos' },
-    { img: 'assets/6-PHM04468.jpg', caption: 'Momentos inolvidables' },
-    { img: 'assets/7-PHM04475.jpg', caption: 'Siempre juntos' },
-    { img: 'assets/12-PHM04807.jpg', caption: 'Hola' }
+    { img: 'assets/3-PHM04394.jpg', caption: 'Caminamos en fe, vivimos en amor' },
+    { img: 'assets/4-PHM04451.jpg', caption: 'Todo es posible con Dios' },
+    { img: 'assets/5-PHM04466.jpg', caption: 'Dios une lo que el amor bendice' },
+    { img: 'assets/6-PHM04468.jpg', caption: 'Bendecidos para bendecir' },
+    { img: 'assets/7-PHM04475.jpg', caption: 'Caminamos en fe, vivimos en amor' },
+    { img: 'assets/12-PHM04807.jpg', caption: 'Dos almas, un camino' }
   ];
   let current = 0;
   const polaroid = document.getElementById('retratos-polaroid');
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const RSVP_PHONE   = '13477834988';
   const COUPLE_NAMES = 'Raul & Milagro';
   const EVENT_DATE   = 'Sábado 22 de Noviembre';
-  const EVENT_PLACE  = 'la Iglesia de la Fe';
+  const EVENT_PLACE  = 'la Iglesia de Fe';
 
   // Elementos
   const abrirRsvp = document.getElementById('open-rsvp-modal');
