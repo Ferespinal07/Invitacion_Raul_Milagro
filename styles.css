@@ -2115,7 +2115,7 @@ Tips & Notas
   background: rgba(0, 0, 0, 0.18); /* Fondo oscuro como Tips & Notas */
   align-items: center;
   justify-content: center;
-  touch-action: none; /* Evita scroll táctil en el modal */
+ /* touch-action: none; /* Evita scroll táctil en el modal */
 }
 
 /* Estado abierto */

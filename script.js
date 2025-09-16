@@ -250,19 +250,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const modalRsvp = document.getElementById('rsvp-modal');
   const cerrarRsvp = document.getElementById('rsvp-modal__close');
   const sendBtn = document.getElementById('rsvp-send');
-  const inputs = document.querySelectorAll('#rsvp-name, #rsvp-note');
+
+  // Guardar scroll antes de abrir modal
+  let scrollY = 0;
+
+  function openModal() {
+    if (!modalRsvp) return;
+    scrollY = window.scrollY || window.pageYOffset;
+    document.body.classList.add('modal-open');
+    document.body.style.top = `-${scrollY}px`;
+    modalRsvp.classList.add('active');
+    console.log('RSVP modal abierto');
+  }
+
+  function closeModal() {
+    if (!modalRsvp) return;
+    modalRsvp.classList.remove('active');
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY); // restaurar posición original
+  }
 
   // Abrir modal
   if (abrirRsvp && modalRsvp) {
-    abrirRsvp.onclick = () => {
-      modalRsvp.classList.add('active');
-      console.log('RSVP modal abierto'); // Para depuración
-    };
+    abrirRsvp.onclick = openModal;
   }
 
   // Cerrar modal
   if (cerrarRsvp && modalRsvp) {
-    cerrarRsvp.onclick = () => modalRsvp.classList.remove('active');
+    cerrarRsvp.onclick = closeModal;
   }
 
   // Envío por WhatsApp
@@ -289,13 +305,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
-  // Prevenir desplazamiento al enfocar inputs en móviles
-  inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      window.scrollTo(0, 0); // Forzar la página al inicio
-      document.body.style.overflow = 'visible'; // Evitar bloqueo de scroll
-    });
-  });
+  // 🚫 Eliminado el scrollTo(0,0) en focus (era lo que mandaba al inicio)
+  // Los inputs funcionan dentro del modal sin mover la página
 });
 
 
