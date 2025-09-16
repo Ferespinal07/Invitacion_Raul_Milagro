@@ -50,7 +50,7 @@ body.loading {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("assets/Bienvenida2.jpg") center/cover no-repeat;
+  background: url("assets/Bienvenida3.jpg") center/cover no-repeat;
   filter: blur(1px); /* <-- aquí se aplica el desenfoque */
   transform: scale(1.1); /* evitar bordes transparentes */
   z-index: -1; /* ponerlo detrás del contenido */
@@ -93,7 +93,7 @@ body.loading {
 }
 
 .bienvenida-sub {
-  color: #ffffff;
+  color: var(--terracotta);
   font-size: 1.1rem;
   margin-bottom: 28px;
   font-family: 'Playfair Display', serif;
