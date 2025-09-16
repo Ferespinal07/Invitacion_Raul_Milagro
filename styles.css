@@ -50,11 +50,14 @@ body.loading {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("assets/Bienvenida.jpg") center/cover no-repeat;
+  background: url("assets/Bienvenida2.jpg") center/cover no-repeat;
   filter: blur(1px); /* <-- aquí se aplica el desenfoque */
   transform: scale(1.1); /* evitar bordes transparentes */
   z-index: -1; /* ponerlo detrás del contenido */
 }
+
+
+
 
 
 .welcome-content {
