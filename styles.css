@@ -2439,7 +2439,8 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 .modal-sugerencia,
 .modal-dresscode,
 .modal-tips,
-.modal-regalos {
+.modal-regalos,
+.rsvp-modal {
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -2479,8 +2480,7 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
   .musica-btn:hover,
   .dresscode-btn:hover,
   .tips-btn:hover,
-  .regalos-btn:hover,
-  .rsvp-btn:hover { transform: none; }
+  .regalos-btn:hover { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
