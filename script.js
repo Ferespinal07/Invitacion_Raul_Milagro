@@ -98,10 +98,13 @@ if (musicBtn && audio && musicIcon) {
 
   // Carrusel de retratos
   const retratos = [
-    { img: 'assets/boda-1.webp', caption: 'Nuestro primer encuentro' },
-    { img: 'assets/NoviosVelo.jpg', caption: 'Un día especial' },
-    { img: 'assets/boda-1.webp', caption: 'Momentos inolvidables' },
-    { img: 'assets/NoviosVelo.jpg', caption: 'Siempre juntos' }
+    { img: 'assets/2-PHM04373.jpg', caption: 'Una pequeña muestra de nuestro amor' },
+    { img: 'assets/3-PHM04394.jpg', caption: 'Un día especial' },
+    { img: 'assets/4-PHM04451.jpg', caption: 'Momentos inolvidables' },
+    { img: 'assets/5-PHM04466.jpg', caption: 'Siempre juntos' },
+    { img: 'assets/6-PHM04468.jpg', caption: 'Momentos inolvidables' },
+    { img: 'assets/7-PHM04475.jpg', caption: 'Siempre juntos' },
+    { img: 'assets/12-PHM04807.jpg', caption: 'Hola' }
   ];
   let current = 0;
   const polaroid = document.getElementById('retratos-polaroid');

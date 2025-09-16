@@ -8,8 +8,8 @@
 
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=32">
-  <script src="script.js?v=32"></script>
+  <link rel="stylesheet" href="styles.css?v=33">
+  <script src="script.js?v=33"></script>
 
 
 
@@ -55,7 +55,7 @@
 
   <!-- Fondo SIN animación -->
   <div class="foto-conteo">
-    <img src="assets/portada3.png" alt="Raul & Milagro" class="foto-img" loading="lazy">
+    <img src="assets/portada3.gif" alt="Raul & Milagro" class="foto-img" loading="lazy">
   </div>
 
   <!-- Círculo con animación -->
@@ -488,12 +488,10 @@
 
 
 
-
-
 <!-- ======================================
      CONFIRMACIÓN DE ASISTENCIA (WhatsApp)
      ====================================== -->
-<section id="rsvp" class="rsvp-section" data-reveal="zoom-in" style="--reveal-dur:.7s">
+<section id="rsvp" class="rsvp-section">
   <div class="rsvp-heading">Confirmación</div>
   <p class="rsvp-subtitle">¿Nos acompañas en este día tan especial?</p>
 
@@ -509,16 +507,15 @@
   </div>
 
   <!-- Modal -->
-  <div id="rsvp-modal" class="rsvp-modal" aria-hidden="true" data-reveal="zoom-in" style="--reveal-dur:.7s">
+  <div id="rsvp-modal" class="rsvp-modal" aria-hidden="true">
     <div class="rsvp-modal__backdrop" data-close-modal></div>
 
     <div class="rsvp-modal__card" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
-      <button class="rsvp-modal__close" title="Cerrar" aria-label="Cerrar" data-close-modal>&times;</button>
+      <button id="rsvp-modal__close" class="rsvp-modal__close" title="Cerrar" aria-label="Cerrar">&times;</button>
 
       <div class="rsvp-modal__badge">
         <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
       </div>
-  
 
       <h3 id="rsvp-title" class="rsvp-modal__title">¿Asistes a la celebración?</h3>
 
